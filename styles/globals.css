@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+img{
+  max-width: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -23,4 +27,33 @@ a {
     color: white;
     background: black;
   }
+}
+
+:root {
+}
+
+.navbar{
+  background: #000;
+}
+
+.navbar .wrapper{
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.navbar .hamburger-wrapper{
+  cursor: pointer;
+}
+
+.navbar .hamburger{
+  width: 40px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(255 101 47 / 20%);
+  transition: all 0.5s ease-in-out;
+  margin: 11px 0px;
 }
