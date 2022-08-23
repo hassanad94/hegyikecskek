@@ -20,6 +20,26 @@ img{
   max-width: 100%;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex.column{
+  flex-direction: column;
+}
+
+@media (min-width: 1230px){
+  .mobile {
+      display: none !important;
+  }
+}
+
+@media (max-width: 1229px) {
+  .desktop{
+    display: none!important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -33,6 +53,8 @@ img{
 :root {
   --nav-bar-height: 85px;
   --nav-bar-bg: #222;
+  --color-3:#CC4125;
+  --base-font-size: 15px;
 }
 
 .main-container{
@@ -40,7 +62,7 @@ img{
 }
 
 .navbar{
-  background: var(--nav-bar-bg);
+  background: black;
   z-index: 20;
   position: fixed;
   top: -1px;
@@ -119,7 +141,83 @@ img{
   padding: 0px;
 }
 
+.navbar .menu-content.mobile .menu-items .separeted{
+  margin-top:20px;
+}
+
 .navbar .menu-content .menu-items li{
   margin: 7px;
-  width: 42%;
+  text-align: center;
+  width: 100%;
+  font-size: var(--base-font-size);
+  width: 16ch;
+  text-align: left;
+}
+.navbar .menu-content .menu-items li.active a{
+  background: var(--color-3);
+}
+
+.navbar .menu-content .menu-items li .link-item{
+  display: inline-block;
+  text-align: left;  
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.navbar .menu-content.mobile .menu-items .separeted li{ 
+  font-size: calc(var( --base-font-size ) + 1px );
+  color: var(--color-3);
+  margin-left: 14px;
+}
+.navbar .menu-content.mobile .menu-items .separeted li:after{
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background: url(/img/menu-button-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-top: 9px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media (min-width:1230px ) {
+
+  .navbar{
+    background: linear-gradient(180deg, rgba(0,0,0,0.6671043417366946) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .navbar .logo-container{
+    width:100px;
+  }
+  .navbar .menu-content{
+    position: relative;
+    left:0px;
+    top:0;
+    bottom: unset;
+  }
+
+  .navbar .menu-content .menu-items li{
+    padding: 7px 15px;
+    margin: 0;
+  }
+  
+  .navbar .menu-content .menu-items li .link-item{
+    width: auto;  
+  }
+  
+  .navbar .menu-content .menu-items{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbar .menu-content .menu-items .separeted{
+    display: flex;
+  }
+
+  .navbar .menu-content .menu-items li.active {
+    background: #00000030;
+  }
 }

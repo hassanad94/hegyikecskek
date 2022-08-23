@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
   
   const highlightedLinks = [
-    { name: "Edzéstervezés", link: "/edzestervezés" },
+    { name: "Edzéstervezés", link: "/edzestervezes" },
     { name: "Tagság", link: "/tagsag" },
     { name: "Kapcsolat", link: "/kapcsolat" },
   
@@ -26,49 +26,40 @@ const Navbar = () => {
 
   const router = useRouter();
 
-  const firstPageID = [...simpleLinks, ...highlightedLinks].findIndex( ( link ) => {
-      
-    return link.link == router.pathname;
-    
-  } );
-
-  const [activePageID, setActivePageID] = useState(firstPageID);
+  const [activeMenuPath, setActiveMenuPath] = useState(router.pathname);
 
   
   useEffect(() => {
 
-    const allLink = document.querySelectorAll( ".navbar .link-item" );
+    const allLink = document.querySelectorAll( `.navbar .menu-content .link-item` );
 
     for (let i = 0; i < allLink.length; i++) {
+      
       const link = allLink[i];
+      
+      if( link.attributes.href.value === activeMenuPath ){
 
-
-      if( i === activePageID ){
-
-        link.classList.add('active');
+        link.closest( "li" ).classList.add('active');
         continue;
+
       }
       
-      link.classList.remove('active');
+      link.closest( "li" ).classList.remove('active');
       
     }
 
    
-  },[activePageID]);
+  },[activeMenuPath]);
 
   
 
-  const handleNavLinkClick = (event) =>{
+  const handleNavLinkClick = (event) => {
 
     const tartgetHref = event.target.getAttribute("href");  
+    //TO-DO csak mobilon kapcsolgassa desktopon ne
+    setActiveBar(false);
 
-    const tartgetID = [...simpleLinks, ...highlightedLinks].findIndex( ( link ) => {
-
-      return link.link == tartgetHref;
-
-    } );
-    
-    setActivePageID( tartgetID );
+    setActiveMenuPath( tartgetHref );
    
   }
 
@@ -78,7 +69,7 @@ const Navbar = () => {
 
       <div className='wrapper'>
 
-        <div className="hamburger-wrapper" onClick={() => setActiveBar(!activeBar) }>
+        <div className="hamburger-wrapper mobile" onClick={() => setActiveBar(!activeBar) }>
 
           <div className="hamburger"></div>
           <div className="hamburger"></div>
@@ -92,31 +83,75 @@ const Navbar = () => {
 
         </div>
 
-      </div>
-
-      <div className="menu-content">
+        <div className="menu-content desktop">
 
           <ul className="menu-items">
 
-            {simpleLinks.map((item, i) => (
-              <li className="" key={`${i * 4}`} onClick={handleNavLinkClick} >
-                <Link href={item.link}>
-                  <a className="link-item" >{item.name}</a>
-                </Link>
-              </li>
-            ))}
+            <div className="flex">
 
-            <br/>
-            <br/>
+              {simpleLinks.map((item, i) => (
+                <li className="" key={`${i * 4}`} onClick={handleNavLinkClick} >
+                  <Link href={item.link}>
+                    <a className="link-item" >{item.name}</a>
+                  </Link>
+                </li>
+              ))}
 
-            {highlightedLinks.map((item, i) => (
-              <li className="" key={`${i * 4}`} onClick={handleNavLinkClick}>
-                <Link href={item.link}>
-                  <a className="link-item">{item.name}</a>
-                </Link>
-              </li>
-            ))}
+            </div>
+
+            <div className="separeted">
+
+              {highlightedLinks.map((item, i) => (
+                <li className="" key={`${i * 4}`} onClick={handleNavLinkClick}>
+                  <Link href={item.link}>
+                    <a className="link-item">{item.name}</a>
+                  </Link>
+                </li>
+              ))}
+
+            </div>
+
           </ul>
+
+      </div>
+
+      </div>
+
+      <div className="menu-content mobile">
+
+      <ul className="menu-items">
+
+        <div className="flex column">
+
+          {simpleLinks.map((item, i) => (
+            <li className="" key={`${i * 4}`} onClick={handleNavLinkClick} >
+              <Link href={item.link}>
+                <a className="link-item" >{item.name}</a>
+              </Link>
+            </li>
+          ))}
+
+        </div>
+
+        <div className="separeted flex column">
+
+          {highlightedLinks.map((item, i) => (
+            <li className="" key={`${i * 4}`} onClick={handleNavLinkClick}>
+              <Link href={item.link}>
+                <a className="link-item">{item.name}</a>
+              </Link>
+            </li>
+          ))}
+
+        </div>
+
+        <div className="logo-container">
+
+          <img src="/logo.png" alt="Logo" className='logo' />
+
+        </div>
+
+        </ul>
 
       </div>
 
