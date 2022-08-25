@@ -58,7 +58,7 @@ img{
 }
 
 .main-container{
-  margin-top: 145px;
+  margin-top: 50px;
 }
 
 .navbar{
@@ -254,10 +254,32 @@ img{
 }
 
 
+h1{
+  font-family: 'Britannic Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  margin: 21px 0px;
+}
+
 
 
 /*Main Content*/
 
-.main-container{
+.main-container > div:not( .fw ){ 
   padding: 0 4%;
+}
+
+.section{
+  display: grid;
+  grid-template-columns: repeat( 4, 1fr );
+  justify-items: center;
+}
+
+.section .col2{
+  grid-column: span 2;
 }

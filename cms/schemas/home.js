@@ -1,21 +1,30 @@
 export default{
     name: 'home',
-    title: 'Fő Oldal',
+    title: 'Fő oldal',
     type: 'document',
     fields: [
         {
-            name: 'image',
+            name: 'hero',
             title: 'Fő Kép',
-            type: 'array',
-            of: [ {type:'image'} ], /*array of images*/ 
+            type: 'image', /*array of images*/ 
             options: {
                 hotspot:true
             }
         },
         {
+            title: 'Bemutatkozó Szöveg', 
             name: 'title_1',
-            title: 'Hegyi Kecskék',
-            type: 'string',
+            type: 'array', 
+            of: [{
+                type: 'block',
+                styles: [
+                    {
+                        title: 'Normal', value: "normal",
+                        title: 'Fő Cím', value: 'h1'
+                    }
+                ],
+            
+            }]
         },
         {
             name: 'galeria',
