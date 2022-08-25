@@ -14,6 +14,7 @@ a {
 
 * {
   box-sizing: border-box;
+  position: relative;
 }
 
 img{
@@ -62,7 +63,7 @@ img{
 }
 
 .navbar{
-  z-index: 20;
+  z-index: 9999999;
   position: fixed;
   top: -1px;
   left: -1px;
@@ -270,16 +271,46 @@ h1{
 
 /*Main Content*/
 
+
+
 .main-container > div:not( .fw ){ 
   padding: 0 4%;
+}
+
+.hero-container{
+  max-height: 540px;
+  overflow: hidden;
+  background: white;
+}
+
+.hero-container::after{
+  content: "";
+  height: 35%;
+  position: absolute;
+  background: url(/img/white-sep.png);
+  background-size: cover;
+  left: 0;
+  right: 0;
+  bottom: -10%;
+}
+  
+.hero-container img{
+  object-fit: cover;
+  width: 100%;
 }
 
 .section{
   display: grid;
   grid-template-columns: repeat( 4, 1fr );
-  justify-items: center;
+  grid-column-gap: 15px;
 }
 
-.section .col2{
+.section.title-desc h1{
   grid-column: span 2;
+  margin-top:0;
+}
+
+.section.title-desc p{
+  grid-row: 2;
+  grid-column: span 4;
 }

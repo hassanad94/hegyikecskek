@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { client, urlForImage } from '../lib/client';
+import {PortableText} from '@portabletext/react';
 
 export async function getStaticProps() {
 
@@ -35,11 +36,11 @@ export default function Home( { defaultData } ) {
      
     </div>  
     
-    <div className="section">
+    <div className="section title-desc">
 
-      <h1 className='col2'> Hegyikecskék </h1>
-
-      {/* { data.title_1 } */}
+      <PortableText className='teszt'
+        value={data.title_1}
+      />
      
     </div>
 
