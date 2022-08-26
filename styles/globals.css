@@ -1,5 +1,14 @@
 /* @import url( "https://use.typekit.net/pkc7ths.css" ); */
 
+@font-face {font-family: "Britannic Bold";
+  src: url("../assets/8be4a2f403c2dc27187d892cca388e24.eot"); /* IE9*/
+  src: url("../assets/8be4a2f403c2dc27187d892cca388e24.eot") format("embedded-opentype"), /* IE6-IE8 */
+  url("../assets/8be4a2f403c2dc27187d892cca388e24.woff2") format("woff2"), /* chrome firefox */
+  url("../assets/8be4a2f403c2dc27187d892cca388e24.woff") format("woff"), /* chrome firefox */
+  url("../assets/8be4a2f403c2dc27187d892cca388e24.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("../assets/8be4a2f403c2dc27187d892cca388e24.svg#Britannic Bold") format("svg"); /* iOS 4.1- */
+}
+
 html,
 body {
   padding: 0;
