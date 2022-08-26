@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import NavBar from './NavBar';
+import NavBar from './Navbar';
 import Footer from './Footer';
 import Image from 'next/image';
 
