@@ -9,7 +9,7 @@ class MyDocument extends Document {
         <Head>
         <link rel="stylesheet" href="https://use.typekit.net/pkc7ths.css"/>
         {/* Egyesével letölteni és hozzáadni, hogy saját szerverről szedje a dolgokat. */}
-        <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
+        {/* <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/> */}
         </Head>
         <body>
           <Main />
