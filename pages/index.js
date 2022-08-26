@@ -3,8 +3,6 @@ import Image from 'next/image';
 import { client, urlForImage } from '../lib/client';
 import {PortableText} from '@portabletext/react';
 
-import { ButtonWithArrow, DefaultButton } from '../components/Buttons';
-
 export async function getStaticProps() {
 
   const query = '*[_type == "home"]';
