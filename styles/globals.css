@@ -37,6 +37,9 @@ img{
 .flex.column{
   flex-direction: column;
 }
+.flex-center {
+  align-items: center;
+}
 
 .center{
   text-align: center;
@@ -309,14 +312,7 @@ h2:before{
 
 p{
   font-size: 15px;
-}
-
-.grid-s-3{
-  grid-column-start: 3;
-}
-
-.grid-s-2{
-  grid-column-start: 2;
+  text-align: justify;
 }
 
 .buttonWithArrow{
@@ -326,17 +322,12 @@ p{
 }
 
 .buttonWithArrow:after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  background: url(/img/menu-button-icon.png);
-  background-position: center;
-  background-repeat: no-repeat;
+  content: url(/img/menu-button-icon.png);
+  position: relative;
   cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 11px;
+  display: inline-block;
+  top: 4px;
+  left: 15px;
 }
 
 
@@ -354,6 +345,7 @@ p{
   max-height: 540px;
   overflow: hidden;
   background: white;
+  min-height: 45vh;
 }
 
 
@@ -363,14 +355,7 @@ p{
 }
 
 .section{
-  display: grid;
-  grid-template-columns: repeat( 4, 1fr );
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
   padding-bottom: 15px;
-}
-.section.grid-center{
-  justify-items: center;
 }
 
 .section:nth-of-type(odd){
@@ -411,6 +396,20 @@ p{
     margin-top: -103px;
   }
 }
+
+.section.title-desc h1{
+  margin-top:0;
+}
+
+.section.title-desc p{
+}
+
+.section.title-desc.intro .button{
+  text-align: right;
+  padding-right: 25%;
+}
+
+
 @media (min-width: 800px) {
   .section:nth-of-type(even)::before {
     margin-top: -15%;
@@ -418,52 +417,60 @@ p{
 
   .section:nth-of-type(odd)::before {
     background-size: contain;
-    height: 16%;
     margin-top: -5%;
+  }
+  
+  .section.title-desc.intro .button{
   }
 }
 
-.section.title-desc h1{
-  grid-column: span 2;
-  margin-top:0;
-}
-
-.section.title-desc p{
-  grid-column: span 4;
-}
-
 .section h2{
-  grid-column: 1/5;
+  text-align: center;
 }
 
-.section.col2 > :is( div,p ){
-  grid-column: span 2;
-}
-.section.col3 > :is( div,p ){
-  grid-column: span 3;
+.section.interested  .image-card-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.section.interested .image-card-container {
-  max-width: 85%;
+.section.interested .image-card {
   display: flex;
   flex-direction: column;
+  max-width: 200px;
+}
+.section.interested .image-card .card-image {
+  min-height: 216px;
 }
 
-.section.interested .image-card-container img {
+.section.interested .image-card img {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  margin-bottom: -1px;
-  height: 66%;
-  object-fit: cover;
 }
 
-.section.interested .image-card-container p {
+.section.interested .image-card p {
   text-align: center;
   margin: 0;
   background: #F5F5F5;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   word-spacing: 100vw;
+}
+
+
+@media (min-width: 489px) {
+  .section.interested  .image-card-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .section.interested  .image-card-container{
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .section .btn{
@@ -473,24 +480,26 @@ p{
   color:white;
   padding: 5px 10px;
   border:none;
+  display: inline-block;
 }
 
-.center-grid{
-  grid-column: 2/4!important;
-}
-
-
-.section.expect .mountain-dec{
+.section.expect .mountain-dec-container{
   position: absolute;
   height: 83%;
   left: 0;
   bottom: 0;
   width: 63%;
 }
+.section.expect .mountain-items{
+  padding-left: 6%;
+}
 .section.expect .mountain-items .item{
   border: 2px solid var(--base-color-2);
   border-radius: 28px;
   padding: 3px 10px;
+  text-align: center;
+  width: 20ch;
+  background: #fff;
 }
 .section.expect .mountain-items .item::before{
   content: "";
@@ -508,26 +517,27 @@ p{
 }
 
 .section.expect .mountain-items .item:nth-of-type(2){
-  left: calc(var(--mountain-item-left) * 1 )
+  left: calc(var(--mountain-item-left) * 1 );
 }
 .section.expect .mountain-items .item:nth-of-type(3){
-  left: calc(var(--mountain-item-left) * 2 )
+  left: calc(var(--mountain-item-left) * 2 );
 }
 .section.expect .mountain-items .item:nth-of-type(4){
-  left: calc(var(--mountain-item-left) * 3 )
+  left: calc(var(--mountain-item-left) * 3 );
 }
 .section.expect .mountain-items .item:nth-of-type(5){
-  left: calc(var(--mountain-item-left) * 4 )
+  left: calc(var(--mountain-item-left) * 4 );
 }
 .section.expect .mountain-items .item:nth-of-type(6){
-  left: calc(var(--mountain-item-left) * 5 )
+  left: calc(var(--mountain-item-left) * 5 + 5vh);
+  width: 14ch;
 }
 .section.expect .mountain-items .item:nth-of-type(7){
-  left: calc(var(--mountain-item-left) * 6 )
+  left: calc(var(--mountain-item-left) * 6 );
 }
 .section.expect .mountain-items .item:nth-of-type(8){
-  left: calc(var(--mountain-item-left) * 7 )
+  left: calc(var(--mountain-item-left) * 7 );
 }
 .section.expect .mountain-items .item:nth-of-type(9){
-  left: calc(var(--mountain-item-left) * 8 )
+  left: calc(var(--mountain-item-left) * 8 );
 }
