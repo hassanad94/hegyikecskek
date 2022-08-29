@@ -17,7 +17,7 @@ export default function App() {
 
     return (
       <>
-        <div className="image-container">
+        {/* <div className="image-container">
         <img src={urlFor(image && image[index])} className="product-detail-image" />
         </div>
         <div className="small-images-container">
@@ -29,7 +29,9 @@ export default function App() {
             onClick={() => setIndex(i)}
             />
         ))}
-        </div>
+        </div> */}
+
+        G
       </>
     );
 }

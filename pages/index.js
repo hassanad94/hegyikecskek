@@ -6,7 +6,9 @@ import Galeria from '../components/Galeria';
 
 export async function getStaticProps() {
 
-  const query = '*[_type == "home"]';
+  const query = `*[_type == "home"] {
+    _id, hero,title_1,galeriavideos,galeriaimages
+  }`;
   var defaultData =  await client.fetch(query);
 
   const coaches = `*[_type == "coaches"] {
@@ -29,9 +31,17 @@ export async function getStaticProps() {
 
 export default function Home( { defaultData, coachesData } ) {
 
-  const { hero, title_1 } = defaultData[0];
-  
+  const { hero, title_1, galeriaimages,galeriavideos } = defaultData[0];
+
   const heroImage = urlForImage(hero).url();
+
+  const galeriaImagesUrls = galeriaimages.map( (img) => (
+
+    urlForImage( img ).url()
+
+  ) );
+
+  const galeria = [ ...galeriaImagesUrls, ...galeriavideos ];
 
   return (
 
@@ -137,7 +147,7 @@ export default function Home( { defaultData, coachesData } ) {
 
       <h2 className='center'>Galéria</h2>
 
-      <Galeria />
+      <Galeria galeria={galeria} />
 
     </div>
 

@@ -27,11 +27,19 @@ export default{
             }]
         },
         {
-            name: 'galeria',
-            title: 'Galéria',
-            type: 'array',
-            of: [ {type:'file'} ], /*array of images*/ 
+            title: 'Galéria Képei', 
+            name: 'galeriaimages',
+            type: 'array', 
+            of: [{
+                type: 'image',
+            }]
         },
+        {
+            title: 'Videók Url címe',
+            name: 'galeriavideos',
+            type: 'array',
+            of: [{type: 'url'}]
+          }
         
     ]
 
