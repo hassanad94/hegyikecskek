@@ -1,16 +1,23 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import { client, urlForImage } from '../lib/client';
 import {PortableText} from '@portabletext/react';
+import {CoachesPreview} from '../components/Coaches';
+import Galeria from '../components/Galeria';
 
 export async function getStaticProps() {
 
   const query = '*[_type == "home"]';
-  const defaultData =  await client.fetch(query);
+  var defaultData =  await client.fetch(query);
+
+  const coaches = `*[_type == "coaches"] {
+    _id, hero, name
+  }`;
+
+  const coachesData = await client.fetch( coaches );
 
   return {
     props: {
-      defaultData,
+      defaultData, coachesData
     },
     // Next.js will attempt to re-generate the page:
     // - At most once every 60 seconds
@@ -20,10 +27,10 @@ export async function getStaticProps() {
 
 
 
-export default function Home( { defaultData } ) {
+export default function Home( { defaultData, coachesData } ) {
 
   const { hero, title_1 } = defaultData[0];
-
+  
   const heroImage = urlForImage(hero).url();
 
   return (
@@ -115,6 +122,22 @@ export default function Home( { defaultData } ) {
       </div>
   
 
+
+    </div>
+
+    <div className='section coaches'>
+
+      <h2 className='center'>Edzőink</h2>
+
+      <CoachesPreview coaches={coachesData} />
+
+    </div>
+
+    <div className='section page-gallery'>
+
+      <h2 className='center'>Galéria</h2>
+
+      <Galeria />
 
     </div>
 
