@@ -3,6 +3,7 @@ import { client, urlForImage } from '../lib/client';
 import {PortableText} from '@portabletext/react';
 import {CoachesPreview} from '../components/Coaches';
 import Galeria from '../components/Galeria';
+import { ReviewCard } from '../components/Card';
 
 export async function getStaticProps() {
 
@@ -17,9 +18,13 @@ export async function getStaticProps() {
 
   const coachesData = await client.fetch( coaches );
 
+  const reviews = `*[_type == "reviews"]`;
+
+  const reviewsData = await client.fetch( reviews );
+
   return {
     props: {
-      defaultData, coachesData
+      defaultData, coachesData,reviewsData
     },
     // Next.js will attempt to re-generate the page:
     // - At most once every 60 seconds
@@ -29,7 +34,7 @@ export async function getStaticProps() {
 
 
 
-export default function Home( { defaultData, coachesData } ) {
+export default function Home( { defaultData, coachesData, reviewsData } ) {
 
   const { hero, title_1, galeriaimages,galeriavideos } = defaultData[0];
 
@@ -46,7 +51,6 @@ export default function Home( { defaultData, coachesData } ) {
     return link.split("v=")[1];
 
   });
-  
 
   const galeria = [ ...galeriaImagesUrls, ...youtubeIds ];
 
@@ -157,6 +161,17 @@ export default function Home( { defaultData, coachesData } ) {
       <div className='galeria-container'>
         <Galeria galeria={galeria} />
 
+      </div>
+
+
+    </div>
+
+    <div className='section page-gallery'>
+
+      <h2 className='center'>Rólunk mondták</h2>
+
+      <div className='galeria-container'>
+        <ReviewCard reviews={reviewsData} />
       </div>
 
 
