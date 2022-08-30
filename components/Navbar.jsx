@@ -148,7 +148,7 @@ const Navbar = () => {
 
         <div className="logo-container">
 
-          <Image layout="fill" src="/logo.png" alt="Logo" className='logo' />
+          <Image width="70px" height="70px" src="/logo.png" alt="Logo" className='logo' />
 
         </div>
 

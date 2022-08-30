@@ -216,7 +216,7 @@ img{
 }
 
 .navbar .menu-content .menu-items li{
-  margin: 7px;
+  margin: 3px;
   text-align: center;
   width: 100%;
   font-size: var(--base-font-size);
@@ -237,7 +237,6 @@ img{
 .navbar .menu-content.mobile .menu-items .separeted li{ 
   font-size: calc(var( --base-font-size ) + 1px );
   color: var(--base-color-2);
-  margin-left: 14px;
 }
 .navbar .menu-content.mobile .menu-items .separeted li:after{
   content: "";
