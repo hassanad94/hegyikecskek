@@ -590,7 +590,10 @@ p{
 
 .section.page-gallery .galeria-container {
   max-width: 1024px;
+  border: 1px solid var(--base-color-1);
   margin: auto;
+  border-radius: var(--base-border-radius);
+  padding: 7px;
 }
 
 .section.page-gallery .image-container {
