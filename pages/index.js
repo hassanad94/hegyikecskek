@@ -154,7 +154,11 @@ export default function Home( { defaultData, coachesData } ) {
 
       <h2 className='center'>Galéria</h2>
 
-      <Galeria galeria={galeria} />
+      <div className='galeria-container'>
+        <Galeria galeria={galeria} />
+
+      </div>
+
 
     </div>
 

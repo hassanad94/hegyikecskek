@@ -1,18 +1,47 @@
-import React, { useRef, useState } from "react";
-import {urlForImage } from '../lib/client';
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import YoutubeEmbed from "./YoutubeEmbed";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, A11y,FreeMode } from 'swiper';
-import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 
 export default function App({galeria}) {
 
-    const [ index, setIndex] = useState( 5 );
+    const [ index, setIndex] = useState( 0 );
+
+    useEffect(() => {
+
+      console.log( "fut" )
+
+      document.querySelector( ".galeria-container .small-image .selected-image" ).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+      
+      if( index == 0 ){
+        
+        document.querySelector( ".galeria-container .swiper-button-prev" ).classList.add( "swiper-button-disabled" );
+
+      }
+      
+      if( index === galeria.length - 1 ){
+        
+        document.querySelector( ".galeria-container .swiper-button-next" ).classList.add( "swiper-button-disabled" );
+
+      }
+
+      return () => {
+
+       const buttons = document.querySelectorAll( ".galeria-container .swiper-button-disabled" );
+
+       for (let i = 0; i < buttons.length; i++) {
+      
+        const button = buttons[i];
+        
+        button.classList.remove('swiper-button-disabled');
+        
+       }
+        
+      }
+    
+    }, [index] )
+    
 
     return (
       <>
@@ -33,53 +62,38 @@ export default function App({galeria}) {
 
         </div>
 
-        <Swiper
-            breakpoints={{
-              320: {
-                spaceBetween:0,
-                slidesPerView: 3,
-              },
-              550: {
-                slidesPerView: 4,
-                spaceBetween:0,
-              },
-              800: {
-                slidesPerView: 6,
-              }
-            }}
-            modules={[FreeMode,Navigation, Scrollbar, A11y]}
-            navigation
-            freeMode={true}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={(swiper) => console.log('slide change',swiper)}
-        >
-          {galeria.map((item, i) => {
+        <div className="img-nav flex">
+
+          {galeria?.map((item, i) => {
 
             let src = item.indexOf( "images" ) > -1 ? item 
             : `https://img.youtube.com/vi/${item}/hqdefault.jpg`;
 
             return( 
             
-              <SwiperSlide key={i}>
                                 
-                <div className="small-image">
+                <div className={i === index ? 'small-image selected' :"small-image" } key={i} onClick={ () => setIndex( i ) }>
 
                   <Image layout="fill"
-                    key={i}
                     src={src}
-                    className={i === index ? 'small-image selected-image' : 'small-image'}
-                    onClick={() => setIndex(i)}/> 
+                    className={i === index ? 'selected-image' :"" }
+                    /> 
                   
                 </div>
     
-              </SwiperSlide>
 
               )
-            })}
-          
-          
-          
-        </Swiper>
+            })}     
+
+        </div>
+
+        <div className="buttons">
+
+          <div className="swiper-button-next" onClick={() => setIndex( (prev) =>  prev + 1)}></div>
+          <div className="swiper-button-prev" onClick={() => setIndex( (prev) =>  prev - 1)}></div>
+
+        </div>     
+
 
       </>
     );

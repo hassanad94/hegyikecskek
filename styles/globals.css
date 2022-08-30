@@ -100,6 +100,7 @@ img{
   --base-color-1: #222;
   --base-color-2:#CC4125;
   --mountain-item-left: 7vw;
+  --base-border-radius: 5px
 }
 
 .button{
@@ -160,7 +161,7 @@ img{
   width: 40px;
   height: 2px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: var(--base-border-radius);
   box-shadow: 0 2px 5px rgb(255 101 47 / 20%);
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -230,7 +231,7 @@ img{
   display: inline-block;
   text-align: left;  
   padding: 5px;
-  border-radius: 5px;
+  border-radius: var(--base-border-radius);
 }
 
 .navbar .menu-content.mobile .menu-items .separeted li{ 
@@ -382,6 +383,9 @@ p{
   width: 100%;
 }
 
+.section{
+  text-align: center;
+}
 
 .section:nth-of-type(odd){
   background: var(--base-color-1) ;
@@ -451,6 +455,7 @@ p{
 
 .section h2{
   text-align: center;
+  display: inline-block;
 }
 
 .section.interested  .image-card-container{
@@ -502,7 +507,7 @@ p{
 
 .section .btn{
   background-color: var(--base-color-2);
-  border-radius: 4px;
+  border-radius: var(--base-border-radius);
   min-width: 140px;
   color:white;
   padding: 5px 10px;
@@ -580,4 +585,60 @@ p{
 
 .coach-slide{
   margin-bottom: 25px;
+}
+
+
+.section.page-gallery .galeria-container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.section.page-gallery .image-container {
+  background: var(--base-color-1);
+  border-radius: var(--base-border-radius);
+}
+
+.section.page-gallery .image-container > span {
+  height: 57vw!important;
+  max-height: 350px;
+  max-width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section.page-gallery .img-nav {
+  scroll-behavior: smooth;
+  margin-top: 11px;
+  overflow: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  column-gap: 2px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 20px;
+}  
+.section.page-gallery .img-nav::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+
+
+.section.page-gallery .small-image {
+  object-fit: cover;
+  cursor: pointer;
+  height: 26vw;
+  max-height: 155px;
+  flex: 0 0 30%;
+  margin: 0px 2.5px;
+  border-radius: var(--base-border-radius);
+}  
+.section.page-gallery .small-image img {
+  object-fit: cover;
+  border-radius: var(--base-border-radius);
+}
+
+.section.page-gallery .small-image.selected {
+  border: 2px solid var( --base-color-2);
+}
+.section.page-gallery .galeria-container .buttons > div {
+  top: 15px;
 }
