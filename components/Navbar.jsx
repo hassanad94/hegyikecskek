@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -79,7 +80,7 @@ const Navbar = () => {
 
         <div className="logo-container">
 
-          <img src="/logo.png" alt="Logo" className='logo' />
+          <Image layout="fill" src="/logo.png" alt="Logo" className='logo' />
 
         </div>
 
@@ -147,7 +148,7 @@ const Navbar = () => {
 
         <div className="logo-container">
 
-          <img src="/logo.png" alt="Logo" className='logo' />
+          <Image layout="fill" src="/logo.png" alt="Logo" className='logo' />
 
         </div>
 

@@ -74,7 +74,7 @@ export default function App({galeria}) {
                                 
                 <div className={i === index ? 'small-image selected' :"small-image" } key={i} onClick={ () => setIndex( i ) }>
 
-                  <Image layout="fill"
+                  <Image layout="fill" alt="Galéria Elem" title="Galéria Képe"
                     src={src}
                     className={i === index ? 'selected-image' :"" }
                     /> 
