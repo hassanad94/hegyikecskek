@@ -43,7 +43,7 @@ export const CoachesPreview = ({ coaches }) => {
                   
           <div className="coach-slide center"> 
           
-            <Image  width={150} height={150} src={profilSrc}/>
+            <Image alt="Edzők Kép" title={coach.name}  width={150} height={150} src={profilSrc}/>
 
             <p className='center'>{coach.name}</p>
 

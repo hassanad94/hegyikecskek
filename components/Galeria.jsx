@@ -10,10 +10,8 @@ export default function App({galeria}) {
 
     useEffect(() => {
 
-      console.log( "fut" )
-
       document.querySelector( ".galeria-container .small-image .selected-image" ).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
-      
+    
       if( index == 0 ){
         
         document.querySelector( ".galeria-container .swiper-button-prev" ).classList.add( "swiper-button-disabled" );
@@ -25,7 +23,7 @@ export default function App({galeria}) {
         document.querySelector( ".galeria-container .swiper-button-next" ).classList.add( "swiper-button-disabled" );
 
       }
-
+      
       return () => {
 
        const buttons = document.querySelectorAll( ".galeria-container .swiper-button-disabled" );
@@ -40,7 +38,9 @@ export default function App({galeria}) {
         
       }
     
-    }, [index] )
+      
+                  /*Le kell cserélni ez a hack-t.*/
+    }, [index] ) // eslint-disable-line react-hooks/exhaustive-deps
     
 
     return (
@@ -51,7 +51,7 @@ export default function App({galeria}) {
           
             ? 
           
-            <Image width="100%" height="100%" layout="responsive" objectFit="contain" src={galeria[index]} className="" />
+            <Image alt="Galéria" width="100%" height="100%" layout="responsive" objectFit="contain" src={galeria[index]} className="" />
 
             :
 
