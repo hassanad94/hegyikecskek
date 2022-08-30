@@ -15,16 +15,14 @@ export const ReviewCard = ({reviews}) => {
     <Swiper
         breakpoints={{
           320: {
-            spaceBetween:0,
+            spaceBetween:10,
             slidesPerView: 1,
         },
         700: {
             slidesPerView: 2,
-            spaceBetween:5,
         },
         1024: {
             slidesPerView: 3,
-            spaceBetween:10,
           }
         }}
         modules={[FreeMode,Navigation, Scrollbar, A11y]}
