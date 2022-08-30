@@ -37,7 +37,9 @@ export const CoachesPreview = ({ coaches }) => {
 
         let profilSrc = urlForImage(coach.hero).url();
 
-        return ( <SwiperSlide key={i}>
+        return ( 
+        
+        <SwiperSlide key={i}>
                   
           <div className="coach-slide center"> 
           

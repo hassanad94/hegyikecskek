@@ -41,7 +41,14 @@ export default function Home( { defaultData, coachesData } ) {
 
   ) );
 
-  const galeria = [ ...galeriaImagesUrls, ...galeriavideos ];
+  const youtubeIds = galeriavideos.map( (link) =>{
+
+    return link.split("v=")[1];
+
+  });
+  
+
+  const galeria = [ ...galeriaImagesUrls, ...youtubeIds ];
 
   return (
 

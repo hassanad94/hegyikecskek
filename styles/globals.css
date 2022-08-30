@@ -382,9 +382,6 @@ p{
   width: 100%;
 }
 
-.section{
-  padding-bottom: 15px;
-}
 
 .section:nth-of-type(odd){
   background: var(--base-color-1) ;
