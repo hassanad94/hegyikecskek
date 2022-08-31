@@ -4,6 +4,7 @@ import {PortableText} from '@portabletext/react';
 import {CoachesPreview} from '../components/Coaches';
 import {Galeria} from '../components/Galeria';
 import { ReviewCard } from '../components/Card';
+import ContactUs from '../components/ContactUs';
 
 export async function getStaticProps() {
 
@@ -174,6 +175,54 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
         <ReviewCard reviews={reviewsData} />
       </div>
 
+
+    </div>
+
+    <div className='section supporters'>
+
+      <h2>Támogatoink</h2>
+
+      <div className='supporter-container flex'>
+
+        <div className='supporter'>
+
+          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-1.png' alt="Támogatoink Logója" />
+
+        </div>
+        
+        <div className='supporter'>
+
+          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-2.png' alt="Támogatoink Logója" />
+
+        </div>      
+
+        <div className='supporter'>
+
+          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-3.png' alt="Támogatoink Logója" />
+
+        </div> 
+
+        <div className='supporter'>
+
+          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-4.png' alt="Támogatoink Logója" />
+
+        </div>
+
+        <div className='supporter'>
+
+          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-5.png' alt="Támogatoink Logója" />
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div className='section contactForm'>
+
+      <h2>Írj Nekünk</h2>
+
+      <ContactUs/>
 
     </div>
 
