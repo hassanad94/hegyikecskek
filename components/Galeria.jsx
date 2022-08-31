@@ -4,13 +4,15 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import 'swiper/css/navigation';
 
 
-export default function App({galeria}) {
+export function Galeria({galeria}) {
 
     const [ index, setIndex] = useState( 0 );
 
     useEffect(() => {
 
-      document.querySelector( ".galeria-container .small-image .selected-image" ).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+      const element = document.querySelector( ".galeria-container .small-image.selected" );
+
+      document.querySelector( ".galeria-container .img-nav" ).scrollTo( element.offsetLeft, 0 )
     
       if( index == 0 ){
         

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { client, urlForImage } from '../lib/client';
 import {PortableText} from '@portabletext/react';
 import {CoachesPreview} from '../components/Coaches';
-import Galeria from '../components/Galeria';
+import {Galeria} from '../components/Galeria';
 import { ReviewCard } from '../components/Card';
 
 export async function getStaticProps() {

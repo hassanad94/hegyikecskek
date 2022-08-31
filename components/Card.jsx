@@ -51,7 +51,7 @@ export const ReviewCard = ({reviews}) => {
                     <p className='center'>{review.review}</p>
 
                     <div className="profile-pic">
-                        <Image alt="Profil kép" title={review.name}  layout="fill" src={profilSrc}/>
+                        <Image alt="Profil kép"  title={review.name}  layout="fill" src={profilSrc}/>
                     </div>
 
 

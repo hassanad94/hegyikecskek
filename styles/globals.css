@@ -630,7 +630,7 @@ p{
   height: 26vw;
   max-height: 155px;
   flex: 0 0 30%;
-  margin: 0px 2.5px;
+  margin: 0px 0;
   border-radius: var(--base-border-radius);
 }  
 .section.page-gallery .small-image img {
