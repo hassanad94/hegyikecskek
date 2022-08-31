@@ -6,27 +6,27 @@ const ContactUs = () => {
 
         <div className="input">
 
-            <input type="text" name="name" class="name" placeholder="Név" />
-            <label for="CustomerEmail">Név</label>
+            <input type="text" name="name" className="name" placeholder="Név" />
+            <label>Név</label>
 
         </div>
 
         <div className="input">
 
-            <input type="email" name="email" class="email" placeholder="Email" />
-            <label for="CustomerEmail">Email</label>
+            <input type="email" name="email" className="email" placeholder="Email" />
+            <label>Email</label>
 
         </div>
 
         <div className="input">
 
-            <textarea  name="message" class="meassage" rows="4"></textarea>
+            <textarea  name="message" className="meassage" rows="4"></textarea>
 
-            <label for="CustomerEmail">Írd ide az üzeneted!</label>
+            <label>Írd ide az üzeneted!</label>
 
         </div>
 
-        <div class="button btn ">Küldés!</div>
+        <div className="button btn ">Küldés!</div>
 
     </div>
     
