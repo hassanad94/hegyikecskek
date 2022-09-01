@@ -441,7 +441,7 @@ p{
 
 
 @media (min-width: 499px) {
-  .section:nth-of-type(even)::before {
+  .section:nth-of-type(even)::before, footer .section::before {
     height: 24vh;
     margin-top: -103px;
   }
@@ -469,9 +469,13 @@ p{
     background-size: contain;
     margin-top: -5%;
   }
-  
-  .section.title-desc.intro .button{
+
+  footer .footer.section::before
+  {
+    background-size: cover;
+    margin-top: -18%;
   }
+
 }
 
 .section :is(h2,h3){
@@ -826,3 +830,4 @@ footer .section.footer .social-media-ref{
 footer .section.footer .social-media-ref a{
   margin: 0px 10px 
 }
+
