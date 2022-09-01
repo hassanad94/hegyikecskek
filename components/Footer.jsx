@@ -8,15 +8,15 @@ const Footer = () => {
 
   const [socials, setSocials] = useState({});
 
-  useEffect(() => {
+  // useEffect(() => {
  
-    client.fetch(
-				`*[_type == "socials"]`
-			)
-			.then((data) => setSocials( data[0] ))
-			.catch(console.error);
+  //   client.fetch(
+	// 			`*[_type == "socials"]`
+	// 		)
+	// 		.then((data) => setSocials( data[0] ))
+	// 		.catch(console.error);
         
-  },[]);
+  // },[]);
 
 
   const { facebook , instagram, youtube } = socials;
