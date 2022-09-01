@@ -39,7 +39,7 @@ export default{
             name: 'galeriavideos',
             type: 'array',
             of: [{type: 'url'}]
-          }
+        }
         
     ]
 

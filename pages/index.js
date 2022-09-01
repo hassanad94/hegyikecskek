@@ -21,8 +21,8 @@ export async function getStaticProps() {
 
   const reviews = `*[_type == "reviews"]`;
 
-  const reviewsData = await client.fetch( reviews );
-
+  const reviewsData = await client.fetch( reviews ); 
+  
   return {
     props: {
       defaultData, coachesData,reviewsData
