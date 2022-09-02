@@ -3,20 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from '/lib/client';
 import { useEffect, useState } from 'react';
+//import useSWR from 'swr';
 
 const Footer = () => {
 
   const [socials, setSocials] = useState({});
 
-  // useEffect(() => {
+  useEffect(() => {
  
-  //   client.fetch(
-	// 			`*[_type == "socials"]`
-	// 		)
-	// 		.then((data) => setSocials( data[0] ))
-	// 		.catch(console.error);
+    client.fetch(
+				`*[_type == "socials"]`
+			)
+			.then((data) => setSocials( data[0] ))
+			.catch(console.error);
         
-  // },[]);
+  },[]);
 
 
   const { facebook , instagram, youtube } = socials;
