@@ -61,7 +61,6 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className="hero-container fw">
 
-
       <Image loader={() => heroImage} unoptimized={true} src={heroImage} alt="hero" title="Fő kép" layout='fill' />
       {/* <Image layout='fill' src={heroImage.url()} decoding="sync" alt="Hero" className='hero' /> */}
      
@@ -69,13 +68,15 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
     
     <div className="section title-desc intro ">
 
-      <PortableText className='teszt'
-        value={title_1}
-      />
+      <div class="content">
 
-      <div className='buttonWithArrow button'>
+        <PortableText className='teszt'
+          value={title_1}
+        />
 
-        Bővebben
+        <div className='buttonWithArrow button'>
+          Bővebben
+        </div>
 
       </div>
      
@@ -83,84 +84,92 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section interested'>
 
-      <h2>Ha szeretnél</h2>
-      
-      <div className='image-card-container'>
+      <div class="content">
 
-        <div className='image-card'> 
-            <Image width={200} height="266" src='/img/reason-1.png' alt="Indok miért csatlakozz" />
-          <p>Fejlődni aszfalton</p>
-        </div>
-
-        <div className='image-card'> 
-            <Image width={200} height="266" src='/img/reason-2.png' alt="Indok miért csatlakozz" />
-          <p>Fejlődni terepen</p>
-        </div>
-
-        <div className='image-card'> 
-            <Image width={200} height="266" src='/img/reason-3.png' alt="Indok miért csatlakozz" />
-          <p>Elkezdeni futni</p>
-        </div>
-
-        <div className='image-card'> 
-            <Image width={200} height="266" src='/img/reason-4.png' alt="Indok miért csatlakozz" />
-          <p>Csapathoz tartozni</p>
-        </div>
-
-      </div>
-
-      <div className='button-container center'>
+        <h2>Ha szeretnél</h2>
         
-        <div className="button btn center center-grid" >
-    
-          Érdekel!
-    
+        <div className='image-card-container'>
+
+          <div className='image-card'>
+              <Image width={200} height="266" src='/img/reason-1.png' alt="Indok miért csatlakozz" />
+            <p>Fejlődni aszfalton</p>
+          </div>
+
+          <div className='image-card'>
+
+            <Image width={200} height="266" src='/img/reason-2.png' alt="Indok miért csatlakozz" />
+
+            <p>Fejlődni terepen</p>
+
+          </div>
+
+          <div className='image-card'>
+
+            <Image width={200} height="266" src='/img/reason-3.png' alt="Indok miért csatlakozz" />
+
+            <p>Elkezdeni futni</p>
+
+          </div>
+
+          <div className='image-card'>
+
+            <Image width={200} height="266" src='/img/reason-4.png' alt="Indok miért csatlakozz" />
+
+            <p>Csapathoz tartozni</p>
+
+          </div>
+
+        </div>
+
+        <div className='button-container center'>
+        
+          <div className="button btn center center-grid" >
+
+            Érdekel!
+
+          </div>
+
         </div>
 
       </div>
-
-
 
     </div>
 
     <div className='section grid-center expect'>
 
-      <h2 className='center'>Mire számíthatsz nálunk</h2>
+      <div class="content">
+
+        <h2 className='center'>Mire számíthatsz nálunk</h2>
+
+
+        <div className='mountain-items flex column'>
+
+          <p className='item'>egy szuper csapat </p>
+          <p className='item'>egyéni edzésterv </p>
+          <p className='item'>egyesületi tagság </p>
+          <p className='item'>közös futások </p>
+          <p className='item'>konzultációk </p>
+          <p className='item'>táborok </p>
+
+        </div>
+
+      </div>
 
       <div className='mountain-dec-container'>
+
         <Image layout='fill' src='/img/mountain-dec.png' alt="hegy dekoráció" className='mountain-dec' />
-      </div>
-
-
-      <div className='mountain-items flex column'>
-
-        <p className='item'>egy szuper csapat </p>
-        <p className='item'>egyéni edzésterv </p>
-        <p className='item'>egyesületi tagság </p>
-        <p className='item'>közös futások </p>
-        <p className='item'>konzultációk </p>
-        <p className='item'>táborok </p>
 
       </div>
-  
-
-
+      
     </div>
 
     <div className='section coaches'>
 
-      <h2 className='center'>Edzőink</h2>
+      <div className='content'>
 
-      <CoachesPreview coaches={coachesData} />
+        <h2 className='center'>Edzőink</h2>
 
-    </div>
-
-    <div className='section page-gallery'>
-
-      <h2 className='center'>Galéria</h2>
-
-      <div className='galeria-container'>
-        <Galeria galeria={galeria} />
+        <CoachesPreview coaches={coachesData} />
 
       </div>
 
@@ -169,48 +178,73 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section page-gallery'>
 
-      <h2 className='center'>Rólunk mondták</h2>
+      <div class="content">
 
-      <div className='galeria-container'>
-        <ReviewCard reviews={reviewsData} />
+        <h2 className='center'>Galéria</h2>
+
+        <div className='galeria-container'>
+
+          <Galeria galeria={galeria} />
+
+        </div>
+
       </div>
 
+    </div>
+
+    <div className='section page-gallery'>
+
+      <div class="content">
+
+        <h2 className='center'>Rólunk mondták</h2>
+
+        <div className='galeria-container'>
+
+          <ReviewCard reviews={reviewsData} />
+
+        </div>
+
+      </div>
 
     </div>
 
     <div className='section supporters'>
 
-      <h2>Támogatoink</h2>
+      <div class="content">
 
-      <div className='supporter-container flex'>
+        <h2>Támogatoink</h2>
 
-        <div className='supporter'>
+        <div className='supporter-container flex'>
 
-          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-1.png' alt="Támogatoink Logója" />
+          <div className='supporter'>
 
-        </div>
+            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-1.png' alt="Támogatoink Logója" />
+
+          </div>
         
-        <div className='supporter'>
+          <div className='supporter'>
 
-          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-2.png' alt="Támogatoink Logója" />
+            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-2.png' alt="Támogatoink Logója" />
 
-        </div>      
+          </div>
 
-        <div className='supporter'>
+          <div className='supporter'>
 
-          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-3.png' alt="Támogatoink Logója" />
+            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-3.png' alt="Támogatoink Logója" />
 
-        </div> 
+          </div>
 
-        <div className='supporter'>
+          <div className='supporter'>
 
-          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-4.png' alt="Támogatoink Logója" />
+            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-4.png' alt="Támogatoink Logója" />
 
-        </div>
+          </div>
 
-        <div className='supporter'>
+          <div className='supporter'>
 
-          <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-5.png' alt="Támogatoink Logója" />
+            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-5.png' alt="Támogatoink Logója" />
+
+          </div>
 
         </div>
 
@@ -220,9 +254,13 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section contactForm'>
 
-      <h2>Írj Nekünk</h2>
+      <div class="content">
 
-      <ContactUs/>
+        <h2>Írj Nekünk</h2>
+
+        <ContactUs/>
+
+      </div>
 
     </div>
 

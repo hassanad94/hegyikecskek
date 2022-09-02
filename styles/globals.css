@@ -387,7 +387,7 @@ p{
 
 .main-container > div:not( .fw ){ 
   padding: 0 4%;
-  padding-bottom:50px ;
+  padding-bottom:15%;
 }
 
 .hero-container{
@@ -405,6 +405,10 @@ p{
 
 .section{
   text-align: center;
+}
+.content{
+  max-width: 1024px;
+  margin:auto;
 }
 
 .section:nth-of-type(odd){
@@ -424,8 +428,8 @@ p{
   left: 0;
   right: 0;
   top: 0;
-  height: 16vh;
-  margin-top: -10%;
+  height: 18vh;
+  margin-top: -12vw;
 }
 
 .section:nth-of-type(even)::before, footer .section::before{
@@ -437,14 +441,13 @@ p{
   right: 0;
   top: 0;
   height: 100px;
-  margin-top: -20%;
+  margin-top: -19vw;
 }
 
 
 @media (min-width: 499px) {
   .section:nth-of-type(even)::before, footer .section::before {
-    height: 24vh;
-    margin-top: -103px;
+    height: 27vh;
   }
 }
 
@@ -462,9 +465,6 @@ p{
 
 
 @media (min-width: 800px) {
-  .section:nth-of-type(even)::before {
-    margin-top: -15%;
-  }
 
   .section:nth-of-type(odd)::before {
     background-size: contain;
@@ -613,6 +613,9 @@ p{
   margin-bottom: 25px;
 }
 
+.section.page-gallery{
+  padding-bottom: 100px;
+}
 
 .section.page-gallery .galeria-container {
   max-width: 1024px;
