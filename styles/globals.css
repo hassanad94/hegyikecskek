@@ -218,7 +218,7 @@ img{
 }
 
 .navbar .menu-content .menu-items li{
-  margin: 3px;
+  margin: 4px;
   text-align: center;
   width: 100%;
   font-size: var(--base-font-size);
@@ -230,9 +230,8 @@ img{
 }
 
 .navbar .menu-content .menu-items li .link-item{
-  display: inline-block;
   text-align: left;  
-  padding: 5px;
+  padding: 3px 5px;
   border-radius: var(--base-border-radius);
 }
 
@@ -250,9 +249,11 @@ img{
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: text-bottom;
-  margin-top: 12px;
+  /* margin-top: 12px; */
   margin-left: 10px;
   cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media (min-width:1230px ) {
