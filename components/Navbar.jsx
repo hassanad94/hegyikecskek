@@ -148,7 +148,7 @@ const Navbar = () => {
 
         <div className="logo-container">
 
-          <Image width="70px" height="70px" src="/logo.png" alt="Logo" className='logo' />
+          <Image objectFit="contain" width="70px" height="70px" src="/logo.png" alt="Logo" className='logo' />
 
         </div>
 
