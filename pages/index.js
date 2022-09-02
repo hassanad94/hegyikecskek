@@ -68,7 +68,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
     
     <div className="section title-desc intro ">
 
-      <div class="content">
+      <div className="content">
 
         <PortableText className='teszt'
           value={title_1}
@@ -84,7 +84,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section interested'>
 
-      <div class="content">
+      <div className="content">
 
         <h2>Ha szeretnél</h2>
         
@@ -137,7 +137,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section grid-center expect'>
 
-      <div class="content">
+      <div className="content">
 
         <h2 className='center'>Mire számíthatsz nálunk</h2>
 
@@ -160,7 +160,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
         <Image layout='fill' src='/img/mountain-dec.png' alt="hegy dekoráció" className='mountain-dec' />
 
       </div>
-      
+
     </div>
 
     <div className='section coaches'>
@@ -178,7 +178,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section page-gallery'>
 
-      <div class="content">
+      <div className="content">
 
         <h2 className='center'>Galéria</h2>
 
@@ -194,7 +194,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section page-gallery'>
 
-      <div class="content">
+      <div className="content">
 
         <h2 className='center'>Rólunk mondták</h2>
 
@@ -210,7 +210,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section supporters'>
 
-      <div class="content">
+      <div className="content">
 
         <h2>Támogatoink</h2>
 
@@ -254,7 +254,7 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     <div className='section contactForm'>
 
-      <div class="content">
+      <div className="content">
 
         <h2>Írj Nekünk</h2>
 
