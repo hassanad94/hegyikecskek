@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from '/lib/client';
 import { useEffect, useState } from 'react';
-//import useSWR from 'swr';
 
 const Footer = () => {
 
