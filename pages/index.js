@@ -188,6 +188,12 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
         </div>
 
+        <div className='buttonWithArrow left button'>
+
+          Galéria megnyitása  
+        
+        </div>
+
       </div>
 
     </div>

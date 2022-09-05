@@ -370,6 +370,10 @@ p{
   font-weight: bold;
 }
 
+.buttonWithArrow.left{
+  text-align: left;
+}
+
 .buttonWithArrow:after {
   content: url(/img/menu-button-icon.png);
   position: relative;
@@ -727,6 +731,10 @@ p{
   top: -15px;
 }
 
+
+.section.page-gallery .button{
+  margin-top: 15px;
+}
 
 .review-cards .card{
   background: white;
