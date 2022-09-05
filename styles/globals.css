@@ -507,19 +507,18 @@ p{
   display: inline-block;
 }
 
-.section.interested  .image-card-container{
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-bottom: 15px;
+.section.interested .image-card-container{
+  display: flex;
+  flex: 0 0 138px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .section.interested .image-card {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  flex: 0 0 138px;
+  padding: 10px;
 }
 .section.interested .image-card .card-image {
   min-height: 216px;
@@ -539,19 +538,6 @@ p{
   border-bottom-left-radius: 5px;
   word-spacing: 100vw;
   color: #000;
-}
-
-
-@media (min-width: 489px) {
-  .section.interested  .image-card-container{
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 800px) {
-  .section.interested  .image-card-container{
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .section .btn{
@@ -621,6 +607,13 @@ p{
 }
 .section.expect .mountain-items .item:nth-of-type(9){
   left: calc(var(--mountain-item-left) * 8 );
+}
+
+
+@media ( min-width:800px ) {
+  .section.interested .image-card{
+    flex: 0 0 25%;
+  }
 }
 
 
