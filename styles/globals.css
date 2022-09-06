@@ -6,6 +6,7 @@
   --base-border-radius: 5px;
   --input-width: 56vw;
   --input-max-width: 470px;
+  --base-section-padding : 4%;
 }
 
 
@@ -392,7 +393,7 @@ p{
 
 
 .main-container > div:not( .fw ){ 
-  padding: 0 4%;
+  padding: 0 var(--base-section-padding);
   padding-bottom:22%;
 }
 
@@ -927,4 +928,24 @@ footer .section.footer .social-media-ref a{
     padding: 25px;
   }
   
+}
+
+
+
+
+
+
+
+/*Rólunk*/
+
+.section.intro.no-hero{
+  padding-top: 15%;
+}
+
+.decoration.fw{
+  margin: 10px calc( var(--base-section-padding) * -1.1 );
+  min-height: 42vw;
+}
+.decoration.fw > *{
+  max-width: 650px;
 }

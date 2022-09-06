@@ -9,6 +9,7 @@ import ContactUs from '../components/ContactUs';
 
 import { useState } from 'react';
 
+
 export async function getStaticProps() {
 
   const query = `*[_type == "home"] {
@@ -93,9 +94,15 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
           value={title_1}
         />
 
-        <div className='buttonWithArrow button'>
-          Bővebben
-        </div>
+        <Link href="/rolunk">
+
+          <div className='buttonWithArrow button'>
+
+            Bővebben
+
+          </div>
+
+        </Link>
 
       </div>
      
