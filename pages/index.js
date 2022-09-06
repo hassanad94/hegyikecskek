@@ -1,10 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link'
 import { client, urlForImage } from '../lib/client';
 import {PortableText} from '@portabletext/react';
 import {CoachesPreview} from '../components/Coaches';
 import {Galeria} from '../components/Galeria';
 import { ReviewCard } from '../components/Card';
 import ContactUs from '../components/ContactUs';
+
+import { useState } from 'react';
 
 export async function getStaticProps() {
 
@@ -39,6 +42,8 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
   const { hero, title_1, galeriaimages,galeriavideos } = defaultData[0];
 
+  const [cardExtrainfo, setCardExtrainfo] = useState([false,false,false,false])
+
   const heroImage = urlForImage(hero).url();
 
   const galeriaImagesUrls = galeriaimages.map( (img) => (
@@ -54,6 +59,20 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
   });
 
   const galeria = [ ...galeriaImagesUrls, ...youtubeIds ];
+
+  const handleReasonCardClick = ( element ) => {
+
+    const target = element.target.closest( ".image-card" );
+
+    let getcurrentChildIndex = Array.from(target.parentNode.children).indexOf(target);
+
+    let cardElements = [...cardExtrainfo];
+
+    cardElements[ getcurrentChildIndex ] = ! cardElements[ getcurrentChildIndex ];
+
+    setCardExtrainfo( cardElements );
+
+  }
 
   return (
 
@@ -90,32 +109,91 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
         
         <div className='image-card-container'>
 
-          <div className='image-card'>
-              <Image width={200} height="266" src='/img/reason-1.png' alt="Indok miért csatlakozz" />
-            <p>Fejlődni aszfalton</p>
+          <div className='image-card' onClick={handleReasonCardClick}>
+            
+              <Image layout='fill'  src='/img/reason-1.png' alt="Indok miért csatlakozz" />
+
+            {cardExtrainfo[0] ?
+            
+              <div className='extraInfo'> <p>Ha szeretnél gyorsabb lenni, vagy hosszabb távokat futni.</p> </div>
+            
+            :
+
+              <p>
+                
+                Fejlődni aszfalton<br/>
+
+                <Image width="15" height="15" src='/i.png' alt="Information" />
+
+              </p>
+
+            }
+
           </div>
 
-          <div className='image-card'>
+          <div className='image-card' onClick={handleReasonCardClick}>
 
-            <Image width={200} height="266" src='/img/reason-2.png' alt="Indok miért csatlakozz" />
+            <Image layout='fill' src='/img/reason-2.png' alt="Indok miért csatlakozz" />
 
-            <p>Fejlődni terepen</p>
+            {cardExtrainfo[1] ?
+            
+              <div className='extraInfo'> <p>Ha szeretnél gyorsabb lenni, vagy hosszabb távokat futni.</p> </div>
+            
+            :
+
+              <p>
+                
+                Fejlődni terepen<br/>
+
+                <Image width="15" height="15" src='/i.png' alt="Information" />
+
+              </p>
+
+            }
 
           </div>
 
-          <div className='image-card'>
+          <div className='image-card' onClick={handleReasonCardClick}>
 
-            <Image width={200} height="266" src='/img/reason-3.png' alt="Indok miért csatlakozz" />
+            <Image layout='fill' src='/img/reason-3.png' alt="Indok miért csatlakozz" />
 
-            <p>Elkezdeni futni</p>
+            {cardExtrainfo[2] ?
+            
+              <div className='extraInfo'> <p>Ha szeretnél gyorsabb lenni, vagy hosszabb távokat futni.</p> </div>
+            
+            :
+
+              <p>
+                
+                Elkezdeni futni<br/>
+
+                <Image width="15" height="15" src='/i.png' alt="Information" />
+
+              </p>
+
+            }
 
           </div>
 
-          <div className='image-card'>
+          <div className='image-card' onClick={handleReasonCardClick}>
 
-            <Image width={200} height="266" src='/img/reason-4.png' alt="Indok miért csatlakozz" />
+            <Image layout='fill' src='/img/reason-4.png' alt="Indok miért csatlakozz" />
 
-            <p>Csapathoz tartozni</p>
+            {cardExtrainfo[3] ?
+            
+              <div className='extraInfo'> <p>Ha szeretnél gyorsabb lenni, vagy hosszabb távokat futni.</p> </div>
+            
+            :
+
+              <p>
+                
+                Csapathoz tartozni<br/>
+
+                <Image width="15" height="15" src='/i.png' alt="Information" />
+
+              </p>
+
+            }
 
           </div>
 
@@ -222,35 +300,55 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
         <div className='supporter-container flex'>
 
-          <div className='supporter'>
+          <Link href="/tamogatoink">
 
-            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-1.png' alt="Támogatoink Logója" />
+            <div className='supporter'>
 
-          </div>
+              <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-1.png' alt="Támogatoink Logója" />
+
+            </div>
+
+          </Link>
         
-          <div className='supporter'>
+          <Link href="/tamogatoink">
 
-            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-2.png' alt="Támogatoink Logója" />
+            <div className='supporter'>
 
-          </div>
+              <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-2.png' alt="Támogatoink Logója" />
 
-          <div className='supporter'>
+            </div>
 
-            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-3.png' alt="Támogatoink Logója" />
+          </Link>
 
-          </div>
+          <Link href="/tamogatoink">
 
-          <div className='supporter'>
+            <div className='supporter'>
 
-            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-4.png' alt="Támogatoink Logója" />
+              <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-3.png' alt="Támogatoink Logója" />
 
-          </div>
+            </div>
 
-          <div className='supporter'>
+          </Link>
 
-            <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-5.png' alt="Támogatoink Logója" />
+          <Link href="/tamogatoink">
 
-          </div>
+            <div className='supporter'>
+
+              <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-4.png' alt="Támogatoink Logója" />
+
+            </div>
+
+          </Link>
+
+          <Link href="/tamogatoink">
+
+            <div className='supporter'>
+
+              <Image width="100" layout="responsive" objectFit='contain' height="100" src='/img/supporter-5.png' alt="Támogatoink Logója" />
+
+            </div>
+
+          </Link>
 
         </div>
 

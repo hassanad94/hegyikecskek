@@ -1,3 +1,14 @@
+:root {
+  --nav-bar-height: 85px;
+  --base-color-1: #222;
+  --base-color-2:#CC4125;
+  --mountain-item-left: 6vw;
+  --base-border-radius: 5px;
+  --input-width: 56vw;
+  --input-max-width: 470px;
+}
+
+
 /* @import url( "https://use.typekit.net/pkc7ths.css" ); */
 
 @font-face {font-family: "Britannic Bold";
@@ -93,16 +104,6 @@ img{
     color: white;
     background: black;
   }
-}
-
-:root {
-  --nav-bar-height: 85px;
-  --base-color-1: #222;
-  --base-color-2:#CC4125;
-  --mountain-item-left: 7vw;
-  --base-border-radius: 5px;
-  --input-width: 56vw;
-  --input-max-width: 470px;
 }
 
 .button{
@@ -326,7 +327,8 @@ h2{
   font-weight: 700;
   font-size: 24px;
   line-height: 40px;
-  margin-top: 0;
+  margin-top: 25px;
+  margin-bottom: 45px;
 }
 
 :is( h2,h3 ){
@@ -391,15 +393,9 @@ p{
 
 .main-container > div:not( .fw ){ 
   padding: 0 4%;
-  padding-bottom:15%;
+  padding-bottom:22%;
 }
 
-@media ( min-width:1230px ) {
-  .main-container > div:not( .fw ){
-    padding: 25px!important;
-  }
-  
-}
 
 .hero-container{
   max-height: 540px;
@@ -490,7 +486,7 @@ p{
 
 }
 
-@media ( min-width:1230px ) {
+@media ( min-width:1024px ) {
 
   .section:not(.footer):nth-of-type(odd)::before{
     content: none;
@@ -498,6 +494,10 @@ p{
 
   .section:nth-of-type(2n):before, footer .section:before{
     content: none;
+  }
+
+  .main-container > div:not( .fw ){
+    padding-bottom: 5%;
   }
   
 }
@@ -517,9 +517,13 @@ p{
 .section.interested .image-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   flex: 0 0 138px;
-  padding: 10px;
+  cursor: pointer;
+  min-height: 211px;
+  margin: 10px 2px;
 }
+
 .section.interested .image-card .card-image {
   min-height: 216px;
 }
@@ -539,6 +543,36 @@ p{
   word-spacing: 100vw;
   color: #000;
 }
+.section.interested .image-card .extraInfo{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background: #2c2621ed;
+  color: white;
+}
+.section.interested .image-card .extraInfo p{
+  background: transparent;
+  color: inherit;
+  word-spacing: normal;
+  user-select: none;
+}
+
+.section.interested .button{
+  margin-top:40px;
+}
+
+@media ( min-width:800px ) {
+  .section.interested .image-card{
+    flex: 0 0 202px;
+    min-height: 300px;
+    margin: 5px;
+  }
+}
+
 
 .section .btn{
   background-color: var(--base-color-2);
@@ -552,14 +586,18 @@ p{
 
 .section.expect .mountain-dec-container{
   position: absolute;
-  height: 83%;
+  height: 77%;
   left: 0;
   bottom: 0;
   width: 63%;
 }
+
 .section.expect .mountain-items{
   padding-left: 6%;
+  z-index: 3;
+  margin-left: 2%;
 }
+
 .section.expect .mountain-items .item{
   border: 2px solid var(--base-color-2);
   border-radius: 28px;
@@ -567,6 +605,7 @@ p{
   text-align: center;
   width: 20ch;
   background: #fff;
+  margin: 10px 0px;
 }
 .section.expect .mountain-items .item::before{
   content: "";
@@ -607,13 +646,6 @@ p{
 }
 .section.expect .mountain-items .item:nth-of-type(9){
   left: calc(var(--mountain-item-left) * 8 );
-}
-
-
-@media ( min-width:800px ) {
-  .section.interested .image-card{
-    flex: 0 0 25%;
-  }
 }
 
 
@@ -775,6 +807,7 @@ p{
 .section.supporters .supporter-container .supporter{
   flex: 0 0 calc(100% / 3 );
   max-width: 140px;
+  cursor: pointer;
 }
 
 .input{
