@@ -38,7 +38,7 @@ const Navbar = () => {
       
       const link = allLink[i];
       
-      if( link.attributes.href.value === activeMenuPath ){
+      if( link.attributes.href.value === router.pathname ){
 
         link.closest( "li" ).classList.add('active');
         continue;
@@ -50,7 +50,7 @@ const Navbar = () => {
     }
 
    
-  },[activeMenuPath]);
+  },[activeMenuPath,router.pathname]);
 
   
 
@@ -63,7 +63,7 @@ const Navbar = () => {
     setActiveMenuPath( tartgetHref );
    
   }
-
+  
   return (
 
     <div className={ "navbar" + ( activeBar ? " open" : "" )  } >

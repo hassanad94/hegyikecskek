@@ -33,7 +33,7 @@ const rolunk = ({defaultData}) => {
 
         <div className='content'>
 
-          <h2>Rólunk SSzól</h2>
+          <h2>Rólunk</h2>
 
           <div className='decoration center fw'>
 
