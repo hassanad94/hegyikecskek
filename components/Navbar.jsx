@@ -49,21 +49,16 @@ const Navbar = () => {
       
     }
 
+    return (
+
+      setActiveBar( false )
+
+    );
+
    
-  },[activeMenuPath,router.pathname]);
+  },[router.pathname]);
 
-  
 
-  const handleNavLinkClick = (event) => {
-
-    const tartgetHref = event.target.getAttribute("href");  
-    //TO-DO csak mobilon kapcsolgassa desktopon ne
-    setActiveBar(false);
-
-    setActiveMenuPath( tartgetHref );
-   
-  }
-  
   return (
 
     <div className={ "navbar" + ( activeBar ? " open" : "" )  } >
@@ -91,7 +86,7 @@ const Navbar = () => {
             <div className="flex">
 
               {simpleLinks.map((item, i) => (
-                <li className="" key={`${i * 4}`} onClick={handleNavLinkClick} >
+                <li className="" key={`${i * 4}`}  >
                   <Link href={item.link}>
                     <a className="link-item" >{item.name}</a>
                   </Link>
@@ -103,7 +98,7 @@ const Navbar = () => {
             <div className="separeted">
 
               {highlightedLinks.map((item, i) => (
-                <li className="" key={`${i * 4}`} onClick={handleNavLinkClick}>
+                <li className="" key={`${i * 4}`} >
                   <Link href={item.link}>
                     <a className="link-item">{item.name}</a>
                   </Link>
@@ -125,7 +120,7 @@ const Navbar = () => {
         <div className="flex column">
 
           {simpleLinks.map((item, i) => (
-            <li className="" key={`${i * 4}`} onClick={handleNavLinkClick} >
+            <li className="" key={`${i * 4}`}  >
               <Link href={item.link}>
                 <a className="link-item" >{item.name}</a>
               </Link>
@@ -137,7 +132,7 @@ const Navbar = () => {
         <div className="separeted flex column">
 
           {highlightedLinks.map((item, i) => (
-            <li className="" key={`${i * 4}`} onClick={handleNavLinkClick}>
+            <li className="" key={`${i * 4}`} >
               <Link href={item.link}>
                 <a className="link-item">{item.name}</a>
               </Link>
