@@ -344,8 +344,19 @@ h2.left-align {
   display: flex !important;
 }
 h2.left-align::before {
-  left: 0;
-  width: 30%;
+  left: 1ch;
+  width: 5ch;
+}
+
+@media (min-width: 600px) {
+  h2.left-align {
+    justify-content: center;
+  }
+
+  h2.left-align::before {
+    left: 50%;
+    translate: -50% 0%;
+  }
 }
 
 h2:before {
@@ -401,6 +412,7 @@ p {
 .main-container > div:not(.fw) {
   padding: 0 var(--base-section-padding);
   padding-bottom: 22%;
+  padding-top: 35px;
 }
 
 .hero-container {
@@ -921,7 +933,7 @@ footer .section.footer .social-media-ref a {
 /*Rólunk*/
 
 .section.intro.no-hero {
-  padding-top: 12%;
+  padding-top: 50px;
 }
 
 .decoration.fw {
@@ -992,4 +1004,98 @@ details summary:after {
 }
 details[open] summary:after {
   rotate: 0deg;
+}
+
+.icon-card-container.rounded-card-image {
+  column-gap: 5px;
+}
+.icon-card-container.rounded-card-image .card-image {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 800px) {
+  .details-container {
+    max-width: unset;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 40px;
+  }
+  .details-container li {
+    width: 380px;
+  }
+}
+
+.count-task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.count-task-container .task:first-of-type:before {
+  content: "";
+  height: 300%;
+  width: 2px;
+  position: absolute;
+  top: 25%;
+  left: 35px;
+  /* translate: 0% -50%; */
+  background: black;
+}
+.count-task-container .task {
+  column-gap: 15px;
+}
+
+.count-task-container .task .count {
+  width: 70px;
+  background: black;
+  height: 70px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.count-task-container .task p {
+  max-width: 290px;
+  text-align: left;
+}
+
+@media (min-width: 650px) {
+  .details-container {
+    max-width: unset;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 40px;
+  }
+  .details-container li {
+    width: 380px;
+  }
+
+  .count-task-container {
+    flex-wrap: wrap;
+    max-height: 250px;
+  }
+
+  .count-task-container .task:nth-of-type(odd):before {
+    content: "";
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    top: 25%;
+    left: 35px;
+    background: black;
+  }
+  .count-task-container .task p {
+    max-width: 33vw;
+  }
 }
