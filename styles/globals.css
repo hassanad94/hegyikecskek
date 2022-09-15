@@ -1015,6 +1015,9 @@ details summary {
   top: 50%;
   translate: 0% -50%;
 }
+details summary {
+  outline: none;
+}
 details summary:after {
   content: url(/img/arrow.svg);
   position: absolute;
