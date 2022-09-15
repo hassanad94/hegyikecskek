@@ -438,6 +438,9 @@ p {
 .section:nth-of-type(odd) {
   background: var(--base-color-1);
 }
+.section:nth-of-type(odd) {
+  background: #fff;
+}
 .section:nth-of-type(odd) :is(h2, p) {
   color: white;
 }
@@ -1012,7 +1015,7 @@ details[open] summary:after {
 .icon-card-container.rounded-card-image .card-image {
   border: 1px solid;
   border-radius: 50%;
-  height: 70px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
