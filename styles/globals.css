@@ -30,6 +30,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--base-color-2) !important;
+  outline: none;
 }
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -240,6 +241,10 @@ img {
   text-align: left;
   padding: 3px 5px;
   border-radius: var(--base-border-radius);
+}
+
+.navbar .menu-content .menu-items li .link-item:active {
+  background: var(--base-color-2);
 }
 
 .navbar .menu-content.mobile .menu-items .separeted li {
