@@ -968,6 +968,7 @@ footer .section.footer .social-media-ref a {
 }
 .icon-card-container > div {
   width: 95px;
+  margin: 0px 3px;
   margin-bottom: 20px;
 }
 .icon-card-container p {
@@ -998,12 +999,14 @@ footer .section.footer .social-media-ref a {
 }
 .details-container details {
   cursor: pointer;
+  outline: none;
 }
 details summary::marker {
   content: none;
 }
 details summary {
   padding-right: 1ch;
+  color: #000;
 }
 .details-container summary::before {
   content: url(/img/list-style.svg);
@@ -1023,9 +1026,6 @@ details[open] summary:after {
   rotate: 0deg;
 }
 
-.icon-card-container.rounded-card-image {
-  margin: 0px 3px;
-}
 .icon-card-container.rounded-card-image .card-image {
   border: 1px solid;
   border-radius: 50%;
@@ -1079,6 +1079,7 @@ details[open] summary:after {
   font-size: 36px;
   justify-content: center;
   flex-shrink: 0;
+  margin-right: 15px;
 }
 
 .count-task-container .task p {
