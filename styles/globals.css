@@ -1033,7 +1033,7 @@ details[open] summary:after {
 }
 
 .icon-card-container.rounded-card-image .card-image {
-  border: 1px solid;
+  border: 1px solid #000;
   border-radius: 50%;
   height: 90px;
   display: flex;
