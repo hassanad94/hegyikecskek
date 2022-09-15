@@ -1018,12 +1018,12 @@ details summary {
 details summary:after {
   content: url(/img/arrow.svg);
   position: absolute;
-  rotate: 180deg;
+  transform: rotate(180deg);
   height: 25px;
-  transition: rotate 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 details[open] summary:after {
-  rotate: 0deg;
+  transform: rotate(0deg);
 }
 
 .icon-card-container.rounded-card-image .card-image {
