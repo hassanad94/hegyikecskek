@@ -377,8 +377,5 @@ export default function Home( { defaultData, coachesData, reviewsData } ) {
 
     </>
 
-   
-    
-
   )
 }

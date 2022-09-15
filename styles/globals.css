@@ -332,10 +332,18 @@ h2{
   margin-bottom: 45px;
 }
 
+
 :is( h2,h3 ){
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+}
+h2.miben{
+  display: flex!important;
+}
+h2.miben::before{
+  left:0;
+  width: 30%;
 }
 
 h2:before{
@@ -948,4 +956,18 @@ footer .section.footer .social-media-ref a{
 }
 .decoration.fw > *{
   max-width: 650px;
+}
+
+.icon-card-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.icon-card-container > div{
+  width: 95px;
+  margin-bottom: 20px;
+}
+.icon-card-container p{
+  font-size: 14px;
+  margin: 5px 0px;
 }
