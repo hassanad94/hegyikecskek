@@ -16,7 +16,7 @@ export async function getStaticProps() {
 const edzestervezes = ({ defaultData }) => {
   const { desc_1, workflows } = defaultData[0];
 
-  const [selectedPlan, setSelectedPlan] = useState("basic");
+  //   const [selectedPlan, setSelectedPlan] = useState("basic");
 
   return (
     <>
@@ -49,11 +49,11 @@ const edzestervezes = ({ defaultData }) => {
           <div className="flex justify-content-center">
             <ul className="details-container">
               {workflows &&
-                workflows.map((work) => {
+                workflows.map((work, key) => {
                   let [title, desc] = work.split("|");
 
                   return (
-                    <li>
+                    <li key={key}>
                       <details>
                         <summary>{title}</summary>
                         <p>{desc}</p>
@@ -72,7 +72,7 @@ const edzestervezes = ({ defaultData }) => {
 
           <div className="icon-card-container rounded-card-image">
             <div className="icon-card flex column">
-              <div class="card-image">
+              <div className="card-image">
                 <Image
                   width="50"
                   objectFit="contain"
@@ -86,7 +86,7 @@ const edzestervezes = ({ defaultData }) => {
             </div>
 
             <div className="icon-card flex column">
-              <div class="card-image">
+              <div className="card-image">
                 <Image
                   width="50"
                   objectFit="contain"
@@ -100,7 +100,7 @@ const edzestervezes = ({ defaultData }) => {
             </div>
 
             <div className="icon-card flex column">
-              <div class="card-image">
+              <div className="card-image">
                 <Image
                   width="50"
                   objectFit="contain"
@@ -114,7 +114,7 @@ const edzestervezes = ({ defaultData }) => {
             </div>
 
             <div className="icon-card flex column">
-              <div class="card-image">
+              <div className="card-image">
                 <Image
                   width="50"
                   objectFit="contain"
@@ -128,7 +128,7 @@ const edzestervezes = ({ defaultData }) => {
             </div>
 
             <div className="icon-card flex column">
-              <div class="card-image">
+              <div className="card-image">
                 <Image
                   width="50"
                   objectFit="contain"
