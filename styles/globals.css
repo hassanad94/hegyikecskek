@@ -335,7 +335,8 @@ h2 {
   margin-bottom: 45px;
 }
 
-:is(h2, h3) {
+h2,
+h3 {
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
@@ -438,10 +439,12 @@ p {
 .section:nth-of-type(odd) {
   background: var(--base-color-1);
 }
-.section:nth-of-type(odd) {
+.section:nth-of-type(even) {
   background: #fff;
 }
-.section:nth-of-type(odd) :is(h2, p) {
+.section:nth-of-type(odd),
+h2,
+.section:nth-of-type(odd) p {
   color: white;
 }
 
@@ -517,7 +520,8 @@ footer .section::before {
   }
 }
 
-.section :is(h2, h3) {
+.section h2,
+.section h3 {
   text-align: center;
   display: inline-block;
 }
@@ -823,7 +827,8 @@ footer .section::before {
   max-width: var(--input-max-width);
 }
 
-:is(input, textarea) {
+input,
+textarea {
   border: 1px solid #e2e8f0;
   max-width: inherit;
   padding: 11px;
@@ -834,7 +839,8 @@ footer .section::before {
   min-height: 45px;
 }
 
-:is(input, textarea) ~ label {
+input ~ label,
+textarea ~ label {
   color: #718096;
   font-size: 15px;
   left: 11px;
@@ -848,12 +854,13 @@ footer .section::before {
   line-height: 1.5;
 }
 
-:is(input):focus {
+input:focus {
   padding-top: 17px;
   outline: none;
 }
 
-:is(input:focus, input:not(:placeholder-shown)) ~ label {
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
   font-size: 12px;
   top: 11px;
 }
