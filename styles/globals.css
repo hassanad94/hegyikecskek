@@ -86,6 +86,10 @@ img {
   align-items: center;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 .center {
   text-align: center;
 }
@@ -336,10 +340,10 @@ h2 {
   font-weight: 700;
   line-height: 24px;
 }
-h2.miben {
+h2.left-align {
   display: flex !important;
 }
-h2.miben::before {
+h2.left-align::before {
   left: 0;
   width: 30%;
 }
@@ -917,7 +921,7 @@ footer .section.footer .social-media-ref a {
 /*Rólunk*/
 
 .section.intro.no-hero {
-  padding-top: 15%;
+  padding-top: 12%;
 }
 
 .decoration.fw {
@@ -950,4 +954,42 @@ footer .section.footer .social-media-ref a {
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
   content: "\276E" !important;
+}
+
+/* Edzéstervezés */
+
+.details-container {
+  text-align: left;
+  max-width: 400px;
+  list-style: none;
+  margin-left: 0;
+}
+.details-container li {
+  margin-bottom: 20px;
+}
+.details-container details {
+  cursor: pointer;
+}
+details summary::marker {
+  content: none;
+}
+details summary {
+  padding-right: 1ch;
+}
+.details-container summary::before {
+  content: url(/img/list-style.svg);
+  position: absolute;
+  left: -23px;
+  top: 50%;
+  translate: 0% -50%;
+}
+details summary:after {
+  content: url(/img/arrow.svg);
+  position: absolute;
+  rotate: 180deg;
+  height: 25px;
+  transition: rotate 0.3s ease-out;
+}
+details[open] summary:after {
+  rotate: 0deg;
 }

@@ -157,7 +157,7 @@ const rolunk = ({ defaultData }) => {
 
           <p>{teamdescription}</p>
 
-          <YoutubeEmbed embedId={trailer.split("v=")[1]} />
+          <YoutubeEmbed maxWidth={600} embedId={trailer.split("v=")[1]} />
 
           <div className="galeria-container">
             <Galeria galeria={galeriaUrls(galeria)} />
