@@ -1008,7 +1008,7 @@ details summary {
   padding-right: 1ch;
   color: #000;
 }
-.details-container summary::before {
+.details-container details::before {
   content: url(/img/list-style.svg);
   position: absolute;
   left: -23px;
