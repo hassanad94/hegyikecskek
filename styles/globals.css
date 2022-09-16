@@ -1143,18 +1143,26 @@ details[open] summary:after {
 }
 
 .pricing-container .card .coaches-container .coach-image {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 .pricing-container .card .coaches-container .coach-image > span {
   border-radius: 50%;
 }
+.pricing-container .card .price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 129px;
+  margin: auto;
+}
 .pricing-container .card .price-container .price {
   font-weight: bold;
   color: var(--base-color-2);
+  font-size: 21px;
 }
 .pricing-container .card .price-container .upperindex {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .pricing-container .card .price-container > span {
