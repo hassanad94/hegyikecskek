@@ -1,5 +1,5 @@
 export default {
-  name: "traningItems",
+  name: "trainingItems",
   title: "Edzés Program Szolgáltatások",
   type: "document",
   fields: [

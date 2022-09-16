@@ -1,22 +1,42 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
+import PriceCard from "../components/PriceCard";
 
 export async function getStaticProps() {
-  const query = `*[_type == "trainingPlan"]`;
-  var defaultData = await client.fetch(query);
+  const coachesQuery = `*[_type == "coaches"]{
+    _id, icon, page{current}
+  }`;
+  var coaches = await client.fetch(coachesQuery);
+
+  const trainingPlanQuery = `*[_type == "trainingPlan"]`;
+  var trainingPlan = await client.fetch(trainingPlanQuery);
+
+  const packets = `*[_type == "traningPackets"]`;
+  var trainingPackets = await client.fetch(packets);
+
+  const items = `*[_type == "trainingItems"]`;
+  var trainingItems = await client.fetch(items);
 
   return {
     props: {
-      defaultData,
+      defaultData: { trainingPackets, trainingItems, trainingPlan, coaches },
     },
     revalidate: 1, // In seconds
   };
 }
 
 const edzestervezes = ({ defaultData }) => {
-  const { desc_1, workflows } = defaultData[0];
+  const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
 
-  //   const [selectedPlan, setSelectedPlan] = useState("basic");
+  var coachesWithLogoURL = coaches;
+
+  coachesWithLogoURL.forEach((coach) => {
+    coach.icon = urlForImage(coach.icon).url();
+    coach.web = coach.page.current;
+    //console.log(coach);
+  });
+
+  const { desc_1, workflows } = trainingPlan[0];
 
   return (
     <>
@@ -200,7 +220,12 @@ const edzestervezes = ({ defaultData }) => {
         <div className="content">
           <h2>Csomagjaink és Áraink</h2>
 
-          <div className="pricing-container"></div>
+          <div className="pricing-container">
+            <PriceCard
+              trainingPacket={trainingPackets[0]}
+              coaches={coachesWithLogoURL}
+            />
+          </div>
         </div>
       </div>
     </>

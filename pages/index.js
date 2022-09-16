@@ -47,6 +47,8 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     false,
   ]);
 
+  console.log(hero);
+
   const heroImage = urlForImage(hero).url();
 
   const galeriaImagesUrls = galeriaimages.map((img) => urlForImage(img).url());

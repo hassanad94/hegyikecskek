@@ -9,6 +9,10 @@
   --base-section-padding: 4%;
 }
 
+.base-color-2 {
+  color: var(--base-color-2);
+}
+
 /* @import url( "https://use.typekit.net/pkc7ths.css" ); */
 
 @font-face {
@@ -115,6 +119,10 @@ img {
     color: white;
     background: black;
   }
+}
+
+.rounded-full {
+  border-radius: 50%;
 }
 
 .button {
@@ -765,7 +773,7 @@ footer .section::before {
   height: 26vw;
   max-height: 155px;
   flex: 0 0 30%;
-  margin: 0px 0;
+  margin: 0px 1px;
   border-radius: var(--base-border-radius);
 }
 .section.page-gallery .small-image img {
@@ -1125,6 +1133,31 @@ details[open] summary:after {
     background: black;
   }
   .count-task-container .task p {
-    max-width: 33vw;
+    max-width: 31vw;
   }
+}
+
+.pricing-container .card .coaches-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-container .card .coaches-container .coach-image {
+  width: 50px;
+  height: 50px;
+}
+.pricing-container .card .coaches-container .coach-image > span {
+  border-radius: 50%;
+}
+.pricing-container .card .price-container .price {
+  font-weight: bold;
+  color: var(--base-color-2);
+}
+.pricing-container .card .price-container .upperindex {
+  font-size: 10px;
+}
+
+.pricing-container .card .price-container > span {
+  display: inline-block;
+  vertical-align: middle;
 }

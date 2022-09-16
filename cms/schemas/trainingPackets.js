@@ -34,7 +34,7 @@ export default {
       of: [
         {
           type: "reference",
-          to: [{ type: "traningItems" }],
+          to: [{ type: "trainingItems" }],
         },
       ],
     },
