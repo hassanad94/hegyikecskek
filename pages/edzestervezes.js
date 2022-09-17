@@ -224,6 +224,7 @@ const edzestervezes = ({ defaultData }) => {
             <PriceCard
               trainingPacket={trainingPackets[0]}
               coaches={coachesWithLogoURL}
+              trainingItems={trainingItems}
             />
           </div>
         </div>

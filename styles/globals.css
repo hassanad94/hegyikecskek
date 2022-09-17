@@ -1142,7 +1142,8 @@ details[open] summary:after {
   justify-content: center;
 }
 
-.pricing-container .card .coaches-container .coach-image {
+.pricing-container .card .coaches-container .coach-image,
+.sanyi-icon-image-container {
   width: 40px;
   height: 40px;
 }
@@ -1156,6 +1157,9 @@ details[open] summary:after {
   max-width: 129px;
   margin: auto;
 }
+.pricing-container .card .price-container.sanyi {
+  max-width: 179px;
+}
 .pricing-container .card .price-container .price {
   font-weight: bold;
   color: var(--base-color-2);
@@ -1168,4 +1172,19 @@ details[open] summary:after {
 .pricing-container .card .price-container > span {
   display: inline-block;
   vertical-align: middle;
+}
+.pricing-container .card .training-item-container::before {
+  display: none;
+}
+.pricing-container .card .training-item-container p {
+  color: #000;
+}
+.pricing-container .card .training-item-container .title > div {
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+.pricing-container .card .training-item-container .description {
+  text-align: left;
+  padding-left: 55px;
 }
