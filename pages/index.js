@@ -6,6 +6,7 @@ import { CoachesPreview } from "../components/Coaches";
 import { Galeria } from "../components/Galeria";
 import { ReviewCard } from "../components/Card";
 import ContactUs from "../components/ContactUs";
+import { useStateContext } from "../context/settingContext";
 
 import { useState } from "react";
 
@@ -39,6 +40,8 @@ export async function getStaticProps() {
 
 export default function Home({ defaultData, coachesData, reviewsData }) {
   const { hero, title_1, galeriaimages, galeriavideos } = defaultData[0];
+
+  const { currentDevice } = useStateContext();
 
   const [cardExtrainfo, setCardExtrainfo] = useState([
     false,
@@ -236,7 +239,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
         <div className="mountain-dec-container">
           <Image
             layout="fill"
-            src="/img/mountain-dec.png"
+            src={`/img/mountain-dec-${currentDevice}.png`}
             alt="hegy dekoráció"
             className="mountain-dec"
           />

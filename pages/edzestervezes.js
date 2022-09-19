@@ -1,8 +1,9 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
 import PriceCard from "../components/PriceCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ContactUs from "../components/ContactUs";
+import { useStateContext } from "../context/settingContext";
 
 export async function getStaticProps() {
   const coachesQuery = `*[_type == "coaches"]{
@@ -40,9 +41,9 @@ const handlePacketSelectorClick = (selectedPacket) => {
 };
 
 const edzestervezes = ({ defaultData }) => {
-  const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
+  const { currentDevice } = useStateContext();
 
-  const [currentDevice, setCurrentDevice] = useState("base");
+  const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
 
   const [activePacket, setActivePacket] = useState(0);
 
@@ -55,17 +56,6 @@ const edzestervezes = ({ defaultData }) => {
 
   const { desc_1, workflows } = trainingPlan[0];
 
-  const handleWindowSizeChange = () => {
-    const currentWindowSize = window.innerWidth;
-
-    if (currentWindowSize >= 850) {
-      setCurrentDevice("tablet");
-    }
-    if (currentWindowSize < 850) {
-      setCurrentDevice("mobile");
-    }
-  };
-
   useEffect(() => {
     if (currentDevice !== "mobile") {
       return;
@@ -73,15 +63,6 @@ const edzestervezes = ({ defaultData }) => {
 
     handlePacketSelectorClick(activePacket);
   }, [activePacket]);
-
-  useEffect(() => {
-    handleWindowSizeChange();
-    window.addEventListener("resize", handleWindowSizeChange);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, [currentDevice]);
 
   return (
     <>
@@ -295,18 +276,18 @@ const edzestervezes = ({ defaultData }) => {
                 />
               </>
             )}
-            {currentDevice === "tablet" &&
-              trainingPackets.map((packet, id) => {
-                return (
-                  <PriceCard
-                    key={id}
-                    data-packet-name={packet.title.current}
-                    trainingPacket={packet}
-                    coaches={coachesWithLogoURL}
-                    trainingItems={trainingItems}
-                  />
-                );
-              })}
+            {currentDevice === "tablet" ||
+              (currentDevice === "desktop" &&
+                trainingPackets.map((packet, id) => {
+                  return (
+                    <PriceCard
+                      key={id}
+                      trainingPacket={packet}
+                      coaches={coachesWithLogoURL}
+                      trainingItems={trainingItems}
+                    />
+                  );
+                }))}
           </div>
           <h2>Írj Nekünk</h2>
           <ContactUs />

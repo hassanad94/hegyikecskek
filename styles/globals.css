@@ -630,6 +630,16 @@ footer .section::before {
   width: 63%;
 }
 
+@media (min-width: 1024px) {
+  .section.expect .mountain-dec-container {
+    bottom: -1px;
+    width: 480px;
+    height: 376px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .section.expect .mountain-items {
   padding-left: 6%;
   z-index: 3;
@@ -686,21 +696,45 @@ footer .section::before {
   left: calc(var(--mountain-item-left) * 8);
 }
 
-@media (min-width: 1230px) {
+@media (min-width: 1024px) {
+  .section.expect .mountain-items .item {
+    order: 9;
+  }
+  .section.expect .mountain-items .item:nth-of-type(1) {
+    left: 36%;
+    top: 30px;
+  }
   .section.expect .mountain-items .item:nth-of-type(2) {
-    left: 15%;
+    left: 11%;
+    top: 104px;
   }
   .section.expect .mountain-items .item:nth-of-type(3) {
-    left: 25%;
+    left: 9%;
+    top: 105px;
+  }
+  .section.expect .mountain-items .item:nth-of-type(2)::before,
+  .section.expect .mountain-items .item:nth-of-type(3)::before {
+    left: 100%;
+    transform: scaleX(-1);
+    top: 9px;
+    margin-left: 0;
   }
   .section.expect .mountain-items .item:nth-of-type(4) {
-    left: 35%;
+    left: 36%;
+    order: 1;
+    top: 0px;
+  }
+  .section.expect .mountain-items .item:nth-of-type(4)::before,
+  .section.expect .mountain-items .item:nth-of-type(1)::before {
+    left: 55%;
+    transform: rotate(270deg);
+    top: 100%;
   }
   .section.expect .mountain-items .item:nth-of-type(5) {
-    left: 45%;
+    left: 56%;
   }
   .section.expect .mountain-items .item:nth-of-type(6) {
-    left: 55%;
+    left: 66%;
   }
   .section.expect .mountain-items .item:nth-of-type(7) {
     left: calc(var(--mountain-item-left) * 6);
@@ -899,6 +933,7 @@ textarea:focus ~ label {
 
 footer .section.footer {
   background: white;
+  padding-top: 30px;
 }
 
 footer .section.footer h3 {
@@ -1203,15 +1238,16 @@ details[open] summary:after {
   }
   .pricing-container .card {
     margin: 10px 5px;
+    order: 3;
   }
 
-  .pricing-container .card [data-packet-name="basic"] {
+  .pricing-container .card[data-packet-name="basic"] {
     order: 1;
   }
-  .pricing-container .card [data-packet-name="basicplus"] {
+  .pricing-container .card[data-packet-name="basicplus"] {
     order: 2;
   }
-  .pricing-container .card [data-packet-name="pro"] {
+  .pricing-container .card[data-packet-name="pro"] {
     order: 3;
   }
 }

@@ -15,7 +15,11 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
   var coachSanyi = coaches.filter((coach) => coach.web === "szabo-sandor")[0];
 
   return (
-    <Card className="card" sx={{ maxWidth: 275, margin: "auto" }}>
+    <Card
+      className="card"
+      data-packet-name={trainingPacket.title.current}
+      sx={{ maxWidth: 275, margin: "auto" }}
+    >
       <Box>
         <CardContent>
           <Typography variant="h4" component="div">

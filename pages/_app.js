@@ -1,17 +1,15 @@
-import Layout from '../components/Layout'
-import '../styles/globals.css'
+import Layout from "../components/Layout";
+import "../styles/globals.css";
+import { StateContext } from "../context/settingContext";
 
 function MyApp({ Component, pageProps }) {
-
-  return(
-
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-
-  )
-
-
+  return (
+    <StateContext>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </StateContext>
+  );
 }
 
-export default MyApp
+export default MyApp;
