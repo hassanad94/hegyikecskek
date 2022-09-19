@@ -40,7 +40,7 @@ const handlePacketSelectorClick = (selectedPacket) => {
   allPacket[selectedPacket].classList.add("active");
 };
 
-const edzestervezes = ({ defaultData }) => {
+const Edzestervezes = ({ defaultData }) => {
   const { currentDevice } = useStateContext();
 
   const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
@@ -62,7 +62,7 @@ const edzestervezes = ({ defaultData }) => {
     }
 
     handlePacketSelectorClick(activePacket);
-  }, [activePacket]);
+  }, [activePacket, currentDevice]);
 
   return (
     <>
@@ -297,4 +297,4 @@ const edzestervezes = ({ defaultData }) => {
   );
 };
 
-export default edzestervezes;
+export default Edzestervezes;
