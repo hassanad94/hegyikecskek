@@ -1,6 +1,8 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
 import PriceCard from "../components/PriceCard";
+import { useState, useEffect } from "react";
+import ContactUs from "../components/ContactUs";
 
 export async function getStaticProps() {
   const coachesQuery = `*[_type == "coaches"]{
@@ -25,18 +27,61 @@ export async function getStaticProps() {
   };
 }
 
+const handlePacketSelectorClick = (selectedPacket) => {
+  const allPacket = [
+    ...document.querySelectorAll(
+      ".packet-selector-container [data-packet-name]"
+    ),
+  ];
+
+  allPacket.forEach((button) => button.classList.remove("active"));
+
+  allPacket[selectedPacket].classList.add("active");
+};
+
 const edzestervezes = ({ defaultData }) => {
   const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
+
+  const [currentDevice, setCurrentDevice] = useState("base");
+
+  const [activePacket, setActivePacket] = useState(0);
 
   var coachesWithLogoURL = coaches;
 
   coachesWithLogoURL.forEach((coach) => {
     coach.icon = urlForImage(coach.icon).url();
     coach.web = coach.page.current;
-    //console.log(coach);
   });
 
   const { desc_1, workflows } = trainingPlan[0];
+
+  const handleWindowSizeChange = () => {
+    const currentWindowSize = window.innerWidth;
+
+    if (currentWindowSize >= 850) {
+      setCurrentDevice("tablet");
+    }
+    if (currentWindowSize < 850) {
+      setCurrentDevice("mobile");
+    }
+  };
+
+  useEffect(() => {
+    if (currentDevice !== "mobile") {
+      return;
+    }
+
+    handlePacketSelectorClick(activePacket);
+  }, [activePacket]);
+
+  useEffect(() => {
+    handleWindowSizeChange();
+    window.addEventListener("resize", handleWindowSizeChange);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, [currentDevice]);
 
   return (
     <>
@@ -221,12 +266,50 @@ const edzestervezes = ({ defaultData }) => {
           <h2>Csomagjaink és Áraink</h2>
 
           <div className="pricing-container">
-            <PriceCard
-              trainingPacket={trainingPackets[0]}
-              coaches={coachesWithLogoURL}
-              trainingItems={trainingItems}
-            />
+            {currentDevice === "mobile" && (
+              <>
+                <div className="packet-selector-container">
+                  {trainingPackets &&
+                    trainingPackets.map((packet, id) => {
+                      return (
+                        <div
+                          key={packet.title.current}
+                          className={
+                            "button btn center" + (id === 0 ? " active" : "")
+                          }
+                          data-packet-name={packet.title.current}
+                          onClick={() => {
+                            setActivePacket(id);
+                          }}
+                        >
+                          {packet.name}
+                        </div>
+                      );
+                    })}
+                </div>
+
+                <PriceCard
+                  trainingPacket={trainingPackets[activePacket]}
+                  coaches={coachesWithLogoURL}
+                  trainingItems={trainingItems}
+                />
+              </>
+            )}
+            {currentDevice === "tablet" &&
+              trainingPackets.map((packet, id) => {
+                return (
+                  <PriceCard
+                    key={id}
+                    data-packet-name={packet.title.current}
+                    trainingPacket={packet}
+                    coaches={coachesWithLogoURL}
+                    trainingItems={trainingItems}
+                  />
+                );
+              })}
           </div>
+          <h2>Írj Nekünk</h2>
+          <ContactUs />
         </div>
       </div>
     </>

@@ -156,8 +156,8 @@ img {
   background-position: center;
   display: block;
   margin-top: -85px;
-  cursor: pointer;
   z-index: -1;
+  pointer-events: none;
 }
 
 @media (min-width: 1080px) {
@@ -380,7 +380,7 @@ h2:before {
   position: absolute;
   width: 50%;
   height: 1px;
-  bottom: -5px;
+  bottom: -10px;
   left: 25%;
   border-bottom: 2px solid var(--base-color-2);
 }
@@ -597,6 +597,7 @@ footer .section::before {
   color: inherit;
   word-spacing: normal;
   user-select: none;
+  padding: 5px;
 }
 
 .section.interested .button {
@@ -709,10 +710,6 @@ footer .section::before {
   }
   .section.expect .mountain-items .item:nth-of-type(9) {
     left: calc(var(--mountain-item-left) * 8);
-  }
-
-  .section.expect .mountain-dec-container {
-    z-index: -1;
   }
 }
 
@@ -841,24 +838,30 @@ footer .section::before {
   cursor: pointer;
 }
 
-.input {
-  width: var(--input-width);
-  max-width: var(--input-max-width);
+.contact-container {
+  align-items: center;
+  flex-direction: column;
+}
+.contact-container > div {
+  margin-bottom: 25px;
 }
 
-input,
-textarea {
-  border: 1px solid #e2e8f0;
-  max-width: inherit;
-  padding: 11px;
-  font-size: 14px;
-  border-radius: var(--base-border-radius);
-  color: black;
-  width: var(--input-width);
-  min-height: 45px;
+@media (min-width: 1024px) {
+  .contact-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-container .input {
+    width: 440px;
+    margin: 20px 10px 35px 10px;
+  }
+  .contact-container textarea {
+    min-width: 900px;
+    max-width: 100%;
+  }
 }
 
-input ~ label,
 textarea ~ label {
   color: #718096;
   font-size: 15px;
@@ -872,50 +875,23 @@ textarea ~ label {
   letter-spacing: 1px;
   line-height: 1.5;
 }
-
-input:focus {
-  padding-top: 17px;
-  outline: none;
-}
-
-einput:focus ~ label,
-input:not(:placeholder-shown) ~ label {
-  font-size: 12px;
-  top: 11px;
-}
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: white;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: white;
-}
-
-.contact-container {
-  align-items: center;
-}
-.contact-container > div {
-  margin-bottom: 25px;
-}
-
 textarea {
-  width: inherit;
   min-height: 96px;
-  min-width: 100%;
-  max-width: 100%;
-  padding-top: 28px;
+  min-width: 219px;
+  max-width: 219px;
+  padding: 11px;
+  padding-top: 20px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  border-radius: var(--base-border-radius);
+  color: black;
 }
 
 textarea ~ label {
   top: 18px;
+}
+textarea:focus {
+  padding-top: 28px;
 }
 textarea:focus ~ label {
   font-size: 11px;
@@ -1136,6 +1112,37 @@ details[open] summary:after {
     max-width: 31vw;
   }
 }
+@media (min-width: 1024px) {
+  .count-task-container .task p {
+    max-width: 350px;
+  }
+}
+
+.packet-selector-container {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.packet-selector-container .button {
+  background: #e1e1e1;
+  min-width: unset;
+  margin: 0px 15px;
+  color: #000;
+}
+.packet-selector-container .button[data-packet-name="basic"] {
+  order: 1;
+}
+.packet-selector-container .button[data-packet-name="basicplus"] {
+  order: 2;
+}
+.packet-selector-container .button[data-packet-name="pro"] {
+  order: 3;
+}
+.packet-selector-container .button.active {
+  background-color: var(--base-color-2);
+  color: #fff;
+}
 
 .pricing-container .card .coaches-container {
   display: flex;
@@ -1187,4 +1194,24 @@ details[open] summary:after {
 .pricing-container .card .training-item-container .description {
   text-align: left;
   padding-left: 55px;
+}
+
+@media (min-width: 850px) {
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+  }
+  .pricing-container .card {
+    margin: 10px 5px;
+  }
+
+  .pricing-container .card [data-packet-name="basic"] {
+    order: 1;
+  }
+  .pricing-container .card [data-packet-name="basicplus"] {
+    order: 2;
+  }
+  .pricing-container .card [data-packet-name="pro"] {
+    order: 3;
+  }
 }

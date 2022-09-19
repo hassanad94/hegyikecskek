@@ -128,6 +128,11 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             })}
         </CardContent>
       </Box>
+      <Box>
+        <CardContent>
+          <div className="button btn center">Edzéstervet kérek!</div>
+        </CardContent>
+      </Box>
     </Card>
   );
 };
