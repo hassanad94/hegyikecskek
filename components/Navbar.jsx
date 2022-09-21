@@ -10,7 +10,7 @@ const Navbar = () => {
     { name: "Főoldal", link: "/" },
     { name: "Rólunk", link: "/rolunk" },
     { name: "Edzéstervezés", link: "/edzestervezes" },
-    { name: "Egyesület", link: "/egyesulet" },
+    { name: "Edzőink", link: "/edzoink" },
     { name: "Esemenyek", link: "/esemenyek" },
     { name: "Eredmények", link: "/eredmenyek" },
     { name: "Galéria", link: "/galeria" },
