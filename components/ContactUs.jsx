@@ -25,7 +25,7 @@ const RedditTextField = styled((props) => (
   },
 }));
 
-const ContactUs = () => {
+const ContactUs = ({ subject }) => {
   return (
     <div className="contact-container flex">
       <RedditTextField
@@ -34,6 +34,7 @@ const ContactUs = () => {
         name="name"
         variant="filled"
         className="input"
+        data-v="1"
         style={{ marginTop: 11 }}
       />
 
@@ -46,6 +47,22 @@ const ContactUs = () => {
         className="input"
         style={{ marginTop: 11 }}
       />
+
+      {subject && (
+        <>
+          <div className="email-subject">Mivel kapcsolatban érdeklődsz?</div>
+
+          <RedditTextField
+            id="subject"
+            name="subject"
+            label="tárgy"
+            variant="filled"
+            type="text"
+            className="input subject-input"
+            style={{ marginTop: 11 }}
+          />
+        </>
+      )}
 
       <div className="text-area">
         <textarea name="message" className="meassage" rows="4"></textarea>

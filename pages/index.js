@@ -217,7 +217,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           </div>
 
           <div className="button-container center">
-            <div className="button btn center center-grid">Érdekel!</div>
+            <div className="button btn center">Érdekel!</div>
           </div>
         </div>
       </div>

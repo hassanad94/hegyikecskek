@@ -1,7 +1,7 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
-import PriceCard from "../components/PriceCard";
-import { useState, useEffect, useContext } from "react";
+import PriceCard from "../components/Card";
+import { useState, useEffect } from "react";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
 
@@ -276,18 +276,17 @@ const Edzestervezes = ({ defaultData }) => {
                 />
               </>
             )}
-            {currentDevice === "tablet" ||
-              (currentDevice === "desktop" &&
-                trainingPackets.map((packet, id) => {
-                  return (
-                    <PriceCard
-                      key={id}
-                      trainingPacket={packet}
-                      coaches={coachesWithLogoURL}
-                      trainingItems={trainingItems}
-                    />
-                  );
-                }))}
+            {(currentDevice === "tablet" || currentDevice === "desktop") &&
+              trainingPackets.map((packet, id) => {
+                return (
+                  <PriceCard
+                    key={id}
+                    trainingPacket={packet}
+                    coaches={coachesWithLogoURL}
+                    trainingItems={trainingItems}
+                  />
+                );
+              })}
           </div>
           <h2>Írj Nekünk</h2>
           <ContactUs />

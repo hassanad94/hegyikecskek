@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
+/*TO-do MAUI DRAwe-re csere*/
+
 const Navbar = () => {
   const simpleLinks = [
     { name: "Főoldal", link: "/" },

@@ -28,10 +28,21 @@ export const StateContext = ({ children }) => {
     };
   }, [currentDevice]);
 
+  const scrollToElement = (elementSelector) => {
+    const element = document.querySelector(elementSelector);
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  };
+
   return (
     <Context.Provider
       value={{
         currentDevice,
+        scrollToElement,
       }}
     >
       {children}

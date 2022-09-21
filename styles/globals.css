@@ -74,10 +74,15 @@ a {
 * {
   box-sizing: border-box;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 img {
   max-width: 100%;
+}
+
+p.left-align {
+  text-align: left;
 }
 
 .flex {
@@ -128,6 +133,108 @@ img {
 .button {
   cursor: pointer;
   z-index: 50;
+}
+
+h1 {
+  font-family: "Britannic Bold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  margin: 21px 0px;
+  margin-bottom: 0;
+  color: #000;
+}
+
+h2 {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+h2,
+h3 {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+}
+h2.left-align,
+h3.left-align {
+  display: flex !important;
+}
+h2.left-align::before,
+h3.left-align:before {
+  left: 1ch;
+  width: 5ch;
+}
+
+@media (min-width: 600px) {
+  h2.left-align,
+  h3.left-align {
+    justify-content: center;
+  }
+
+  h2.left-align::before,
+  h3.left-align::before {
+    left: 50%;
+    translate: -50% 0%;
+  }
+}
+
+h2:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -10px;
+  left: 25%;
+  border-bottom: 2px solid var(--base-color-2);
+}
+
+h3 {
+  font-size: 14px;
+  font-family: "Noto Sans";
+}
+
+h3:before {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 2px solid var(--base-color-2);
+}
+
+p {
+  font-size: 15px;
+  text-align: justify;
+  color: #000;
+}
+
+.buttonWithArrow {
+  font-size: calc(var(--base-font-size) + 1px);
+  color: var(--base-color-2);
+  font-weight: bold;
+}
+
+.buttonWithArrow.left {
+  text-align: left;
+}
+
+.buttonWithArrow:after {
+  content: url(/img/menu-button-icon.png);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  top: 4px;
+  left: 15px;
 }
 
 .main-container {
@@ -326,104 +433,6 @@ img {
   }
 }
 
-h1 {
-  font-family: "Britannic Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 28px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.02em;
-  margin: 21px 0px;
-  margin-bottom: 0;
-  color: #000;
-}
-
-h2 {
-  font-family: "Noto Sans";
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 40px;
-  margin-top: 25px;
-  margin-bottom: 45px;
-}
-
-h2,
-h3 {
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  color: #000;
-}
-h2.left-align {
-  display: flex !important;
-}
-h2.left-align::before {
-  left: 1ch;
-  width: 5ch;
-}
-
-@media (min-width: 600px) {
-  h2.left-align {
-    justify-content: center;
-  }
-
-  h2.left-align::before {
-    left: 50%;
-    translate: -50% 0%;
-  }
-}
-
-h2:before {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 1px;
-  bottom: -10px;
-  left: 25%;
-  border-bottom: 2px solid var(--base-color-2);
-}
-
-h3 {
-  font-size: 14px;
-  font-family: "Noto Sans";
-}
-
-h3:before {
-  content: "";
-  position: absolute;
-  width: 105%;
-  height: 1px;
-  bottom: 0;
-  border-bottom: 2px solid var(--base-color-2);
-}
-
-p {
-  font-size: 15px;
-  text-align: justify;
-  color: #000;
-}
-
-.buttonWithArrow {
-  font-size: calc(var(--base-font-size) + 1px);
-  color: var(--base-color-2);
-  font-weight: bold;
-}
-
-.buttonWithArrow.left {
-  text-align: left;
-}
-
-.buttonWithArrow:after {
-  content: url(/img/menu-button-icon.png);
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  top: 4px;
-  left: 15px;
-}
-
 /*Main Content*/
 
 .main-container > div:not(.fw) {
@@ -502,9 +511,6 @@ footer .section::before {
 
 .section.title-desc h1 {
   margin-top: 0;
-}
-
-.section.title-desc p {
 }
 
 .section.title-desc.intro .button {
@@ -631,6 +637,9 @@ footer .section::before {
 }
 
 @media (min-width: 1024px) {
+  .section.expect {
+    min-height: 500px;
+  }
   .section.expect .mountain-dec-container {
     bottom: -1px;
     width: 480px;
@@ -880,11 +889,42 @@ footer .section::before {
   margin-bottom: 25px;
 }
 
+.contact-container .email-subject {
+  width: 219px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+.contact-container .input {
+  width: 75vw;
+}
+.contact-container textarea {
+  min-height: 96px;
+  min-width: 75vw;
+  max-width: 470vw;
+}
+
+@media (min-width: 600px) {
+  .contact-container .input {
+    width: 470px;
+  }
+  .contact-container textarea {
+    min-width: 470px;
+    max-width: 470px;
+  }
+}
 @media (min-width: 1024px) {
   .contact-container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .contact-container .email-subject {
+    width: 100%;
+  }
+  .contact-container .input.subject-input {
+    width: 900px;
   }
   .contact-container .input {
     width: 440px;
@@ -919,6 +959,8 @@ textarea {
   font-size: 14px;
   border-radius: var(--base-border-radius);
   color: black;
+  background: #fff;
+  outline: 0;
 }
 
 textarea ~ label {
@@ -975,6 +1017,10 @@ footer .section.footer .social-media-ref a {
 
 .section.intro.no-hero {
   padding-top: 50px;
+}
+
+.section.intro.no-hero h2:before {
+  display: none;
 }
 
 .decoration.fw {
@@ -1249,5 +1295,88 @@ details[open] summary:after {
   }
   .pricing-container .card[data-packet-name="pro"] {
     order: 3;
+  }
+}
+
+.coach-select-container {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coach-select-container .coach-select {
+  align-items: center;
+  background-color: #fffbfe;
+  border-radius: var(--base-border-radius);
+  margin: 10px 5px;
+  order: 4;
+  width: 144px;
+}
+.coach-select-container .coach-select[data-web="szabo-sandor"] {
+  order: 1;
+}
+.coach-select-container .coach-select .name {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.coach-preview-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coach-preview-card-container .coach-preview-card {
+  margin: 15px 5px 15px 5px;
+  width: 300px;
+  order: 10;
+}
+
+.coach-preview-card-container .coach-preview-card[data-web="szabo-sandor"] {
+  order: 1;
+}
+
+.coach-preview-card-container .coach-preview-card .name {
+  margin: 0;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.coach-preview-card-container .coach-preview-card .title {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.profil-image ~ h2 {
+  margin-bottom: 15px;
+  font-family: "Britannic Bold";
+}
+
+.about-container h3 {
+  color: #fff;
+  font-size: 22px;
+}
+
+.about-container h3:before {
+  width: 3ch;
+  bottom: -5px;
+}
+
+.philosophies-container {
+  justify-content: space-evenly;
+}
+.philosophies-container .philosophy {
+  margin: 10px 5px;
+  width: 90px;
+}
+
+.section.success ul li {
+  color: #fff;
+  text-align: left;
+  font-size: 15px;
+}
+@media (min-width: 600px) {
+  .section.success ul {
+    margin-left: 15%;
   }
 }

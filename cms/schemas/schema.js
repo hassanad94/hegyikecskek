@@ -8,17 +8,21 @@ import aboutUs from "./aboutUs";
 import traningPlan from "./traningPlan";
 import trainingItems from "./trainingItems";
 import trainingPackets from "./trainingPackets";
+import coachesSite from "./coachesSite";
+import philosophy from "./philosophy";
 
 export default createSchema({
   name: "default",
   types: schemaTypes.concat([
     home,
-    coaches,
     aboutUs,
     traningPlan,
+    coachesSite,
     trainingPackets,
-    reviews,
     trainingItems,
     socials,
+    coaches,
+    reviews,
+    philosophy,
   ]),
 });
