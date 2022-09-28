@@ -149,6 +149,11 @@ h1 {
   color: #000;
 }
 
+.section.no-hero h1 {
+  color: #fff;
+  justify-content: center;
+}
+
 h2 {
   font-family: "Noto Sans";
   font-weight: 700;
@@ -1448,4 +1453,30 @@ details[open] summary:after {
 .runing-event > div b {
   width: 35%;
   display: inline-block;
+  vertical-align: top;
+}
+.runing-event > div span {
+  display: inline-block;
+  width: calc(65% - 6px);
+  vertical-align: middle;
+}
+
+.camp-name {
+  margin-bottom: 10px;
+  text-align: left !important;
+  display: block !important;
+}
+
+@media (min-width: 600px) {
+  .camp-name {
+    text-align: center !important;
+  }
+}
+
+.camp-selector .button {
+  margin: 30px 5px 10px 5px;
+}
+.camp-selector .button:not(.selected) {
+  background: #e1e1e1;
+  color: #000;
 }

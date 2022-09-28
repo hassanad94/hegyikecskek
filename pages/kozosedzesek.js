@@ -31,7 +31,7 @@ const KozosEdzesek = ({ defaultData }) => {
     <>
       <div className="section intro no-hero">
         <div className="content">
-          <h2>Közös Edzések</h2>
+          <h1>Közös Edzések</h1>
 
           <p>{intro}</p>
 

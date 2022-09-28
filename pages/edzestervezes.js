@@ -70,7 +70,7 @@ const Edzestervezes = ({ defaultData }) => {
     <>
       <div className="section intro no-hero">
         <div className="content">
-          <h2>Egyéni edzéstervezés</h2>
+          <h1>Egyéni edzéstervezés</h1>
 
           <p>{desc_1}</p>
 

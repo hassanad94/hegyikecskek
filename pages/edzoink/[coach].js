@@ -58,7 +58,7 @@ function Edzo({ defaultData }) {
             />
           </div>
 
-          <h2>{name}</h2>
+          <h1>{name}</h1>
 
           <div className="about-container">
             <h3 className="left-align">Rólam</h3>
