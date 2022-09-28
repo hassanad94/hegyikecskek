@@ -13,6 +13,7 @@ import philosophy from "./philosophy";
 import sharedTrainings from "./sharedTrainings";
 import sharedTrainingsDates from "./sharedTrainingsDates";
 import camps from "./camps";
+import association from "./association";
 
 export default createSchema({
   name: "default",
@@ -23,6 +24,7 @@ export default createSchema({
     coachesSite,
     sharedTrainings,
     camps,
+    association,
     trainingPackets,
     sharedTrainingsDates,
     trainingItems,

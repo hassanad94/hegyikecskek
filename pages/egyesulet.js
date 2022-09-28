@@ -21,7 +21,7 @@ const galeriaUrls = (items) => {
   return arrayOfUrls;
 };
 
-const Rolunk = ({ defaultData }) => {
+const Egyesulet = ({ defaultData }) => {
   const { desc_1, img_1, teamdescription, trailer, galeria } = defaultData[0];
 
   var heroImage = urlForImage(img_1).url();
@@ -168,4 +168,4 @@ const Rolunk = ({ defaultData }) => {
   );
 };
 
-export default Rolunk;
+export default Egyesulet;
