@@ -25,9 +25,16 @@ const RedditTextField = styled((props) => (
   },
 }));
 
-const ContactUs = ({ subject }) => {
+const ContactUs = ({ subject, description }) => {
   return (
     <div className="contact-container flex">
+      {description && (
+        <p>
+          Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
+          felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
+        </p>
+      )}
+
       <RedditTextField
         id="contact-name"
         label="Név"

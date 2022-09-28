@@ -10,6 +10,8 @@ import trainingItems from "./trainingItems";
 import trainingPackets from "./trainingPackets";
 import coachesSite from "./coachesSite";
 import philosophy from "./philosophy";
+import sharedTrainings from "./sharedTrainings";
+import sharedTrainingsDates from "./sharedTrainingsDates";
 
 export default createSchema({
   name: "default",
@@ -18,7 +20,9 @@ export default createSchema({
     aboutUs,
     traningPlan,
     coachesSite,
+    sharedTrainings,
     trainingPackets,
+    sharedTrainingsDates,
     trainingItems,
     socials,
     coaches,

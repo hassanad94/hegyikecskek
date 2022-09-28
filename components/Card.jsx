@@ -86,16 +86,18 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
 
   var coachSanyi = coaches.filter((coach) => coach.web === "szabo-sandor")[0];
 
+  const { title, name, services, price, priceSanyi } = trainingPacket;
+
   return (
     <Card
       className="card"
-      data-packet-name={trainingPacket.title.current}
+      data-packet-name={title.current}
       sx={{ maxWidth: 275, margin: "auto" }}
     >
       <Box>
         <CardContent>
           <Typography variant="h4" component="div">
-            {trainingPacket.name}
+            {name}
           </Typography>
         </CardContent>
       </Box>
@@ -118,7 +120,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         </CardContent>
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
-            <span className="price">{trainingPacket.price}</span>{" "}
+            <span className="price">{price}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
@@ -139,7 +141,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
                 <Avatar src={coachSanyi.icon} alt="Sanyi" size="md" />
               </div>
             )}
-            <span className="price">{trainingPacket.priceSanyi}</span>{" "}
+            <span className="price">{priceSanyi}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
@@ -155,7 +157,6 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             trainingItems.map((item) => {
               const { description, title, _id } = item;
 
-              const { services } = trainingPacket;
               const packetContain = services.findIndex((service) => {
                 return service["_ref"] === _id;
               });

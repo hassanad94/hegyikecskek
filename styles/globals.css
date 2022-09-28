@@ -896,7 +896,8 @@ footer .section::before {
   margin-bottom: 3px;
   text-align: center;
 }
-.contact-container .input {
+.contact-container .input,
+.contact-container p {
   width: 75vw;
 }
 .contact-container textarea {
@@ -906,7 +907,8 @@ footer .section::before {
 }
 
 @media (min-width: 600px) {
-  .contact-container .input {
+  .contact-container .input,
+  .contact-container p {
     width: 470px;
   }
   .contact-container textarea {
@@ -923,7 +925,8 @@ footer .section::before {
   .contact-container .email-subject {
     width: 100%;
   }
-  .contact-container .input.subject-input {
+  .contact-container .input.subject-input,
+  .contact-container p {
     width: 900px;
   }
   .contact-container .input {
@@ -1379,4 +1382,70 @@ details[open] summary:after {
   .section.success ul {
     margin-left: 15%;
   }
+}
+
+.kozos-edzes-calendar-container .MuiTypography-overline,
+.kozos-edzes-calendar-container .MuiPickersToolbar-content button,
+.kozos-edzes-calendar-container .MuiDialogActions-root {
+  display: none;
+}
+.kozos-edzes-calendar-container .MuiPickerStaticWrapper-content {
+  background-color: var(--base-color-1);
+  border-radius: var(--base-border-radius);
+  color: white;
+}
+.kozos-edzes-calendar-container .MuiDatePickerToolbar-root {
+  padding-bottom: 0px;
+}
+
+.kozos-edzes-calendar-container .MuiPickersToolbar-content h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+.kozos-edzes-calendar-container
+  .MuiDayPicker-monthContainer
+  .MuiPickersDay-root {
+  background: none;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.kozos-edzes-calendar-container
+  .MuiDayPicker-monthContainer
+  .MuiBadge-overlapCircular {
+  pointer-events: none;
+  margin-top: 8%;
+  margin-right: 10%;
+}
+.kozos-edzes-calendar-container
+  .MuiDayPicker-monthContainer
+  .MuiPickersDay-today {
+  background-color: var(--base-color-2);
+}
+.kozos-edzes-calendar-container .MuiDayPicker-monthContainer .Mui-selected {
+  color: var(--base-color-2);
+  background-color: white;
+  font-weight: bold;
+  font-size: 15px !important;
+  line-height: 1;
+}
+
+.kozos-edzes-calendar-container .MuiTypography-caption,
+.kozos-edzes-calendar-container .MuiPickersArrowSwitcher-button,
+.kozos-edzes-calendar-container .MuiPickersCalendarHeader-switchViewIcon {
+  color: #797b86;
+}
+
+.running-event {
+  margin-top: 15px;
+}
+.runing-event > div {
+  margin: 10px 5px;
+  text-align: left;
+}
+.runing-event > div b {
+  width: 35%;
+  display: inline-block;
 }

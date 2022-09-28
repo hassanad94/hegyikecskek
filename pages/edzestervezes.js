@@ -14,7 +14,9 @@ export async function getStaticProps() {
   const trainingPlanQuery = `*[_type == "trainingPlan"]`;
   var trainingPlan = await client.fetch(trainingPlanQuery);
 
-  const packets = `*[_type == "traningPackets"]`;
+  const packets = `*[_type == "traningPackets"]{
+    title, name, services, price, priceSanyi, trainingItems->[]
+  }`;
   var trainingPackets = await client.fetch(packets);
 
   const items = `*[_type == "trainingItems"]`;
