@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Image from "next/image";
 import { useStateContext } from "../context/settingContext";
 
 export default function GaleriaList({ images }) {
@@ -24,12 +25,10 @@ export default function GaleriaList({ images }) {
         gap={10}
       >
         {images?.map((item, i) => (
-          <ImageListItem key={item.img}>
-            <img
+          <ImageListItem key={`${item}i`}>
+            <Image
               src={`${item}?w=248&fit=crop&auto=format`}
-              srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
               alt={`Galéria Kép ${i}`}
-              loading="lazy"
             />
           </ImageListItem>
         ))}

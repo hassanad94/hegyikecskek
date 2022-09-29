@@ -29,27 +29,22 @@ const Galeria = ({ defaultData }) => {
   const [mergedGaleria, seMergedGaleria] = useState(null);
 
   useEffect(() => {
-    console.log(galeriaState);
-
     var filteredBySelectionGaleria = galeriaState.filter((galeria) =>
       Object.keys(selectedGaleries).find(
         () => selectedGaleries[galeria.slug.current] === true
       )
     );
 
-    console.info(filteredBySelectionGaleria);
     var mergedImageUrls = [];
 
     for (const galeriaItem of filteredBySelectionGaleria) {
-      console.log(galeriaItem.images.map((img) => urlForImage(img).url()));
-
       mergedImageUrls = mergedImageUrls.concat(
         galeriaItem.images.map((img) => urlForImage(img).url())
       );
     }
 
     seMergedGaleria(mergedImageUrls);
-  }, [selectedGaleries]);
+  }, [selectedGaleries, galeriaState]);
 
   return (
     <>

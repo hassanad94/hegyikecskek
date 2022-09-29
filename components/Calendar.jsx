@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import TextField from "@mui/material/TextField";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -32,7 +32,7 @@ const Calendar = () => {
 
   const { distance, when, endDate, location, pace } = shownEvent || {};
 
-  const getDates = async () => {
+  const getDates = useMemo(async () => {
     const { first: firstDate, last: lastDate } = firstLastDayOfMonth(
       new Date(currentMonth)
     );
@@ -57,7 +57,7 @@ const Calendar = () => {
 
         setHighlightedDays(eventDates);
       });
-  };
+  }, [currentMonth, value]);
 
   const handleDayChange = (newValue) => {
     setValue(newValue);
@@ -73,7 +73,7 @@ const Calendar = () => {
 
   useEffect(() => {
     getDates();
-  }, [currentMonth]);
+  }, [currentMonth, getDates]);
 
   return (
     <Box sx={{ maxWidth: "350px" }}>
