@@ -38,9 +38,8 @@ const Taborok = ({ defaultData }) => {
     galeria,
     join,
     _id,
+    turns,
   } = currentCamp;
-
-  const handleCampChangeClick = () => {};
 
   var introImageURL = urlForImage(introImage).url();
   var campPreviewImageURL = urlForImage(campPreview).url();
@@ -85,7 +84,7 @@ const Taborok = ({ defaultData }) => {
           </div>
 
           <h2 className="camp-name">{campName} EdzőTábor</h2>
-          <p className="left-align">Minden évben ősszel és tavasszal</p>
+          <p className="center">{turns}</p>
 
           <div className="flex justify-content-center ">
             <Image

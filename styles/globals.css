@@ -1460,6 +1460,11 @@ details[open] summary:after {
   width: calc(65% - 6px);
   vertical-align: middle;
 }
+@media (min-width: 600px) {
+  .runing-event > div {
+    text-align: center;
+  }
+}
 
 .camp-name {
   margin-bottom: 10px;
@@ -1479,4 +1484,9 @@ details[open] summary:after {
 .camp-selector .button:not(.selected) {
   background: #e1e1e1;
   color: #000;
+}
+
+.section.supporter h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
