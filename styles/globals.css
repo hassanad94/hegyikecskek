@@ -238,6 +238,7 @@ p {
   content: url(/img/menu-button-icon.png);
   position: relative;
   cursor: pointer;
+  user-select: none;
   display: inline-block;
   top: 4px;
   left: 15px;
@@ -288,6 +289,7 @@ p {
 
 .navbar .hamburger-wrapper {
   cursor: pointer;
+  user-select: none;
 }
 
 .navbar .hamburger {
@@ -385,6 +387,7 @@ p {
   /* margin-top: 12px; */
   margin-left: 10px;
   cursor: pointer;
+  user-select: none;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -570,6 +573,7 @@ footer .section::before {
   justify-content: flex-end;
   flex: 0 0 138px;
   cursor: pointer;
+  user-select: none;
   min-height: 211px;
   margin: 10px 2px;
 }
@@ -679,6 +683,7 @@ footer .section::before {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  user-select: none;
   top: 50%;
   transform: translateY(-50%);
   margin-left: -15px;
@@ -823,6 +828,7 @@ footer .section::before {
 .section.page-gallery .small-image {
   object-fit: cover;
   cursor: pointer;
+  user-select: none;
   height: 26vw;
   max-height: 155px;
   flex: 0 0 30%;
@@ -892,6 +898,7 @@ footer .section::before {
   flex: 0 0 calc(100% / 3);
   max-width: 140px;
   cursor: pointer;
+  user-select: none;
 }
 
 .contact-container {

@@ -7,6 +7,10 @@ import { useStateContext } from "../context/settingContext";
 export default function GaleriaList({ images }) {
   const { currentDevice } = useStateContext();
 
+  if (images.length === 0) {
+    return <>☝🏽☝🏽☝🏽Kérlek válasz a szűrők közül. ☝🏽☝🏽☝🏽</>;
+  }
+
   return (
     <Box
       sx={{
