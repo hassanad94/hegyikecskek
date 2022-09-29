@@ -27,8 +27,6 @@ export const ReviewCard = ({ reviews }) => {
       navigation
       freeMode={true}
       className="review-cards"
-      // onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={(swiper) => console.log('slide change',swiper)}
     >
       {reviews &&
         reviews.map((review, i) => {

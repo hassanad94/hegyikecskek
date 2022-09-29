@@ -4,8 +4,6 @@ import Image from "next/image";
 const Supporter = (...props) => {
   const { name, logo, description, url } = props[0].supporter;
 
-  console.log(props);
-
   const logoUrl = urlForImage(logo).url();
 
   return (

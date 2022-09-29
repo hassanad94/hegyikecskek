@@ -786,6 +786,13 @@ footer .section::before {
   padding: 7px;
 }
 
+.section:nth-of-type(odd).page-gallery .galeria-container {
+  border-color: #fff;
+}
+.section:nth-of-type(odd).page-gallery .galeria-container .image-container {
+  background: #fff;
+}
+
 .section.page-gallery .image-container {
   background: var(--base-color-1);
   border-radius: var(--base-border-radius);

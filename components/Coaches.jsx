@@ -28,8 +28,6 @@ export const CoachesPreview = ({ coaches }) => {
       modules={[FreeMode, Navigation, Scrollbar, A11y]}
       navigation
       freeMode={true}
-      // onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={(swiper) => console.log('slide change',swiper)}
     >
       {coaches &&
         coaches.map((coach, i) => {
@@ -59,8 +57,6 @@ export const CoachSelectorButton = ({ coach }) => {
   const { scrollToElement } = useStateContext();
 
   const { icon, name, web } = coach;
-
-  console.log(`[data-web='${web}']`);
 
   return (
     <>
