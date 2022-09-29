@@ -1,6 +1,4 @@
 import { client } from "../lib/client";
-import Image from "next/image";
-import ContactUs from "../components/ContactUs";
 import Supporter from "../components/Supporter";
 
 export async function getStaticProps() {

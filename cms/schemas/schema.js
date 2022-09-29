@@ -16,6 +16,7 @@ import camps from "./camps";
 import association from "./association";
 import supporters from "./supporters";
 import supporterSite from "./supporterSite";
+import galeries from "./galeries";
 
 export default createSchema({
   name: "default",
@@ -29,6 +30,7 @@ export default createSchema({
     association,
     supporterSite,
     supporters,
+    galeries,
     trainingPackets,
     sharedTrainingsDates,
     trainingItems,
