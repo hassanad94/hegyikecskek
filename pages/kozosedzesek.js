@@ -27,6 +27,8 @@ const galeriaUrls = (items) => {
 const KozosEdzesek = ({ defaultData }) => {
   const { intro, galeria, join } = defaultData.pageInfo[0];
 
+  const galeriaWithUrl = galeriaUrls(galeria);
+
   return (
     <>
       <div className="section intro no-hero">
@@ -62,7 +64,7 @@ const KozosEdzesek = ({ defaultData }) => {
           <h2 className="left-align">Képek a közös edzésekről</h2>
 
           <div className="galeria-container">
-            <Galeria galeria={galeriaUrls(galeria)} />
+            <Galeria galeria={galeriaWithUrl} />
           </div>
         </div>
       </div>
