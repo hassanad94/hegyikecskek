@@ -1,6 +1,6 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
-import Calendar from "../components/calendar";
+import Calendar from "../components/Calendar";
 import { Galeria } from "../components/Galeria";
 import ContactUs from "../components/ContactUs";
 
