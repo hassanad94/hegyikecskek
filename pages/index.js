@@ -78,12 +78,11 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     <>
       <div className="hero-container fw">
         <Image
-          loader={() => heroImage}
-          unoptimized={true}
           src={heroImage}
           alt="hero"
           title="Fő kép"
           layout="fill"
+          priority
         />
         {/* <Image layout='fill' src={heroImage.url()} decoding="sync" alt="Hero" className='hero' /> */}
       </div>
