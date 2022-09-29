@@ -25,8 +25,10 @@ export default function GaleriaList({ images }) {
         gap={10}
       >
         {images?.map((item, i) => (
-          <ImageListItem key={`${item}i`}>
+          <ImageListItem key={`${item}${i}`}>
             <Image
+              width={300}
+              height={150}
               src={`${item}?w=248&fit=crop&auto=format`}
               alt={`Galéria Kép ${i}`}
             />
