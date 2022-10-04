@@ -91,10 +91,9 @@ const Egyesulet = ({ defaultData }) => {
               tagdescription.map((tag, i) => {
                 const [summary, description] = tag.split("-");
 
-                console.log(tag);
-
                 return (
                   <Accordion
+                    key={i + summary}
                     sx={{
                       boxShadow: "none",
                       background: "transparent",

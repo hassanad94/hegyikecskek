@@ -20,11 +20,14 @@
     "@sanity/image-url": "^1.0.1",
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.5",
+    "mailgun.js": "^8.0.1",
     "next": "12.2.5",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.36.1",
     "react-minimal-pie-chart": "^8.3.0",
+    "react-toastify": "^9.0.8",
     "swiper": "^8.3.2"
   },
   "devDependencies": {

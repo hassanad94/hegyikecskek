@@ -1,6 +1,9 @@
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { alpha, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+import { toast, ToastContainer } from "react-toastify";
+import { useForm, Controller } from "react-hook-form";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const RedditTextField = styled((props) => (
   <TextField InputProps={{ disableUnderline: true }} {...props} />
@@ -26,59 +29,101 @@ const RedditTextField = styled((props) => (
 }));
 
 const ContactUs = ({ subject, description }) => {
+  const { control, handleSubmit } = useForm();
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    const { name, email, message } = data;
+
+    if (typeof message === "undefined") {
+      return toast.error("Kérlek írd le az üzeneted.");
+    }
+
+    const sendMail = await fetch("/api/hello", {
+      method: "post",
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json)
+      .then((data) => console.log(data));
+  };
+
   return (
-    <div className="contact-container flex">
-      {description && (
-        <p>
-          Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
-          felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
-        </p>
-      )}
+    <>
+      <ToastContainer position="bottom-center" limit={1} />
+      <form
+        className="contact-container flex"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        {description && (
+          <p>
+            Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
+            felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
+          </p>
+        )}
+        <Controller
+          name="name"
+          control={control}
+          id="contact-name"
+          render={({ field }) => (
+            <RedditTextField
+              {...field}
+              className="input"
+              label="Név"
+              variant="filled"
+              required
+              style={{ marginTop: 11 }}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="email"
+          render={({ field }) => (
+            <RedditTextField
+              {...field}
+              id="contact-email"
+              label="email"
+              variant="filled"
+              type="email"
+              className="input"
+              required
+              style={{ marginTop: 11 }}
+            />
+          )}
+        />
 
-      <RedditTextField
-        id="contact-name"
-        label="Név"
-        name="name"
-        variant="filled"
-        className="input"
-        data-v="1"
-        style={{ marginTop: 11 }}
-      />
+        {subject && (
+          <>
+            <div className="email-subject">Mivel kapcsolatban érdeklődsz?</div>
 
-      <RedditTextField
-        id="contact-email"
-        label="email"
-        name="email"
-        variant="filled"
-        type="email"
-        className="input"
-        style={{ marginTop: 11 }}
-      />
+            <RedditTextField
+              id="subject"
+              name="subject"
+              label="tárgy"
+              variant="filled"
+              type="text"
+              className="input subject-input"
+              style={{ marginTop: 11 }}
+            />
+          </>
+        )}
+        <div className="text-area">
+          <Controller
+            name="message"
+            control={control}
+            required
+            render={({ field }) => (
+              <>
+                <textarea {...field} className="meassage" rows="4"></textarea>
 
-      {subject && (
-        <>
-          <div className="email-subject">Mivel kapcsolatban érdeklődsz?</div>
-
-          <RedditTextField
-            id="subject"
-            name="subject"
-            label="tárgy"
-            variant="filled"
-            type="text"
-            className="input subject-input"
-            style={{ marginTop: 11 }}
+                <label>Írd ide az üzeneted!</label>
+              </>
+            )}
           />
-        </>
-      )}
-
-      <div className="text-area">
-        <textarea name="message" className="meassage" rows="4"></textarea>
-
-        <label>Írd ide az üzeneted!</label>
-      </div>
-
-      <div className="button btn ">Küldés!</div>
-    </div>
+        </div>
+        <input className="button btn " type="submit" value={"Küldés"} />
+      </form>
+    </>
   );
 };
 
