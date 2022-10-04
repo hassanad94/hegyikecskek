@@ -2,6 +2,7 @@ import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import { Galeria } from "../components/Galeria";
+import { useStateContext } from "../context/settingContext";
 
 export async function getStaticProps() {
   const query = `*[_type == "aboutUs"]`;
@@ -23,6 +24,10 @@ const galeriaUrls = (items) => {
 
 const Rolunk = ({ defaultData }) => {
   const { desc_1, img_1, teamdescription, trailer, galeria } = defaultData[0];
+
+  const { getYoutubeEmbemedId } = useStateContext();
+
+  var youtubeEmbemedId = getYoutubeEmbemedId(trailer);
 
   var heroImage = urlForImage(img_1).url();
 
@@ -157,7 +162,7 @@ const Rolunk = ({ defaultData }) => {
 
           <p>{teamdescription}</p>
 
-          <YoutubeEmbed maxWidth={600} embedId={trailer.split("v=")[1]} />
+          <YoutubeEmbed maxWidth={600} embedId={youtubeEmbemedId} />
 
           <div className="galeria-container">
             <Galeria galeria={galeriaUrls(galeria)} />

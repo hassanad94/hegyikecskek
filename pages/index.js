@@ -41,7 +41,7 @@ export async function getStaticProps() {
 export default function Home({ defaultData, coachesData, reviewsData }) {
   const { hero, title_1, galeriaimages, galeriavideos } = defaultData[0];
 
-  const { currentDevice } = useStateContext();
+  const { currentDevice, getYoutubeEmbemedId } = useStateContext();
 
   const [cardExtrainfo, setCardExtrainfo] = useState([
     false,
@@ -55,7 +55,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
   const galeriaImagesUrls = galeriaimages.map((img) => urlForImage(img).url());
 
   const youtubeIds = galeriavideos.map((link) => {
-    return link.split("v=")[1];
+    return getYoutubeEmbemedId(link);
   });
 
   const galeria = [...galeriaImagesUrls, ...youtubeIds];

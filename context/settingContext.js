@@ -5,6 +5,16 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
   const [currentDevice, setCurrentDevice] = useState("base");
 
+  const getYoutubeEmbemedId = (link) => {
+    if (link.indexOf("youtu.be/") >= 0) {
+      //https://youtu.be/80C4Flkl_sc
+
+      return link.split("be/")[1];
+    }
+
+    return link.split("v=")[1];
+  };
+
   const handleWindowSizeChange = () => {
     const currentWindowSize = window.innerWidth;
 
@@ -43,6 +53,7 @@ export const StateContext = ({ children }) => {
       value={{
         currentDevice,
         scrollToElement,
+        getYoutubeEmbemedId,
       }}
     >
       {children}
