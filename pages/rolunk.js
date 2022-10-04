@@ -48,7 +48,7 @@ const Rolunk = ({ defaultData }) => {
             />
           </div>
 
-          <p>{desc_1}</p>
+          <p className="center">{desc_1}</p>
         </div>
       </div>
 
