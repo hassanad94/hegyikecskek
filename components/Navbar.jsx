@@ -51,19 +51,6 @@ const Navbar = () => {
   return (
     <div className={"navbar" + (activeBar ? " open" : "")}>
       <div className="wrapper">
-        <div
-          className="hamburger-wrapper mobile"
-          onClick={() => setActiveBar(!activeBar)}
-        >
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
-        </div>
-
-        <div className="logo-container">
-          <Image layout="fill" src="/logo.png" alt="Logo" className="logo" />
-        </div>
-
         <div className="menu-content desktop">
           <ul className="menu-items">
             <div className="flex">
@@ -86,6 +73,19 @@ const Navbar = () => {
               ))}
             </div>
           </ul>
+        </div>
+
+        <div
+          className="hamburger-wrapper mobile"
+          onClick={() => setActiveBar(!activeBar)}
+        >
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+        </div>
+
+        <div className="logo-container">
+          <Image layout="fill" src="/logo.png" alt="Logo" className="logo" />
         </div>
       </div>
 

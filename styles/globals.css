@@ -437,6 +437,10 @@ p {
   .main-container {
     margin-top: 50px;
   }
+
+  .navbar .wrapper {
+    height: 100%;
+  }
 }
 
 /*Main Content*/
