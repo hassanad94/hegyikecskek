@@ -7,6 +7,7 @@
   --input-width: 56vw;
   --input-max-width: 470px;
   --base-section-padding: 4%;
+  --association-charts-height: 100px;
 }
 
 .base-color-2 {
@@ -398,11 +399,7 @@ p {
   }
 
   .navbar {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.6671043417366946) 0%,
-      rgba(0, 0, 0, 0) 100%
-    ) !important;
+    background: #222222;
   }
 
   .navbar::after {
@@ -496,6 +493,10 @@ p {
   top: 0;
   height: 18vh;
   margin-top: -12vw;
+}
+
+.section:nth-of-type(odd) .details-container .MuiSvgIcon-root {
+  color: #fff;
 }
 
 .section:nth-of-type(even)::before,
@@ -1022,6 +1023,9 @@ footer .section.footer .quick-contact {
   margin-top: 10px;
   font-size: 11px;
 }
+footer .section.footer .quick-contact a {
+  color: #000;
+}
 
 footer .section.footer .social-media-ref {
   margin-top: 10px;
@@ -1517,4 +1521,55 @@ details[open] summary:after {
 .galeria-box::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+
+.icon-card-container.association-counts > div:not(.charts) {
+  padding-top: 10px;
+}
+.icon-card-container.association-counts > div {
+  align-items: center;
+  margin: 0;
+  width: calc(100% / 3);
+  color: #191919;
+  font-weight: bold;
+}
+.icon-card-container.association-counts > div p {
+  padding-top: 20px;
+}
+.icon-card-container.association-counts > div.charts p {
+  margin-top: -3px;
+}
+
+.circle-count {
+  height: var(--association-charts-height);
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 50%;
+}
+.circle-count.medal-count {
+  background: #fcc201;
+}
+.circle-count.tag-count {
+  background: #44a0e3;
+}
+
+.boys-girls-chart {
+  font-size: 12px;
+  width: 102px;
+  height: 119px;
+}
+.tag-info-details .MuiPaper-elevation:before {
+  display: none;
+}
+.tag-info-details {
+  margin: auto;
+}
+
+@media (min-width: 650px) {
+  .tag-info-details {
+    max-width: 500px;
+  }
 }

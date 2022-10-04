@@ -1,6 +1,6 @@
 export default {
   name: "association",
-  title: "Tagsági Oldal",
+  title: "Egyesületi Információ Oldal",
   type: "document",
   fields: [
     {
@@ -9,8 +9,28 @@ export default {
       type: "text",
     },
     {
+      name: "tagCount",
+      title: "Tagok Száma",
+      type: "number",
+    },
+    {
+      name: "medalCount",
+      title: "Dobogós Helyezések",
+      type: "number",
+    },
+    {
+      name: "boysCount",
+      title: "Fiúk Száma",
+      type: "number",
+    },
+    {
+      name: "girlsCount",
+      title: "Lányok Száma",
+      type: "number",
+    },
+    {
       name: "tagInfo",
-      title: "Tagsági Információ",
+      title: "Tagsági Információ Alatti szöveg",
       type: "text",
     },
     {

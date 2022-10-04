@@ -89,7 +89,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
 
       <div className="section title-desc intro ">
         <div className="content">
-          <PortableText className="teszt" value={title_1} />
+          <PortableText value={title_1} />
 
           <Link href="/rolunk">
             <div className="buttonWithArrow button">Bővebben</div>

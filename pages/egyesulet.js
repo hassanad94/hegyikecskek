@@ -1,10 +1,13 @@
-import { client, urlForImage } from "../lib/client";
-import Image from "next/image";
-import YoutubeEmbed from "../components/YoutubeEmbed";
-import { Galeria } from "../components/Galeria";
+import { client } from "../lib/client";
+import { PieChart } from "react-minimal-pie-chart";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Typography } from "@mui/material";
 
 export async function getStaticProps() {
-  const query = `*[_type == "aboutUs"]`;
+  const query = `*[_type == "association"]`;
   var defaultData = await client.fetch(query);
 
   return {
@@ -15,152 +18,116 @@ export async function getStaticProps() {
   };
 }
 
-const galeriaUrls = (items) => {
-  let arrayOfUrls = items.map((img) => urlForImage(img).url());
-
-  return arrayOfUrls;
-};
-
 const Egyesulet = ({ defaultData }) => {
-  const { desc_1, img_1, teamdescription, trailer, galeria } = defaultData[0];
+  const {
+    intro,
+    tagInfo,
+    medalCount,
+    tagCount,
+    boysCount,
+    girlsCount,
+    tagdescription,
+  } = defaultData[0];
 
-  var heroImage = urlForImage(img_1).url();
+  const dataMock = [
+    { title: "Fiúk", value: boysCount, color: "#c0dfff" },
+    { title: "Lányok", value: girlsCount, color: "#ffc0cb" },
+  ];
+
+  console.log(tagdescription);
 
   return (
     <>
       <div className="section intro no-hero">
         <div className="content">
-          <h1>Rólunk</h1>
+          <h1>Az egyesület</h1>
 
-          <div className="decoration center">
-            <Image
-              objectFit="contain"
-              width={640}
-              height={276}
-              src={heroImage}
-              alt="hero"
-              title="Fő kép"
-            />
+          <p>{intro}</p>
+
+          <div className="button-container center">
+            <div className="button btn center">Edzéstervet kérek!</div>
           </div>
-
-          <p>{desc_1}</p>
         </div>
       </div>
 
       <div className="section">
         <div className="content">
-          <h2 className="miben">Miben hiszünk</h2>
+          <h2 className="">Az egyesület számokban</h2>
 
-          <div className="icon-card-container">
+          <div className="icon-card-container association-counts">
             <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-1.png"
-                alt="Miben Hiszünk"
-              />
+              <div className="circle-count tag-count">{tagCount}</div>
 
-              <p className="center">Egy csapat vagyunk</p>
+              <p className="center">Tagok Száma</p>
             </div>
 
             <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-2.png"
-                alt="Miben Hiszünk"
-              />
+              <div className="circle-count medal-count">{medalCount}</div>
 
-              <p className="center">Segítünk egymásnak</p>
+              <p className="center">Dobogós helyezések</p>
             </div>
 
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-3.png"
-                alt="Miben Hiszünk"
+            <div className="icon-card flex column charts">
+              <PieChart
+                className="boys-girls-chart"
+                data={dataMock}
+                label={({ dataEntry }) =>
+                  Math.round(dataEntry.percentage) + "%"
+                }
               />
-
-              <p className="center">Sportszerűek vagyunk</p>
-            </div>
-
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-4.png"
-                alt="Miben Hiszünk"
-              />
-
-              <p className="center">Keményen dolgozunk</p>
-            </div>
-
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-5.png"
-                alt="Miben Hiszünk"
-              />
-
-              <p className="center">Jól érezzük magunkat</p>
-            </div>
-
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-6.png"
-                alt="Miben Hiszünk"
-              />
-
-              <p className="center">Szeretjük a kihívásokat</p>
-            </div>
-
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-7.png"
-                alt="Miben Hiszünk"
-              />
-
-              <p className="center">Örülünk egymásnak</p>
-            </div>
-
-            <div className="icon-card flex column">
-              <Image
-                width="50"
-                objectFit="contain"
-                height="50"
-                src="/img/belife-8.png"
-                alt="Miben Hiszünk"
-              />
-
-              <p className="center">Tiszteljük a másikat</p>
+              <p className="center">fiú:lány arány</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="section page-gallery">
+      <div className="section">
         <div className="content">
-          <h2>A csapat</h2>
+          <h2 className="">Tagsági információk</h2>
+          <p className="center">{tagInfo}</p>
 
-          <p>{teamdescription}</p>
+          <div className="tag-info-details details-container">
+            {tagdescription &&
+              tagdescription.map((tag, i) => {
+                const [summary, description] = tag.split("-");
 
-          <YoutubeEmbed maxWidth={600} embedId={trailer.split("v=")[1]} />
+                console.log(tag);
 
-          <div className="galeria-container">
-            <Galeria galeria={galeriaUrls(galeria)} />
+                return (
+                  <Accordion
+                    sx={{
+                      boxShadow: "none",
+                      background: "transparent",
+                      border: "none!important",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    <AccordionSummary
+                      key={i}
+                      className="title"
+                      expandIcon={<ExpandMoreIcon />}
+                      sx={{
+                        marginBottom: "0px",
+                        minHeight: "unset!important",
+                        padding: "0px",
+                        height: "auto",
+                      }}
+                    >
+                      <Typography sx={{ textAlign: "left" }}>
+                        {summary}
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails
+                      className="description-container"
+                      sx={{ padding: "0px" }}
+                    >
+                      <Typography className="description">
+                        {description}
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                );
+              })}
           </div>
         </div>
       </div>
