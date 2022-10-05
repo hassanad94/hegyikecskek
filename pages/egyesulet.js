@@ -5,6 +5,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Typography } from "@mui/material";
+import Link from "next/link";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const query = `*[_type == "association"]`;
@@ -45,7 +47,7 @@ const Egyesulet = ({ defaultData }) => {
           <p>{intro}</p>
 
           <div className="button-container center">
-            <div className="button btn center">Edzéstervet kérek!</div>
+            <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
           </div>
         </div>
       </div>
@@ -128,6 +130,13 @@ const Egyesulet = ({ defaultData }) => {
                 );
               })}
           </div>
+
+          <Link href="/kedvezmenyek">
+            <div className="buttonWithArrow button">Kedvezményeink</div>
+          </Link>
+          <br />
+
+          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
         </div>
       </div>
     </>

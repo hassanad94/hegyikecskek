@@ -255,7 +255,11 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
             <Galeria galeria={galeria} />
           </div>
 
-          <div className="buttonWithArrow left button">Galéria megnyitása</div>
+          <Link href="/galeria">
+            <div className="buttonWithArrow left button">
+              Galéria megnyitása
+            </div>
+          </Link>
         </div>
       </div>
 

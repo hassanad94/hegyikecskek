@@ -4,6 +4,7 @@ import PriceCard from "../components/Card";
 import { useState, useEffect } from "react";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const coachesQuery = `*[_type == "coaches"]{
@@ -86,7 +87,7 @@ const Edzestervezes = ({ defaultData }) => {
 
           <br />
 
-          <div className="button btn center">Érdekel!</div>
+          <OpenMessageModal buttonTitle="Érdekel!" />
         </div>
       </div>
 

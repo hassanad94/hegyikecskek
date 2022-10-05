@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Galeria } from "../components/Galeria";
 import { useState } from "react";
 import ContactUs from "../components/ContactUs";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const query = `*[_type == "camps"]`;
@@ -137,7 +138,7 @@ const Taborok = ({ defaultData }) => {
 
           <p>{join}</p>
 
-          <div className="button btn center">Edzéstervet kérek!</div>
+          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
         </div>
       </div>
 

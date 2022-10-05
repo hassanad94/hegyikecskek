@@ -3,6 +3,7 @@ import Image from "next/image";
 import Calendar from "../components/Calendar";
 import { Galeria } from "../components/Galeria";
 import ContactUs from "../components/ContactUs";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const pageQuery = `*[_type == "sharedTrainings"]{
@@ -75,7 +76,7 @@ const KozosEdzesek = ({ defaultData }) => {
 
           <p>{join}</p>
 
-          <div className="button btn center">Edzéstervet kérek!</div>
+          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
         </div>
       </div>
 

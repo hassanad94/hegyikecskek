@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { useStateContext } from "../context/settingContext";
+import { useState } from "react";
 import ContactUs from "./ContactUs";
 
 const OpenMessageModal = (...props) => {
@@ -19,7 +19,7 @@ const OpenMessageModal = (...props) => {
     width: "100%",
   };
 
-  const { openMessageModal, setOpenMessageModal } = useStateContext();
+  const [openMessageModal, setOpenMessageModal] = useState(false);
   const handleOpen = () => setOpenMessageModal(true);
   const handleClose = () => setOpenMessageModal(false);
 
@@ -38,7 +38,7 @@ const OpenMessageModal = (...props) => {
         disableScrollLock={true}
       >
         <Box sx={style}>
-          <ContactUs subject={"Érdekelnek az edzések"} subjectDisabled={true} />
+          <ContactUs subject={buttonTitle} subjectDisabled={true} />
         </Box>
       </Modal>
     </>

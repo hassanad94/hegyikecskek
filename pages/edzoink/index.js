@@ -1,6 +1,7 @@
 import { client, urlForImage } from "../../lib/client";
 import { CoachSelectorButton } from "../../components/Coaches";
 import CoachPreviewCard from "../../components/CoachPreviewCard";
+import OpenMessageModal from "../../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const query = `*[_type == "coachesSite"]`;
@@ -56,7 +57,7 @@ const Edzoink = ({ defaultData }) => {
             })}
           </div>
 
-          <div className="button btn center">Edzéstervet Kérek</div>
+          <OpenMessageModal buttonTitle="Edzéstervet Kérek" />
         </div>
       </div>
     </>

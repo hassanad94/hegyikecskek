@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -205,7 +206,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
       </Box>
       <Box>
         <CardContent>
-          <div className="button btn center">Edzéstervet kérek!</div>
+          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
         </CardContent>
       </Box>
     </Card>

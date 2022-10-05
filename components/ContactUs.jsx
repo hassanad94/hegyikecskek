@@ -108,7 +108,7 @@ const ContactUs = (...props) => {
               render={({ field }) => (
                 <RedditTextField
                   name={field.name}
-                  value={field.value}
+                  value={subject}
                   onChange={field.onChange}
                   label="Mivel kapcsolatban érdeklődsz?"
                   disabled={subjectDisabled}
