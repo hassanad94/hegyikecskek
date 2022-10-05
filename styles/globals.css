@@ -30,6 +30,7 @@
     /* chrome firefox opera Safari, Android, iOS 4.2+*/
       url("../assets/8be4a2f403c2dc27187d892cca388e24.svg#Britannic Bold")
       format("svg"); /* iOS 4.1- */
+  font-display: fallback;
 }
 
 .swiper-button-next,
