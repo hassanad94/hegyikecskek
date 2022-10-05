@@ -78,7 +78,13 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
   return (
     <>
       <div className="hero-container fw">
-        <Image src={heroImage} alt="hero" title="Fő kép" layout="fill" />
+        <Image
+          src={heroImage}
+          priority
+          alt="hero"
+          title="Fő kép"
+          layout="fill"
+        />
       </div>
 
       <div className="section title-desc intro ">
