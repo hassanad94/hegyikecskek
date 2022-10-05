@@ -633,7 +633,7 @@ footer .section::before {
   }
 }
 
-.section .btn {
+.btn {
   background-color: var(--base-color-2);
   border-radius: var(--base-border-radius);
   min-width: 140px;
@@ -1576,4 +1576,20 @@ details[open] summary:after {
   .tag-info-details {
     max-width: 500px;
   }
+}
+
+.modal-message {
+  cursor: pointer;
+}
+.modal-message .MuiFormControl-root,
+.modal-message textarea {
+  width: 330px;
+  min-width: 300px;
+}
+.MuiFilledInput-input.Mui-disabled {
+  background-color: rgb(148, 148, 148);
+}
+
+.MuiFilledInput-root.Mui-disabled {
+  background-color: #fcfcfb;
 }

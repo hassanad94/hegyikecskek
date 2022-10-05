@@ -7,6 +7,7 @@ import { Galeria } from "../components/Galeria";
 import { ReviewCard } from "../components/Card";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
+import OpenMessageModal from "../components/OpenMessageModal";
 
 import { useState } from "react";
 
@@ -77,14 +78,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
   return (
     <>
       <div className="hero-container fw">
-        <Image
-          src={heroImage}
-          alt="hero"
-          title="Fő kép"
-          layout="fill"
-          priority
-        />
-        {/* <Image layout='fill' src={heroImage.url()} decoding="sync" alt="Hero" className='hero' /> */}
+        <Image src={heroImage} alt="hero" title="Fő kép" layout="fill" />
       </div>
 
       <div className="section title-desc intro ">
@@ -216,7 +210,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           </div>
 
           <div className="button-container center">
-            <div className="button btn center">Érdekel!</div>
+            <OpenMessageModal buttonTitle="Érdekel" />
           </div>
         </div>
       </div>

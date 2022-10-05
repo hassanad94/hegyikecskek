@@ -5,6 +5,8 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
   const [currentDevice, setCurrentDevice] = useState("base");
 
+  const [openMessageModal, setOpenMessageModal] = useState(false);
+
   const getYoutubeEmbemedId = (link) => {
     if (link.indexOf("youtu.be/") >= 0) {
       //https://youtu.be/80C4Flkl_sc
@@ -54,6 +56,8 @@ export const StateContext = ({ children }) => {
         currentDevice,
         scrollToElement,
         getYoutubeEmbemedId,
+        openMessageModal,
+        setOpenMessageModal,
       }}
     >
       {children}

@@ -28,24 +28,24 @@ const RedditTextField = styled((props) => (
   },
 }));
 
-const ContactUs = ({ subject, description }) => {
+const ContactUs = (...props) => {
   const { control, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-
-    const { name, email, message } = data;
+    const { message } = data;
 
     if (typeof message === "undefined") {
       return toast.error("Kérlek írd le az üzeneted.");
     }
 
-    const sendMail = await fetch("/api/hello", {
+    const sendMail = await fetch("/api/sendMail", {
       method: "post",
       body: JSON.stringify(data),
     })
       .then((r) => r.json)
       .then((data) => console.log(data));
   };
+
+  const { subject, description, subjectDisabled } = props[0];
 
   return (
     <>
@@ -60,33 +60,49 @@ const ContactUs = ({ subject, description }) => {
             felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
           </p>
         )}
-        <Controller
+        {/* <Controller
           name="name"
+          defaultValue={""}
           control={control}
           id="contact-name"
+          rules={{ required: true }}
           render={({ field }) => (
             <RedditTextField
-              {...field}
-              className="input"
               label="Név"
+              className="input"
               variant="filled"
-              required
+              inputRef={field.ref}
               style={{ marginTop: 11 }}
             />
           )}
-        />
+        /> */}
+
         <Controller
+          render={(props) => (
+            <RedditTextField
+              value={props.value}
+              onChange={props.onChange}
+              inputRef={props.ref}
+            />
+          )}
+          name="name"
           control={control}
+          rules={{ required: true }}
+        />
+
+        {/* <Controller
+          control={control}
+          defaultValue={""}
           name="email"
+          rules={{ required: true }}
           render={({ field }) => (
             <RedditTextField
-              {...field}
+              inputRef={field.ref}
               id="contact-email"
               label="email"
               variant="filled"
               type="email"
               className="input"
-              required
               style={{ marginTop: 11 }}
             />
           )}
@@ -96,19 +112,29 @@ const ContactUs = ({ subject, description }) => {
           <>
             <div className="email-subject">Mivel kapcsolatban érdeklődsz?</div>
 
-            <RedditTextField
-              id="subject"
+            <Controller
+              control={control}
+              defaultValue={""}
               name="subject"
-              label="tárgy"
-              variant="filled"
-              type="text"
-              className="input subject-input"
-              style={{ marginTop: 11 }}
+              render={({ field }) => (
+                <RedditTextField
+                  inputRef={field.ref}
+                  id="subjectinput"
+                  label="Mivel kapcsolatban érdeklődsz?"
+                  defaultValue={subject}
+                  disabled={subjectDisabled}
+                  variant="filled"
+                  type="text"
+                  className="input"
+                  style={{ marginTop: 11 }}
+                />
+              )}
             />
           </>
         )}
         <div className="text-area">
           <Controller
+            defaultValue={""}
             name="message"
             control={control}
             required
@@ -120,8 +146,8 @@ const ContactUs = ({ subject, description }) => {
               </>
             )}
           />
-        </div>
-        <input className="button btn " type="submit" value={"Küldés"} />
+        </div> */}
+        <input className="button btn" type="submit" value={"Küldés"} />
       </form>
     </>
   );
