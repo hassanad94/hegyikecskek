@@ -29,9 +29,12 @@ const RedditTextField = styled((props) => (
 }));
 
 const ContactUs = (...props) => {
+  const { subject, description, subjectDisabled } = props[0];
   const { control, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    const { message } = data;
+    console.log(data);
+
+    const { name, email, message } = data;
 
     if (typeof message === "undefined") {
       return toast.error("Kérlek írd le az üzeneted.");
@@ -44,8 +47,6 @@ const ContactUs = (...props) => {
       .then((r) => r.json)
       .then((data) => console.log(data));
   };
-
-  const { subject, description, subjectDisabled } = props[0];
 
   return (
     <>
@@ -60,49 +61,37 @@ const ContactUs = (...props) => {
             felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
           </p>
         )}
-        {/* <Controller
+        <Controller
           name="name"
-          defaultValue={""}
           control={control}
-          id="contact-name"
-          rules={{ required: true }}
+          defaultValue={""}
           render={({ field }) => (
             <RedditTextField
-              label="Név"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
               className="input"
+              label="Név"
               variant="filled"
-              inputRef={field.ref}
+              required
               style={{ marginTop: 11 }}
             />
           )}
-        /> */}
-
-        <Controller
-          render={(props) => (
-            <RedditTextField
-              value={props.value}
-              onChange={props.onChange}
-              inputRef={props.ref}
-            />
-          )}
-          name="name"
-          control={control}
-          rules={{ required: true }}
         />
-
-        {/* <Controller
+        <Controller
           control={control}
-          defaultValue={""}
           name="email"
-          rules={{ required: true }}
+          defaultValue={""}
           render={({ field }) => (
             <RedditTextField
-              inputRef={field.ref}
-              id="contact-email"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
               label="email"
               variant="filled"
               type="email"
               className="input"
+              required
               style={{ marginTop: 11 }}
             />
           )}
@@ -114,18 +103,18 @@ const ContactUs = (...props) => {
 
             <Controller
               control={control}
-              defaultValue={""}
               name="subject"
+              defaultValue={subject}
               render={({ field }) => (
                 <RedditTextField
-                  inputRef={field.ref}
-                  id="subjectinput"
+                  name={field.name}
+                  value={field.value}
+                  onChange={field.onChange}
                   label="Mivel kapcsolatban érdeklődsz?"
-                  defaultValue={subject}
                   disabled={subjectDisabled}
                   variant="filled"
                   type="text"
-                  className="input"
+                  className="input subject-input"
                   style={{ marginTop: 11 }}
                 />
               )}
@@ -134,20 +123,25 @@ const ContactUs = (...props) => {
         )}
         <div className="text-area">
           <Controller
-            defaultValue={""}
             name="message"
             control={control}
-            required
+            defaultValue={""}
             render={({ field }) => (
               <>
-                <textarea {...field} className="meassage" rows="4"></textarea>
+                <textarea
+                  name={field.name}
+                  value={field.value}
+                  onChange={field.onChange}
+                  className="meassage"
+                  rows="4"
+                ></textarea>
 
                 <label>Írd ide az üzeneted!</label>
               </>
             )}
           />
-        </div> */}
-        <input className="button btn" type="submit" value={"Küldés"} />
+        </div>
+        <input className="button btn " type="submit" value={"Küldés"} />
       </form>
     </>
   );
