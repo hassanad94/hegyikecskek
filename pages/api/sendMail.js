@@ -20,8 +20,6 @@ export default async function handler(req, res) {
 
   const { email, name, message, subject } = data;
 
-  console.log(data);
-
   const messageData = {
     from: "Excited User <me@samples.mailgun.org>",
     to: `${email}`,

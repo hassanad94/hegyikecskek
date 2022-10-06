@@ -9,6 +9,18 @@ export default {
       type: "string",
     },
     {
+      name: "slug",
+      title:
+        "!Kötelező, Ez alapján fogja a rendszer tudni, hogy ugorjon a főoldalról",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 40,
+      },
+      validation: (Rule) =>
+        Rule.required().warning("Kérlek nyomj rá a Generate-re."),
+    },
+    {
       name: "logo",
       title: "Logója",
       type: "image",

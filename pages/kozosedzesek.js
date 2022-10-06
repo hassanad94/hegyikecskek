@@ -4,6 +4,7 @@ import Calendar from "../components/Calendar";
 import { Galeria } from "../components/Galeria";
 import ContactUs from "../components/ContactUs";
 import OpenMessageModal from "../components/OpenMessageModal";
+import { useEffect } from "react";
 
 export async function getStaticProps() {
   const pageQuery = `*[_type == "sharedTrainings"]{
@@ -29,6 +30,22 @@ const KozosEdzesek = ({ defaultData }) => {
   const { intro, galeria, join } = defaultData.pageInfo[0];
 
   const galeriaWithUrl = galeriaUrls(galeria);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    if (!hash) {
+      return false;
+    }
+
+    const selectedSupporter = document
+      .getElementById(hash)
+      .closest(".supporter");
+
+    selectedSupporter.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <>

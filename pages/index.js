@@ -284,7 +284,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           <h2>Támogatoink</h2>
 
           <div className="supporter-container flex">
-            <Link href="/tamogatoink">
+            <Link href="/kedvezmenyek/#hegyfutas">
               <div className="supporter">
                 <Image
                   width="100"
@@ -297,7 +297,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               </div>
             </Link>
 
-            <Link href="/tamogatoink">
+            <Link href="/kedvezmenyek/#runnerslab">
               <div className="supporter">
                 <Image
                   width="100"
@@ -310,7 +310,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               </div>
             </Link>
 
-            <Link href="/tamogatoink">
+            <Link href="/kedvezmenyek/#pinter">
               <div className="supporter">
                 <Image
                   width="100"
@@ -323,7 +323,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               </div>
             </Link>
 
-            <Link href="/tamogatoink">
+            <Link href="/kedvezmenyek/#proactivelab">
               <div className="supporter">
                 <Image
                   width="100"
@@ -336,7 +336,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               </div>
             </Link>
 
-            <Link href="/tamogatoink">
+            <Link href="/kedvezmenyek/#allrys">
               <div className="supporter">
                 <Image
                   width="100"

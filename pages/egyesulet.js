@@ -36,8 +36,6 @@ const Egyesulet = ({ defaultData }) => {
     { title: "Lányok", value: girlsCount, color: "#ffc0cb" },
   ];
 
-  console.log(tagdescription);
-
   return (
     <>
       <div className="section intro no-hero">

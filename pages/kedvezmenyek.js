@@ -43,10 +43,7 @@ const Kedvezmenyek = (...prop) => {
       {supporters &&
         supporters.map((supporter) => {
           return (
-            <div
-              key={supporter.url}
-              className="section supporter intro no-hero"
-            >
+            <div key={supporter.url} className="section supporter">
               <div className="content">
                 <Supporter supporter={supporter} />
               </div>

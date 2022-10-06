@@ -32,8 +32,6 @@ const ContactUs = (...props) => {
   const { subject, description, subjectDisabled } = props[0];
   const { control, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-
     const { name, email, message } = data;
 
     if (typeof message === "undefined") {

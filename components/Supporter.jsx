@@ -2,13 +2,13 @@ import { urlForImage } from "../lib/client";
 import Image from "next/image";
 
 const Supporter = (...props) => {
-  const { name, logo, description, url } = props[0].supporter;
+  const { name, logo, description, url, slug } = props[0].supporter;
 
   const logoUrl = urlForImage(logo).url();
 
   return (
     <>
-      <h2> {name}</h2>
+      <h2 id={slug.current}> {name}</h2>
       <div className="logo-container">
         <Image
           width={100}
