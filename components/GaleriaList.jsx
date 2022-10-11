@@ -24,17 +24,17 @@ export default function GaleriaList({ images }) {
       className="galeria-box"
     >
       <ImageList
-        variant="masonry"
+        variant="woven"
         cols={currentDevice === "mobile" ? 2 : 3}
-        gap={10}
+        gap={2}
       >
         {images?.map((item, i) => (
           <ImageListItem key={`${item}${i}`}>
             <Image
-              width={300}
-              height={150}
+              layout="fill"
               src={`${item}?w=248&fit=crop&auto=format`}
               alt={`Galéria Kép ${i}`}
+              objectFit="contain"
             />
           </ImageListItem>
         ))}
