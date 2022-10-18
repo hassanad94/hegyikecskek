@@ -358,7 +358,7 @@ p {
   width: 16ch;
   text-align: left;
 }
-.navbar .menu-content .menu-items li.active a {
+.navbar .menu-content .menu-items li.active {
   background: var(--base-color-2);
 }
 
@@ -418,9 +418,13 @@ p {
   }
 
   .navbar .menu-content .menu-items li {
-    padding: 7px 15px;
+    padding: 7px 10px;
     margin: 0;
     width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
   }
 
   .navbar .menu-content .menu-items li .link-item {

@@ -126,15 +126,16 @@ const ContactUs = (...props) => {
             defaultValue={""}
             render={({ field }) => (
               <>
-                <textarea
-                  name={field.name}
-                  value={field.value}
-                  onChange={field.onChange}
-                  className="meassage"
-                  rows="4"
-                ></textarea>
-
-                <label>Írd ide az üzeneted!</label>
+                <label>
+                  <textarea
+                    name={field.name}
+                    value={field.value}
+                    onChange={field.onChange}
+                    className="meassage"
+                    rows="4"
+                  ></textarea>
+                  Írd ide az üzeneted!
+                </label>
               </>
             )}
           />
