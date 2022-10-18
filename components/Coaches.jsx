@@ -30,8 +30,8 @@ export const CoachesPreview = ({ coaches }) => {
       freeMode={true}
     >
       {coaches &&
-        coaches.map((coach, i) => {
-          let profilSrc = urlForImage(coach.hero).url();
+        coaches?.map((coach, i) => {
+          let profilSrc = coach.hero !== null && urlForImage(coach.hero).url();
 
           return (
             <SwiperSlide key={i}>
