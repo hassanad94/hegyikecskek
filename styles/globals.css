@@ -451,7 +451,7 @@ p {
 /*Main Content*/
 
 .main-container > div:not(.fw) {
-  padding: 0 var(--base-section-padding);
+  /* padding: 0 var(--base-section-padding); */
   padding-bottom: 22%;
   padding-top: 35px;
 }
@@ -474,6 +474,7 @@ p {
 .content {
   max-width: 1024px;
   margin: auto;
+  padding: 0 var(--base-section-padding);
 }
 
 .section:nth-of-type(odd) {
@@ -1604,4 +1605,21 @@ details[open] summary:after {
 
 .MuiFilledInput-root.Mui-disabled {
   background-color: #fcfcfb;
+}
+
+.decoration.fill-img {
+  width: 100%;
+  min-height: 300px;
+  margin: 15px 0px;
+}
+.decoration.fill-img img {
+  object-fit: cover;
+  object-position: 30% 50%;
+}
+
+@media (min-width: 650px) {
+  .decoration.fill-img {
+    min-height: 47vw;
+    max-height: 600px;
+  }
 }

@@ -33,21 +33,16 @@ const Rolunk = ({ defaultData }) => {
 
   return (
     <>
-      <div className="section intro no-hero">
+      <div className="section intro  no-hero">
         <div className="content">
           <h1>Rólunk</h1>
+        </div>
 
-          <div className="decoration center">
-            <Image
-              objectFit="contain"
-              width={640}
-              height={276}
-              src={heroImage}
-              alt="hero"
-              title="Fő kép"
-            />
-          </div>
+        <div className="decoration fill-img center">
+          <Image layout="fill" src={heroImage} alt="hero" title="Fő kép" />
+        </div>
 
+        <div className="content">
           <p className="center">{desc_1}</p>
         </div>
       </div>
