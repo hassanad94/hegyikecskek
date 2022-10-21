@@ -10,7 +10,8 @@ export default function CoachPreviewCard({ coach }) {
     <Card sx={{ maxWidth: 300 }} className="coach-preview-card" data-web={web}>
       <CardContent>
         <div className="name">{name}</div>
-        <div className="titles">{titles.join(", ")}</div>
+
+        {titles && <div className="titles">{titles.join(", ")}</div>}
       </CardContent>
       <CardMedia
         component="img"
@@ -21,9 +22,9 @@ export default function CoachPreviewCard({ coach }) {
       <CardContent>
         <b>EdzésTervezés</b> {price} {!isEuro ? "Ft" : "EUR"} / hó - tól
       </CardContent>
-      <CardContent
-        sx={{ padding: "10px", textAlign: "left" }}
-      >{`${introduction.slice(0, 78)}...`}</CardContent>
+      <CardContent sx={{ padding: "10px", textAlign: "left" }}>
+        {introduction && `${introduction.slice(0, 78)}...`}
+      </CardContent>
       <CardContent>
         <Link sx={{ textDecoration: "none" }} href={`/edzoink/${web}`}>
           <div className="buttonWithArrow button">Olvass rólam többet</div>

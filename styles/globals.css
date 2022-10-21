@@ -360,6 +360,7 @@ p {
 }
 .navbar .menu-content .menu-items li.active {
   background: var(--base-color-2);
+  border-radius: var(--base-border-radius);
 }
 
 .navbar .menu-content .menu-items li .link-item {
