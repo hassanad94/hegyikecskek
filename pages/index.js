@@ -273,7 +273,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
         <div className="content">
           <h2 className="center">Rólunk mondták</h2>
 
-          <div className="galeria-container">
+          <div className="reviews-container">
             <ReviewCard reviews={reviewsData} />
           </div>
         </div>

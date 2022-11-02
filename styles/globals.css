@@ -973,6 +973,10 @@ footer .section::before {
     min-width: 900px;
     max-width: 100%;
   }
+
+  .review-cards .card {
+    margin: 0px 2px;
+  }
 }
 
 textarea ~ label {
