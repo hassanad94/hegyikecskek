@@ -26,6 +26,9 @@ const RedditTextField = styled((props) => (
     backgroundColor: "#fff!important",
     borderRadius: 4,
   },
+  "& input": {
+    paddingTop: 20,
+  },
 }));
 
 const ContactUs = (...props) => {
@@ -119,27 +122,25 @@ const ContactUs = (...props) => {
             />
           </>
         )}
-        <div className="text-area">
-          <Controller
-            name="message"
-            control={control}
-            defaultValue={""}
-            render={({ field }) => (
-              <RedditTextField
-                name={field.name}
-                value={field.value}
-                onChange={field.onChange}
-                label="Írd ide az üzeneted!"
-                multiline
-                className="input"
-                rows={3}
-                variant="filled"
-                type="text"
-                style={{ marginTop: 11 }}
-              />
-            )}
-          />
-        </div>
+        <Controller
+          name="message"
+          control={control}
+          defaultValue={""}
+          render={({ field }) => (
+            <RedditTextField
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              label="Írd ide az üzeneted!"
+              multiline
+              className="input"
+              rows={3}
+              variant="filled"
+              type="text"
+              style={{ marginTop: 11 }}
+            />
+          )}
+        />
         <input className="button btn " type="submit" value={"Küldés"} />
       </form>
     </>

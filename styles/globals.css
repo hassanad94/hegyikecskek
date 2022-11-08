@@ -970,7 +970,7 @@ footer .section::before {
   flex-direction: column;
 }
 .contact-container > div {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .contact-container .email-subject {
@@ -982,19 +982,9 @@ footer .section::before {
 }
 .contact-container .input,
 .contact-container p {
-  width: 75vw;
+  width: 100%;
 }
 
-@media (min-width: 600px) {
-  .contact-container .input,
-  .contact-container p {
-    width: 470px;
-  }
-  .contact-container textarea {
-    min-width: 470px;
-    max-width: 470px;
-  }
-}
 @media (min-width: 1024px) {
   .contact-container {
     flex-direction: row;
@@ -1657,14 +1647,6 @@ details[open] summary:after {
   cursor: pointer;
 }
 
-@media (min-width: 375px) {
-  .modal-message .MuiFormControl-root,
-  .modal-message textarea {
-    width: 330px;
-    min-width: 300px;
-  }
-}
-
 .MuiFilledInput-input.Mui-disabled {
   background-color: rgb(148, 148, 148);
 }
@@ -1688,4 +1670,8 @@ details[open] summary:after {
     min-height: 47vw;
     max-height: 600px;
   }
+}
+
+.MuiInputBase-root:hover {
+  background-color: #fcfcfb;
 }
