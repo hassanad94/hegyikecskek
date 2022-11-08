@@ -1421,6 +1421,7 @@ details[open] summary:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .coach-preview-card-container .coach-preview-card {
