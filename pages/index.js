@@ -147,7 +147,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div class="rotateIcon">
+                  <div className="rotateIcon">
                     <Image
                       width={23}
                       height={23}
@@ -176,7 +176,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div class="rotateIcon">
+                  <div className="rotateIcon">
                     <Image
                       width={23}
                       height={23}
@@ -205,7 +205,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div class="rotateIcon">
+                  <div className="rotateIcon">
                     <Image
                       width={23}
                       height={23}
