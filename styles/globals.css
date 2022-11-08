@@ -1101,9 +1101,14 @@ footer .section.footer .social-media-ref a {
   textarea ~ label {
     top: 18px;
   }
-  fy-content: space-evenly;
-  flex-wrap: wrap;
 }
+
+.icon-card-container {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  display: flex;
+}
+
 .icon-card-container > div {
   width: 95px;
   margin: 0px 3px;
