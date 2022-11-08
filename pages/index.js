@@ -80,7 +80,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
       <div className="hero-container fw">
         <Image
           src={heroImage}
-          priority
+          priority={true}
           alt="hero"
           title="Fő kép"
           layout="fill"

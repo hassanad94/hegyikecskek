@@ -26,6 +26,9 @@ const RedditTextField = styled((props) => (
     backgroundColor: "#fff!important",
     borderRadius: 4,
   },
+  "& .MuiFilledInput-input": {
+    paddingTop: 17,
+  },
 }));
 
 const ContactUs = (...props) => {
