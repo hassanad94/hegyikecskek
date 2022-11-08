@@ -277,7 +277,7 @@ p {
 }
 
 body.modal-open {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 body.modal-open .main-container {
   margin-top: 0;
