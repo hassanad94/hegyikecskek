@@ -20,8 +20,14 @@ const OpenMessageModal = (...props) => {
   };
 
   const [openMessageModal, setOpenMessageModal] = useState(false);
-  const handleOpen = () => setOpenMessageModal(true);
-  const handleClose = () => setOpenMessageModal(false);
+  const handleOpen = () => {
+    document.body.classList.toggle("modal-open", !openMessageModal);
+    setOpenMessageModal(true);
+  };
+  const handleClose = () => {
+    document.body.classList.toggle("modal-open", !openMessageModal);
+    setOpenMessageModal(false);
+  };
 
   const { buttonTitle } = props[0];
 
@@ -35,7 +41,8 @@ const OpenMessageModal = (...props) => {
         className="modal-message"
         open={openMessageModal}
         onClose={handleClose}
-        disableScrollLock={true}
+        disableScrollLock
+        // disablePortal={true} // a modal így a gyermek lesz nem külön elem
       >
         <Box sx={style}>
           <ContactUs subject={buttonTitle} subjectDisabled={true} />

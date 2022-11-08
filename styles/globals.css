@@ -272,6 +272,26 @@ p {
   margin-top: 20px;
 }
 
+.modal-open .navbar {
+  display: none;
+}
+
+body.modal-open {
+  overflow-y: hidden;
+}
+body.modal-open .main-container {
+  margin-top: 0;
+}
+
+@media (min-width: 1024px) {
+  body.modal-open .main-container {
+    margin-top: 20px;
+  }
+  .modal-open .navbar {
+    display: initial;
+  }
+}
+
 .navbar {
   z-index: 9999999;
   position: fixed;
@@ -615,10 +635,11 @@ footer .section::before {
 .section.interested .image-card .card-image {
   min-height: 216px;
 }
-.section.interested .image-card .rotate-icon {
+.section.interested .image-card .rotateIcon {
   position: absolute;
-  top: 0;
   right: 4px;
+  top: 0;
+  z-index: 2;
 }
 
 .section.interested .image-card img {

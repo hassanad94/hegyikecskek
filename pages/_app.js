@@ -16,7 +16,12 @@ function MyApp({ Component, pageProps }) {
     return (
       <div className="loader">
         <div>
-          <Image src="/in-build.svg" width={200} height={200} />
+          <Image
+            src="/in-build.svg"
+            alt="loader logo"
+            width={200}
+            height={200}
+          />
           <h1>Az oldal épp készítjük. Mobilodon megtekinheted.</h1>
         </div>
       </div>
