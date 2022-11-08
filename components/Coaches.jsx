@@ -58,7 +58,13 @@ export const CoachSelectorButton = ({ coach }) => {
         data-web={coach.web}
       >
         <div className="coach-image flex">
-          <Image width={34} height={50} src={icon} alt="Edző icon" />
+          <Image
+            width={34}
+            height={50}
+            objectFit="contain"
+            src={icon}
+            alt="Edző icon"
+          />
         </div>
         <div className="name">{name}</div>
       </div>
