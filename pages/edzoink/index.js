@@ -45,7 +45,7 @@ const Edzoink = ({ defaultData }) => {
             {coachesDataNormalized?.map((coach) => {
               const { _id } = coach;
 
-              return <CoachSelectorButton key={_id} coach={coach} />; //SCROLL TO ELEMENT FEJLESZTÉSRE VÁR
+              return <CoachSelectorButton key={_id} coach={coach} />;
             })}
           </div>
 
