@@ -1,11 +1,17 @@
 import Head from "next/head";
 import NavBar from "./Navbar";
 import Footer from "./Footer";
-import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
+  const router = useRouter();
+
   return (
-    <div className="layout">
+    <div
+      className={`layout ${
+        router.asPath === "/" ? "home" : router.asPath.replace("/", "")
+      }`}
+    >
       <Head>
         <title>Hegyi Kecskék</title>
         <meta name="description" content="Hegyi kecskék hivatalos oldala" />

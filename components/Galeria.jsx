@@ -74,7 +74,8 @@ export function Galeria({ galeria }) {
               onClick={() => setIndex(i)}
             >
               <Image
-                layout="fill"
+                width={68}
+                height={70}
                 alt="Galéria Elem"
                 title="Galéria Képe"
                 src={src}

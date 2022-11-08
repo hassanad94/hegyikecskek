@@ -33,7 +33,7 @@ const Rolunk = ({ defaultData }) => {
 
   return (
     <>
-      <div className="section intro  no-hero">
+      <div className="section intro no-hero">
         <div className="content">
           <h1>Rólunk</h1>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const YoutubeEmbed = ({ embedId, maxWidth }) => (
-  <div className="video-responsive center">
+  <div className="video-responsive flex center">
     <iframe
       width="100%"
       height="100%"
