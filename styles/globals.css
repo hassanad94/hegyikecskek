@@ -1651,13 +1651,13 @@ details[open] summary:after {
 .modal-message {
   cursor: pointer;
 }
-.modal-message .MuiFormControl-root,
-.modal-message textarea {
-  width: 330px;
-  min-width: 300px;
-}
 
-@media (min-width: 650px) {
+@media (min-width: 375px) {
+  .modal-message .MuiFormControl-root,
+  .modal-message textarea {
+    width: 330px;
+    min-width: 300px;
+  }
 }
 
 .MuiFilledInput-input.Mui-disabled {
