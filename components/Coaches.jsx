@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
+import { Navigation, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import { useStateContext } from "../context/settingContext";
@@ -12,20 +12,10 @@ import "swiper/css/scrollbar";
 export const CoachesPreview = ({ coaches }) => {
   return (
     <Swiper
-      breakpoints={{
-        320: {
-          spaceBetween: 5,
-          slidesPerView: 2,
-        },
-        375: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        800: {
-          slidesPerView: 4,
-        },
-      }}
-      modules={[FreeMode, Navigation, Scrollbar, A11y]}
+      loop={true}
+      spaceBetween={5}
+      slidesPerView={3}
+      modules={[FreeMode, Navigation]}
       navigation
       freeMode={true}
     >
@@ -39,8 +29,8 @@ export const CoachesPreview = ({ coaches }) => {
                 <Image
                   alt="Edzők Kép"
                   title={coach.name}
-                  width={150}
-                  height={150}
+                  width={90}
+                  height={90}
                   src={profilSrc}
                 />
 
