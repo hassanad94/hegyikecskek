@@ -852,6 +852,7 @@ footer .section::before {
 .section.page-gallery .image-container {
   background: var(--base-color-1);
   border-radius: var(--base-border-radius);
+  user-select: none;
 }
 
 .section.page-gallery .image-container > span {
