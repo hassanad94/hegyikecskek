@@ -984,11 +984,6 @@ footer .section::before {
 .contact-container p {
   width: 75vw;
 }
-.contact-container textarea {
-  min-height: 96px;
-  min-width: 75vw;
-  max-width: 470vw;
-}
 
 @media (min-width: 600px) {
   .contact-container .input,
@@ -1041,7 +1036,6 @@ textarea ~ label {
   line-height: 1.5;
 }
 textarea {
-  /* min-height: 96px; */
   min-width: 219px;
   max-width: 219px;
   padding: 11px;
@@ -1057,7 +1051,8 @@ textarea {
 textarea ~ label {
   top: 18px;
 }
-textarea:focus ~ label {
+
+area:focus ~ label {
   font-size: 11px;
 }
 
@@ -1100,31 +1095,23 @@ footer .section.footer .social-media-ref a {
 
 @media (min-width: 1230px) {
   footer .section.footer {
-    padding: 25px;
+    padding: 25px; /*  /* min-height: 96px; */
+    min-width: 219px;
+    max-width: 219px;
+    padding: 11px;
+    padding-top: 20px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    border-radius: var(--base-border-radius);
+    color: black;
+    background: #fff;
+    outline: 0;
   }
-}
 
-/*Rólunk*/
-
-.section.intro.no-hero {
-  padding-top: 50px;
-}
-
-.section.intro.no-hero h2:before {
-  display: none;
-}
-
-.decoration.fw {
-  margin: 10px calc(var(--base-section-padding) * -1.1);
-  min-height: 42vw;
-}
-.decoration.fw > * {
-  max-width: 650px;
-}
-
-.icon-card-container {
-  display: flex;
-  justify-content: space-evenly;
+  textarea ~ label {
+    top: 18px;
+  }
+  fy-content: space-evenly;
   flex-wrap: wrap;
 }
 .icon-card-container > div {

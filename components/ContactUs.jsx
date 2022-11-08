@@ -26,9 +26,6 @@ const RedditTextField = styled((props) => (
     backgroundColor: "#fff!important",
     borderRadius: 4,
   },
-  "& .MuiFilledInput-input": {
-    paddingTop: 17,
-  },
 }));
 
 const ContactUs = (...props) => {
@@ -134,6 +131,7 @@ const ContactUs = (...props) => {
                 onChange={field.onChange}
                 label="Írd ide az üzeneted!"
                 multiline
+                className="input"
                 rows={3}
                 variant="filled"
                 type="text"
