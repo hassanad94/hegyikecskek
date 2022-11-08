@@ -558,7 +558,7 @@ footer .section::before {
 
 .section.title-desc.intro .button {
   text-align: right;
-  padding-right: 25%;
+  padding-right: var(--base-section-padding);
 }
 
 @media (min-width: 800px) {
@@ -614,6 +614,11 @@ footer .section::before {
 
 .section.interested .image-card .card-image {
   min-height: 216px;
+}
+.section.interested .image-card .rotate-icon {
+  position: absolute;
+  top: 0;
+  right: 4px;
 }
 
 .section.interested .image-card img {
@@ -889,7 +894,7 @@ footer .section::before {
   background: white;
   border-radius: var(--base-border-radius);
   padding: 5px;
-  max-width: 330px;
+  max-width: 300px;
   margin: auto;
   margin-bottom: 25px;
 }
@@ -1114,16 +1119,41 @@ footer .section.footer .social-media-ref a {
   margin: 5px 0px;
 }
 
+body .swiper-button-next:after,
+body .swiper-button-prev:after {
+  content: "" !important;
+  height: 34px;
+  width: 17px;
+  flex-shrink: 0;
+  -o-object-fit: contain;
+  object-fit: contain;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
-  content: "\276F" !important;
+  content: "" !important;
+  background: url(/icons/arrow-right.svg) !important;
 }
 
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  content: "\276E" !important;
+  content: "" !important;
+  background: url(/icons/arrow-left.svg) !important;
 }
 
+.reviews-container .swiper-button-prev:after,
+.reviews-container .swiper-rtl .swiper-button-next:after {
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.reviews-container .swiper-button-next:after,
+.reviews-container .swiper-rtl .swiper-button-prev:after {
+  margin-left: 30px;
+  flex-shrink: 0;
+}
 /* Edzéstervezés */
 
 .details-container {
@@ -1626,6 +1656,10 @@ details[open] summary:after {
   width: 330px;
   min-width: 300px;
 }
+
+@media (min-width: 650px) {
+}
+
 .MuiFilledInput-input.Mui-disabled {
   background-color: rgb(148, 148, 148);
 }

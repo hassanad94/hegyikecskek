@@ -119,13 +119,14 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               ) : (
                 <p>
                   Fejlődni aszfalton
-                  <br />
-                  <Image
-                    width="15"
-                    height="15"
-                    src="/i.png"
-                    alt="Information"
-                  />
+                  <div className="rotate-icon">
+                    <Image
+                      width="23"
+                      height="23"
+                      src="/icons/rotate-left.svg"
+                      alt="Information"
+                    />
+                  </div>
                 </p>
               )}
             </div>
@@ -147,13 +148,14 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               ) : (
                 <p>
                   Fejlődni terepen
-                  <br />
-                  <Image
-                    width="15"
-                    height="15"
-                    src="/i.png"
-                    alt="Information"
-                  />
+                  <div className="rotate-icon">
+                    <Image
+                      width="23"
+                      height="23"
+                      src="/icons/rotate-left.svg"
+                      alt="Information"
+                    />
+                  </div>
                 </p>
               )}
             </div>
@@ -175,13 +177,14 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               ) : (
                 <p>
                   Elkezdeni futni
-                  <br />
-                  <Image
-                    width="15"
-                    height="15"
-                    src="/i.png"
-                    alt="Information"
-                  />
+                  <div className="rotate-icon">
+                    <Image
+                      width="23"
+                      height="23"
+                      src="/icons/rotate-left.svg"
+                      alt="Information"
+                    />
+                  </div>
                 </p>
               )}
             </div>
@@ -203,13 +206,14 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               ) : (
                 <p>
                   Csapathoz tartozni
-                  <br />
-                  <Image
-                    width="15"
-                    height="15"
-                    src="/i.png"
-                    alt="Information"
-                  />
+                  <div className="rotate-icon">
+                    <Image
+                      width="23"
+                      height="23"
+                      src="/icons/rotate-left.svg"
+                      alt="Information"
+                    />
+                  </div>
                 </p>
               )}
             </div>
@@ -281,7 +285,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
 
       <div className="section supporters">
         <div className="content">
-          <h2>Támogatoink</h2>
+          <h2>Támogatóink</h2>
 
           <div className="supporter-container flex">
             <Link href="/kedvezmenyek/#hegyfutas">
