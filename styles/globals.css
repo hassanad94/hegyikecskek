@@ -1558,7 +1558,7 @@ details[open] summary:after {
 
 .camp-name {
   margin-bottom: 10px;
-  text-align: left !important;
+  line-height: 1.2;
   display: block !important;
 }
 
