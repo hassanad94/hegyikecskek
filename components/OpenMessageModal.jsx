@@ -17,6 +17,8 @@ const OpenMessageModal = (...props) => {
     borderRadius: "8px",
     cursor: "auto",
     width: "100%",
+    maxHeight: "85vh",
+    overflow: "scroll",
   };
 
   const [openMessageModal, setOpenMessageModal] = useState(false);
