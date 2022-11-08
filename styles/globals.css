@@ -1041,7 +1041,7 @@ textarea ~ label {
   line-height: 1.5;
 }
 textarea {
-  min-height: 96px;
+  /* min-height: 96px; */
   min-width: 219px;
   max-width: 219px;
   padding: 11px;
@@ -1056,9 +1056,6 @@ textarea {
 
 textarea ~ label {
   top: 18px;
-}
-textarea:focus {
-  padding-top: 28px;
 }
 textarea:focus ~ label {
   font-size: 11px;

@@ -128,17 +128,17 @@ const ContactUs = (...props) => {
             control={control}
             defaultValue={""}
             render={({ field }) => (
-              <>
-                <textarea
-                  id="message"
-                  name={field.name}
-                  value={field.value}
-                  onChange={field.onChange}
-                  className="meassage"
-                  rows="4"
-                ></textarea>
-                <label htmlFor="message">Írd ide az üzeneted!</label>
-              </>
+              <RedditTextField
+                name={field.name}
+                value={field.value}
+                onChange={field.onChange}
+                label="Írd ide az üzeneted!"
+                multiline
+                rows={3}
+                variant="filled"
+                type="text"
+                style={{ marginTop: 11 }}
+              />
             )}
           />
         </div>
