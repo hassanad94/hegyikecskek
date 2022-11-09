@@ -1102,6 +1102,10 @@ footer .section.footer.footer-desktop .footer-menu a {
   text-decoration: none;
 }
 
+footer .section.footer.footer-desktop .contacts .quick-contact {
+  text-align: left;
+}
+
 footer .section.footer h3 {
   margin-bottom: 17px;
   font-size: 14px;

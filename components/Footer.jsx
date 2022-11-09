@@ -56,14 +56,21 @@ const Footer = () => {
           </div>
 
           <div className="flex contacts">
-            <h3> Kapcsolat</h3>
-
-            <div className="quick-contact">
-              <a href="mailto:info@hegyikecskek.hu">
-                &#9993; info@hegyikecskek.hu
-              </a>{" "}
+            <div className="quick-contact left">
+              <h3> Kapcsolat</h3>
               <br />
-              &#x1F4DE; <a href="tel:+36301234455">+36 30 123 4455</a>
+              <a href="">
+                <Image src="/icons/location.svg" width={10} height={10} /> 1111,
+                Valahol, valami utca 23
+              </a>
+              <br />
+              <a href="mailto:info@hegyikecskek.hu">
+                <Image src="/icons/mail.svg" width={10} height={10} />{" "}
+                info@hegyikecskek.hu
+              </a>
+              <br />
+              <Image src="/icons/phone.svg" width={10} height={10} />{" "}
+              <a href="tel:+36301234455"> +36 30 123 4455</a>
             </div>
 
             <div className="social-media-ref">
