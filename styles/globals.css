@@ -258,6 +258,21 @@ p {
   text-align: left;
 }
 
+.buttonWithArrow.right {
+  text-align: right;
+  padding-right: var(--base-section-padding);
+}
+
+.buttonWithArrow.right::after {
+  left: 4px;
+}
+
+@media (min-width: 1024px) {
+  .buttonWithArrow.right {
+    padding-right: 10px;
+  }
+}
+
 .buttonWithArrow:after {
   content: url(/img/menu-button-icon.png);
   position: relative;
@@ -877,6 +892,15 @@ footer .section::before {
   display: none; /* Safari and Chrome */
 }
 
+.section.page-gallery .img-nav .buttons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.section.page-gallery .small-image.selected {
+  border: 2px solid var(--base-color-2);
+}
 .section.page-gallery .small-image {
   object-fit: cover;
   cursor: pointer;
@@ -904,8 +928,12 @@ footer .section::before {
 .section.page-gallery .small-image.selected img {
   filter: none;
 }
-.section.page-gallery .galeria-container .buttons > div {
-  top: -15px;
+.section.page-gallery .galeria-container .buttons .swiper-button-next {
+  right: 0px;
+}
+
+.section.page-gallery .galeria-container .buttons .swiper-button-prev {
+  left: 0px;
 }
 
 .section.page-gallery .button {
@@ -1146,14 +1174,22 @@ body .swiper-button-prev:after {
 
 .reviews-container .swiper-button-prev:after,
 .reviews-container .swiper-rtl .swiper-button-next:after {
-  margin-right: 4px;
+  /* margin-right: 4px; */
   flex-shrink: 0;
 }
 
 .reviews-container .swiper-button-next:after,
 .reviews-container .swiper-rtl .swiper-button-prev:after {
-  margin-left: 30px;
+  /* margin-left: 30px; */
   flex-shrink: 0;
+}
+.reviews-container .swiper-button-prev,
+.reviews-container .swiper-rtl .swiper-button-next {
+  left: 0px;
+}
+.reviews-container .swiper-button-next,
+.reviews-container .swiper-rtl .swiper-button-prev {
+  right: 0px;
 }
 /* Edzéstervezés */
 

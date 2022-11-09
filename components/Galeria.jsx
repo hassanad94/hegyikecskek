@@ -61,6 +61,16 @@ export function Galeria({ galeria }) {
       </div>
 
       <div className="img-nav flex">
+        <div className="buttons">
+          <div
+            className="swiper-button-next"
+            onClick={() => setIndex((prev) => prev + 1)}
+          ></div>
+          <div
+            className="swiper-button-prev"
+            onClick={() => setIndex((prev) => prev - 1)}
+          ></div>
+        </div>
         {galeria?.map((item, i) => {
           let src =
             item.indexOf("images") > -1
@@ -84,17 +94,6 @@ export function Galeria({ galeria }) {
             </div>
           );
         })}
-      </div>
-
-      <div className="buttons">
-        <div
-          className="swiper-button-next"
-          onClick={() => setIndex((prev) => prev + 1)}
-        ></div>
-        <div
-          className="swiper-button-prev"
-          onClick={() => setIndex((prev) => prev - 1)}
-        ></div>
       </div>
     </>
   );

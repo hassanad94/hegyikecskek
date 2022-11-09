@@ -21,7 +21,7 @@ export const CoachesPreview = ({ coaches }) => {
     >
       {coaches &&
         coaches?.map((coach, i) => {
-          let profilSrc = coach.hero !== null && urlForImage(coach.hero).url();
+          let profilSrc = coach.icon !== null && urlForImage(coach.icon).url();
 
           return (
             <SwiperSlide key={i}>

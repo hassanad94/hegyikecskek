@@ -18,7 +18,7 @@ export async function getStaticProps() {
   var defaultData = await client.fetch(query);
 
   const coaches = `*[_type == "coaches"] {
-    _id, hero, name
+    _id, hero, name, icon
   }`;
 
   const coachesData = await client.fetch(coaches);
@@ -266,7 +266,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           </div>
 
           <Link href="/galeria">
-            <div className="buttonWithArrow left button">
+            <div className="buttonWithArrow right button">
               Galéria megnyitása
             </div>
           </Link>
