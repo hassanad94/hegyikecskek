@@ -74,6 +74,7 @@ const Footer = () => {
             </div>
 
             <div className="social-media-ref">
+              <h3> Kövess Minket</h3>
               <a href={facebook}>
                 <Image
                   objectFit="contain"

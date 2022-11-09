@@ -1092,6 +1092,7 @@ footer .section.footer.footer-desktop .logo-container {
 footer .section.footer.footer-desktop h3 {
   margin-top: 0;
   margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 footer .section.footer.footer-desktop h3::before {
