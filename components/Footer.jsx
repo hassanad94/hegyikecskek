@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
 
       <div className="kapcsolat">
-        <h3 className="desktop"> Kapcsolat</h3>
+        <h3> Kapcsolat</h3>
 
         <div className="quick-contact">
           <a href="mailto:info@hegyikecskek.hu">&#9993; info@hegyikecskek.hu</a>{" "}

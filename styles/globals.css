@@ -2,7 +2,7 @@
   --nav-bar-height: 85px;
   --base-color-1: #222;
   --base-color-2: #cc4125;
-  --mountain-item-left: 6vw;
+  --mountain-item-left: 25px;
   --base-border-radius: 5px;
   --input-width: 56vw;
   --input-max-width: 470px;
@@ -714,11 +714,15 @@ footer .section::before {
 }
 
 .section.expect .mountain-dec-container {
-  position: absolute;
+  /* position: absolute;
   height: 77%;
   left: 0;
   bottom: 0;
-  width: 63%;
+  width: 83vw; */
+  display: flex;
+}
+
+@media (min-width: 650px) {
 }
 
 @media (min-width: 1024px) {
@@ -735,9 +739,8 @@ footer .section::before {
 }
 
 .section.expect .mountain-items {
-  padding-left: 6%;
   z-index: 3;
-  margin-left: 2%;
+  top: -26px;
 }
 
 .section.expect .mountain-items .item {
@@ -765,17 +768,21 @@ footer .section::before {
   left: 0;
 }
 
+.section.expect .mountain-items .item:nth-of-type(1) {
+  left: var(--mountain-item-left);
+}
+
 .section.expect .mountain-items .item:nth-of-type(2) {
-  left: calc(var(--mountain-item-left) * 1);
+  left: calc(var(--mountain-item-left) + 17px);
 }
 .section.expect .mountain-items .item:nth-of-type(3) {
-  left: calc(var(--mountain-item-left) * 2);
+  left: calc(var(--mountain-item-left) + 35px);
 }
 .section.expect .mountain-items .item:nth-of-type(4) {
-  left: calc(var(--mountain-item-left) * 3);
+  left: calc(var(--mountain-item-left) + 48px);
 }
 .section.expect .mountain-items .item:nth-of-type(5) {
-  left: calc(var(--mountain-item-left) * 4);
+  left: calc(var(--mountain-item-left) + 67px);
 }
 .section.expect .mountain-items .item:nth-of-type(6) {
   left: calc(var(--mountain-item-left) * 5 + 5vh);
@@ -1756,4 +1763,5 @@ details[open] summary:after {
 
 .rolunk .page-gallery .video-responsive {
   margin: 16px 0px;
+  justify-content: center;
 }
