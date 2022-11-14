@@ -17,6 +17,8 @@ export async function getStaticProps() {
   }`;
   var defaultData = await client.fetch(query);
 
+  defaultData[0].hero = urlForImage(defaultData[0].hero).url();
+
   const coaches = `*[_type == "coaches"] {
     _id, hero, name, icon
   }`;
@@ -51,8 +53,6 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     false,
   ]);
 
-  const heroImage = urlForImage(hero).url();
-
   const galeriaImagesUrls = galeriaimages.map((img) => urlForImage(img).url());
 
   const youtubeIds = galeriavideos.map((link) => {
@@ -79,7 +79,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     <>
       <div className="hero-container fw">
         <Image
-          src={heroImage}
+          src={hero}
           priority={true}
           alt="hero"
           title="Fő kép"
@@ -241,8 +241,9 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
 
         <div className="mountain-dec-container">
           <Image
-            layout="fill"
-            src={`/img/mountain-dec-${currentDevice}.png`}
+            width={500}
+            height={400}
+            src={`/teszt.png`}
             alt="hegy dekoráció"
             className="mountain-dec"
           />
