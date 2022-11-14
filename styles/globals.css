@@ -930,6 +930,7 @@ footer .section::before {
 }
 .section.page-gallery .galeria-container .buttons .swiper-button-next {
   right: 0px;
+  justify-content: flex-end;
 }
 
 .section.page-gallery .galeria-container .buttons .swiper-button-prev {
@@ -1078,55 +1079,40 @@ area:focus ~ label {
 footer .section.footer {
   background: white;
   padding-top: 30px;
-}
-footer .section.footer.footer-desktop {
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
 }
 
-footer .section.footer.footer-desktop .logo-container {
-  align-items: flex-start;
+footer .section.footer > div {
+  flex: 1 1 100%;
 }
-
-footer .section.footer.footer-desktop h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-footer .section.footer.footer-desktop h3::before {
-  bottom: 6px;
-}
-
-footer .section.footer.footer-desktop .footer-menu a {
-  text-decoration: none;
-}
-
-footer .section.footer.footer-desktop .contacts .quick-contact {
-  text-align: left;
+footer .section.footer > .logo-container {
+  flex-basis: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer .section.footer h3 {
-  margin-bottom: 17px;
+  margin-bottom: 0px;
+  margin-top: 0;
   font-size: 14px;
   line-height: 35px;
   font-family: noto-sans;
 }
 footer .section.footer h3::before {
-  bottom: -5px;
+  bottom: 4px;
 }
 
 footer .section.footer .footer-menu {
-  max-width: 50%;
-  margin: auto;
   font-size: 14px;
   margin-bottom: 7px;
 }
 footer .section.footer .footer-menu a {
   line-height: 24px;
   color: #000;
-  text-decoration: underline;
 }
 footer .section.footer .btn {
   margin-bottom: 8px;
@@ -1140,7 +1126,7 @@ footer .section.footer .quick-contact a {
 }
 
 footer .section.footer .social-media-ref {
-  margin: 30px 0px;
+  margin: 10px 0px;
 }
 footer .section.footer .social-media-ref a {
   margin: 0px 10px;
@@ -1153,21 +1139,26 @@ footer .section.footer .general {
   margin-right: 15px;
 }
 
-@media (min-width: 1230px) {
-  footer .section.footer {
-    padding: 25px; /*  /* min-height: 96px; */
-    min-width: 219px;
-    max-width: 219px;
-    padding: 11px;
-    padding-top: 20px;
-    border: 1px solid #e2e8f0;
-    font-size: 14px;
-    border-radius: var(--base-border-radius);
-    color: black;
-    background: #fff;
-    outline: 0;
-  }
+footer .section.footer .kapcsolat h3 {
+  display: none;
+}
 
+@media (min-width: 650px) {
+  footer .section.footer > div {
+    flex: 0 1 270px;
+  }
+  footer .section.footer > .logo-container {
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer .section.footer .kapcsolat h3 {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1230px) {
   textarea ~ label {
     top: 18px;
   }

@@ -3,11 +3,9 @@ import Link from "next/link";
 import { client } from "/lib/client";
 import { useEffect, useState } from "react";
 import OpenMessageModal from "./OpenMessageModal";
-import { useStateContext } from "../context/settingContext";
 
 const Footer = () => {
   const [socials, setSocials] = useState({});
-  const { currentDevice } = useStateContext();
 
   useEffect(() => {
     client
@@ -17,102 +15,6 @@ const Footer = () => {
   }, []);
 
   const { facebook, instagram, youtube } = socials;
-
-  if (currentDevice === "desktop") {
-    return (
-      <>
-        <div className="section footer-desktop footer flex">
-          <div className="flex general">
-            <div className="logo-container flex">
-              <Image
-                width="100"
-                height="100"
-                src="/logo-dark.png"
-                alt="Logo"
-                className="logo"
-              />
-            </div>
-
-            <div className="footer-menu flex column">
-              <h3> Hegyikecskék</h3>
-              <Link href="/rolunk">Rólunk</Link>
-              <Link href="/velemenyek">Vélemények</Link>
-              <Link href="/galeria">Galéria</Link>
-            </div>
-
-            <div className="footer-menu flex column">
-              <h3> Szolgáltatások</h3>
-              <Link href="/edzestervezes">edzéstervezés</Link>
-              <Link href="/konzultacio">konzultáció</Link>
-              <Link href="/esemenyek">események</Link>
-            </div>
-
-            <div className="footer-menu flex column">
-              <h3> Egyesület</h3>
-              <Link href="/informacio">információ</Link>
-              <Link href="/tagsag">tagság</Link>
-              <Link href="/elonyok">előnyök</Link>
-            </div>
-          </div>
-
-          <div className="flex contacts">
-            <div className="quick-contact left">
-              <h3> Kapcsolat</h3>
-              <br />
-              <a href="">
-                <Image src="/icons/location.svg" width={10} height={10} /> 1111,
-                Valahol, valami utca 23
-              </a>
-              <br />
-              <a href="mailto:info@hegyikecskek.hu">
-                <Image src="/icons/mail.svg" width={10} height={10} />{" "}
-                info@hegyikecskek.hu
-              </a>
-              <br />
-              <Image src="/icons/phone.svg" width={10} height={10} />{" "}
-              <a href="tel:+36301234455"> +36 30 123 4455</a>
-            </div>
-
-            <div className="social-media-ref">
-              <h3> Kövess Minket</h3>
-              <a href={facebook}>
-                <Image
-                  objectFit="contain"
-                  width="32px"
-                  height="32px"
-                  src="/facebook.png"
-                  alt="Logo"
-                  className="logo"
-                />
-              </a>
-
-              <a href={instagram}>
-                <Image
-                  objectFit="contain"
-                  width="32px"
-                  height="32px"
-                  src="/instagram.png"
-                  alt="Logo"
-                  className="logo"
-                />
-              </a>
-
-              <a href={youtube}>
-                <Image
-                  objectFit="contain"
-                  width="32px"
-                  height="32px"
-                  src="/youtube.png"
-                  alt="Logo"
-                  className="logo"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  }
 
   return (
     <div className="section footer">
@@ -126,68 +28,76 @@ const Footer = () => {
         />
       </div>
 
-      <h3> Szolgáltatások</h3>
+      <div className="services-container">
+        <h3> Szolgáltatások</h3>
 
-      <div className="footer-menu flex column">
-        <Link href="/edzestervezes">edzéstervezés</Link>
-        <Link href="/konzultacio">konzultáció</Link>
-        <Link href="/esemenyek">események</Link>
+        <div className="footer-menu flex column">
+          <Link href="/edzestervezes">edzéstervezés</Link>
+          <Link href="/konzultacio">konzultáció</Link>
+          <Link href="/esemenyek">események</Link>
+        </div>
       </div>
 
-      <h3> Egyesület</h3>
+      <div className="egyesulet">
+        <h3> Egyesület</h3>
 
-      <div className="footer-menu flex column">
-        <Link href="/informacio">információ</Link>
-        <Link href="/tagsag">tagság</Link>
-        <Link href="/elonyok">előnyök</Link>
+        <div className="footer-menu flex column">
+          <Link href="/informacio">információ</Link>
+          <Link href="/tagsag">tagság</Link>
+          <Link href="/elonyok">előnyök</Link>
+        </div>
       </div>
 
-      <h3> Kapcsolat</h3>
+      <div className="kapcsolat">
+        <h3 className="desktop"> Kapcsolat</h3>
 
-      <div className="quick-contact">
-        <a href="mailto:info@hegyikecskek.hu">&#9993; info@hegyikecskek.hu</a>{" "}
+        <div className="quick-contact">
+          <a href="mailto:info@hegyikecskek.hu">&#9993; info@hegyikecskek.hu</a>{" "}
+          <br />
+          &#x1F4DE; <a href="tel:+36301234455">+36 30 123 4455</a>
+        </div>
+
+        <div className="social-media-ref">
+          <a href={facebook}>
+            <Image
+              objectFit="contain"
+              width="32px"
+              height="32px"
+              src="/facebook.png"
+              alt="Logo"
+              className="logo"
+            />
+          </a>
+
+          <a href={instagram}>
+            <Image
+              objectFit="contain"
+              width="32px"
+              height="32px"
+              src="/instagram.png"
+              alt="Logo"
+              className="logo"
+            />
+          </a>
+
+          <a href={youtube}>
+            <Image
+              objectFit="contain"
+              width="32px"
+              height="32px"
+              src="/youtube.png"
+              alt="Logo"
+              className="logo"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div className="controls">
+        <OpenMessageModal buttonTitle="Edzéstervet szeretnék!" />
         <br />
-        &#x1F4DE; <a href="tel:+36301234455">+36 30 123 4455</a>
+        <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
       </div>
-
-      <div className="social-media-ref">
-        <a href={facebook}>
-          <Image
-            objectFit="contain"
-            width="32px"
-            height="32px"
-            src="/facebook.png"
-            alt="Logo"
-            className="logo"
-          />
-        </a>
-
-        <a href={instagram}>
-          <Image
-            objectFit="contain"
-            width="32px"
-            height="32px"
-            src="/instagram.png"
-            alt="Logo"
-            className="logo"
-          />
-        </a>
-
-        <a href={youtube}>
-          <Image
-            objectFit="contain"
-            width="32px"
-            height="32px"
-            src="/youtube.png"
-            alt="Logo"
-            className="logo"
-          />
-        </a>
-      </div>
-
-      <OpenMessageModal buttonTitle="Edzéstervet szeretnék!" />
-      <br />
-      <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
     </div>
   );
 };
