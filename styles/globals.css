@@ -1082,7 +1082,7 @@ footer .section.footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 footer .section.footer > div {
@@ -1141,6 +1141,9 @@ footer .section.footer .general {
 
 footer .section.footer .kapcsolat h3 {
   display: none;
+}
+footer .section.footer .controls h3 {
+  align-self: center;
 }
 
 @media (min-width: 650px) {
