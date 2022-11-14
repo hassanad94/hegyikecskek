@@ -85,12 +85,7 @@ const Navbar = () => {
         </div>
 
         <div className="logo-container">
-          <Image
-            layout="fill"
-            src="/icons/white-icon.svg"
-            alt="Logo"
-            className="logo"
-          />
+          <Image layout="fill" src="/logo.png" alt="Logo" className="logo" />
         </div>
       </div>
 
@@ -118,9 +113,10 @@ const Navbar = () => {
         </ul>
         <div className="logo-container">
           <Image
-            width={100}
-            height={100}
-            src="/icons/white-icon.svg"
+            objectFit="contain"
+            width="70px"
+            height="70px"
+            src="/logo.png"
             alt="Logo"
             className="logo"
           />

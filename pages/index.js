@@ -17,8 +17,6 @@ export async function getStaticProps() {
   }`;
   var defaultData = await client.fetch(query);
 
-  defaultData[0].hero = urlForImage(defaultData[0].hero).url();
-
   const coaches = `*[_type == "coaches"] {
     _id, hero, name, icon
   }`;
@@ -53,6 +51,8 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     false,
   ]);
 
+  const heroImage = urlForImage(hero).url();
+
   const galeriaImagesUrls = galeriaimages.map((img) => urlForImage(img).url());
 
   const youtubeIds = galeriavideos.map((link) => {
@@ -79,7 +79,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
     <>
       <div className="hero-container fw">
         <Image
-          src={hero}
+          src={heroImage}
           priority={true}
           alt="hero"
           title="Fő kép"
