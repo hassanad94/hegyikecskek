@@ -16,7 +16,7 @@ export async function getStaticProps() {
   var trainingPlan = await client.fetch(trainingPlanQuery);
 
   const packets = `*[_type == "traningPackets"]{
-    title, name, services, price, priceSanyi, trainingItems->[]
+    title, name, services, price, trainingItems->[]
   }`;
   var trainingPackets = await client.fetch(packets);
 

@@ -105,6 +105,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             {coaches &&
               coaches.map((coach) => {
                 let { icon, page, _id } = coach;
+                console.log(coaches.length);
                 return (
                   <div key={_id} className="coach-image rounded-full">
                     <Avatar src={icon} alt="Edzők" size="md" />

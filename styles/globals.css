@@ -1411,13 +1411,16 @@ details[open] summary:after {
 .pricing-container .card .coaches-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.pricing-container .card .coaches-container .coach-image,
-.sanyi-icon-image-container {
-  width: 40px;
-  height: 40px;
+.pricing-container .card .coaches-container .coach-image {
+  flex-basis: 25%;
 }
+.pricing-container .card .coaches-container .coach-image > div {
+  margin: auto;
+}
+
 .pricing-container .card .coaches-container .coach-image > span {
   border-radius: 50%;
 }
