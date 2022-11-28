@@ -714,27 +714,33 @@ footer .section::before {
 }
 
 .section.expect .mountain-dec-container {
-  /* position: absolute;
-  height: 77%;
-  left: 0;
-  bottom: 0;
-  width: 83vw; */
-  display: flex;
+  min-height: 400px;
+  text-align: left;
+}
+.section.expect.mountain-dec {
+  padding-bottom: 0px;
+  text-align: center;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 372px) {
+  .section.expect.mountain-dec {
+    padding-bottom: 1%;
+  }
+}
+
+@media (min-width: 900px) {
+  .section.expect.mountain-dec {
+    padding-bottom: 3%;
+  }
 }
 
 @media (min-width: 1024px) {
-  .section.expect {
-    min-height: 500px;
+  .section.expect.mountain-dec {
+    padding: 0;
   }
   .section.expect .mountain-dec-container {
-    bottom: -1px;
-    width: 480px;
-    height: 376px;
-    left: 50%;
-    transform: translateX(-50%);
+    min-height: 430px;
+    text-align: center;
   }
 }
 

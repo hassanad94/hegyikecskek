@@ -225,29 +225,32 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
         </div>
       </div>
 
-      <div className="section grid-center expect">
+      <div className="section mountain-dec expect">
         <div className="content">
           <h2 className="center">Mire számíthatsz nálunk</h2>
-
-          <div className="mountain-items flex column">
-            <p className="item">egy szuper csapat </p>
-            <p className="item">egyéni edzésterv </p>
-            <p className="item">egyesületi tagság </p>
-            <p className="item">közös futások </p>
-            <p className="item">konzultációk </p>
-            <p className="item">táborok </p>
+        </div>
+        {currentDevice === "mobile" ? (
+          <div className="mountain-dec-container">
+            <Image
+              width={400}
+              height={427}
+              src={`/mountain-dec-m.png`}
+              alt="hegy dekoráció"
+              className="mountain-dec"
+              objectFit="container"
+            />
           </div>
-        </div>
-
-        <div className="mountain-dec-container">
-          <Image
-            width={500}
-            height={400}
-            src={`/teszt.png`}
-            alt="hegy dekoráció"
-            className="mountain-dec"
-          />
-        </div>
+        ) : (
+          <div className="mountain-dec-container">
+            <Image
+              layout="fill"
+              src={`/mountain-dec.png`}
+              alt="hegy dekoráció"
+              className="mountain-dec"
+              objectFit="contain"
+            />
+          </div>
+        )}
       </div>
 
       <div className="section coaches">

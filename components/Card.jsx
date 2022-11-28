@@ -81,11 +81,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
-  var regularCoaches = coaches.filter((coach) => coach.web !== "szabo-sandor");
-
-  var coachSanyi = coaches.filter((coach) => coach.web === "szabo-sandor")[0];
-
-  const { title, name, services, price, priceSanyi } = trainingPacket;
+  const { title, name, services, price } = trainingPacket;
 
   return (
     <Card
@@ -106,8 +102,8 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
           className="coaches-container-wrapper"
         >
           <Box className="coaches-container">
-            {regularCoaches &&
-              regularCoaches.map((coach) => {
+            {coaches &&
+              coaches.map((coach) => {
                 let { icon, page, _id } = coach;
                 return (
                   <div key={_id} className="coach-image rounded-full">
@@ -120,27 +116,6 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
             <span className="price">{price}</span>{" "}
-            <span className="upperindex">
-              <span className="base-color-2">
-                <b>HUF</b>
-              </span>
-              / hónap
-            </span>
-          </Box>
-        </CardContent>
-        <CardContent sx={{ paddingTop: "0px", paddingBottom: "0px" }}>
-          <hr />
-        </CardContent>
-        <CardContent
-          sx={{ padding: "0px 0px", paddingBottom: "0px !important" }}
-        >
-          <Box className="price-container sanyi">
-            {coachSanyi && (
-              <div className="sanyi-icon-image-container">
-                <Avatar src={coachSanyi.icon} alt="Sanyi" size="md" />
-              </div>
-            )}
-            <span className="price">{priceSanyi}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
