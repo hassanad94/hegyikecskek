@@ -26,13 +26,14 @@ export const CoachesPreview = ({ coaches }) => {
           return (
             <SwiperSlide key={i}>
               <div className="coach-slide center">
-                <Image
-                  alt="Edzők Kép"
-                  title={coach.name}
-                  width={90}
-                  height={90}
-                  src={profilSrc}
-                />
+                <div className="image-container">
+                  <Image
+                    alt="Edzők Kép"
+                    title={coach.name}
+                    layout="fill"
+                    src={profilSrc}
+                  />
+                </div>
 
                 <p className="center">{coach.name}</p>
               </div>

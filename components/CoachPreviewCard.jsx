@@ -12,7 +12,7 @@ export default function CoachPreviewCard({ coach }) {
       <CardContent>
         <div className="name">{name}</div>
 
-        {titles && <div className="titles">{titles.join(", ")}</div>}
+        {titles && <div className="title">{titles.join(", ")}</div>}
       </CardContent>
       <CardMedia
         sx={{ objectFit: "contain" }}

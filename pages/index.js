@@ -53,7 +53,9 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
 
   const heroImage = urlForImage(hero).url();
 
-  const galeriaImagesUrls = galeriaimages.map((img) => urlForImage(img).url());
+  const galeriaImagesUrls = galeriaimages.map((img) =>
+    urlForImage(img).width(1000).url()
+  );
 
   const youtubeIds = galeriavideos.map((link) => {
     return getYoutubeEmbemedId(link);
