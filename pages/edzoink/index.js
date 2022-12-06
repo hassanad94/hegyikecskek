@@ -12,6 +12,12 @@ export async function getStaticProps() {
   }`;
   var coaches = await client.fetch(coachesQuery);
 
+  coaches.forEach((coach) => {
+    coach.icon = urlForImage(coach.icon).width(48).height(71).url();
+    coach.hero = urlForImage(coach.hero).url();
+    coach.web = coach.page.current;
+  });
+
   return {
     props: {
       defaultData: { siteData, coaches },
@@ -25,14 +31,6 @@ const Edzoink = ({ defaultData }) => {
 
   const { intro } = siteData[0];
 
-  var coachesDataNormalized = coaches;
-
-  coachesDataNormalized.forEach((coach) => {
-    coach.icon = urlForImage(coach.icon).url();
-    coach.hero = urlForImage(coach.hero).url();
-    coach.web = coach.page.current;
-  });
-
   return (
     <>
       <div className="section intro no-hero">
@@ -42,7 +40,7 @@ const Edzoink = ({ defaultData }) => {
           <p>{intro}</p>
 
           <div className="coach-select-container flex">
-            {coachesDataNormalized?.map((coach) => {
+            {coaches?.map((coach) => {
               const { _id } = coach;
 
               return <CoachSelectorButton key={_id} coach={coach} />;
@@ -50,7 +48,7 @@ const Edzoink = ({ defaultData }) => {
           </div>
 
           <div className="coach-preview-card-container">
-            {coachesDataNormalized?.map((coach) => {
+            {coaches?.map((coach) => {
               const { _id } = coach;
 
               return <CoachPreviewCard key={_id} coach={coach} />;
