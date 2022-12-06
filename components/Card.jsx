@@ -3,6 +3,7 @@ import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import OpenMessageModal from "../components/OpenMessageModal";
+import CurrencyFormat from "react-currency-format";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -105,7 +106,6 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             {coaches &&
               coaches.map((coach) => {
                 let { icon, page, _id } = coach;
-                console.log(coaches.length);
                 return (
                   <div key={_id} className="coach-image rounded-full">
                     <Avatar src={icon} alt="Edzők" size="md" />
@@ -116,7 +116,14 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         </CardContent>
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
-            <span className="price">{price}</span>{" "}
+            <span className="price">
+              <CurrencyFormat
+                value={price}
+                displayType={"text"}
+                thousandSeparator={"."}
+                decimalSeparator={","}
+              />
+            </span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>

@@ -363,6 +363,10 @@ body.modal-open .main-container {
   pointer-events: none;
 }
 
+.logo-container {
+  text-align: center;
+}
+
 .open.navbar .hamburger-wrapper .hamburger:nth-child(2) {
   transform: translateX(-200px);
 }
@@ -1032,7 +1036,7 @@ footer .section::before {
   .contact-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
   .contact-container .email-subject {
     width: 100%;
@@ -1045,6 +1049,9 @@ footer .section::before {
     width: 440px;
     margin: 20px 10px 35px 10px;
   }
+  .contact-container .input.text-area-input {
+    width: 100%;
+  }
   .contact-container textarea {
     min-width: 900px;
     max-width: 100%;
@@ -1052,6 +1059,10 @@ footer .section::before {
 
   .review-cards .card {
     margin: 0px 2px;
+  }
+
+  .contact-container .btn {
+    margin: auto;
   }
 }
 
@@ -1165,6 +1176,9 @@ footer .section.footer .controls h3 {
   }
   footer .section.footer > .logo-container {
     margin-bottom: 5px;
+  }
+  footer .section.footer > .controls {
+    margin-top: 25px;
   }
 }
 
@@ -1410,8 +1424,9 @@ details[open] summary:after {
 
 .pricing-container .card .coaches-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  padding: 0px 16px;
 }
 
 .pricing-container .card .coaches-container .coach-image {
@@ -1428,7 +1443,7 @@ details[open] summary:after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 129px;
+  max-width: 139px;
   margin: auto;
 }
 .pricing-container .card .price-container.sanyi {
@@ -1729,6 +1744,16 @@ details[open] summary:after {
 }
 .tag-info-details {
   margin: auto;
+  margin-bottom: 25px;
+}
+
+.tag-info-details .MuiAccordion-rounded {
+  max-width: 376px;
+  text-align: center;
+}
+
+.tag-info-details .MuiAccordion-rounded p {
+  text-align: center !important;
 }
 
 @media (min-width: 650px) {
@@ -1773,4 +1798,8 @@ details[open] summary:after {
 .rolunk .page-gallery .video-responsive {
   margin: 16px 0px;
   justify-content: center;
+}
+
+.css-bn1soe:last-child {
+  padding-bottom: 0px;
 }

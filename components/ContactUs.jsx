@@ -133,7 +133,7 @@ const ContactUs = (...props) => {
               onChange={field.onChange}
               label="Írd ide az üzeneted!"
               multiline
-              className="input"
+              className="input text-area-input"
               rows={3}
               variant="filled"
               type="text"
