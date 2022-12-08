@@ -12,6 +12,11 @@ export async function getStaticProps() {
   }`;
   var coaches = await client.fetch(coachesQuery);
 
+  coaches.forEach((coach) => {
+    coach.icon = urlForImage(coach.icon).url();
+    coach.web = coach.page.current;
+  });
+
   const trainingPlanQuery = `*[_type == "trainingPlan"]`;
   var trainingPlan = await client.fetch(trainingPlanQuery);
 
@@ -49,13 +54,6 @@ const Edzestervezes = ({ defaultData }) => {
   const { trainingPackets, trainingItems, trainingPlan, coaches } = defaultData;
 
   const [activePacket, setActivePacket] = useState(0);
-
-  var coachesWithLogoURL = coaches;
-
-  coachesWithLogoURL.forEach((coach) => {
-    coach.icon = urlForImage(coach.icon).url();
-    coach.web = coach.page.current;
-  });
 
   const { desc_1, workflows } = trainingPlan[0];
 
@@ -274,7 +272,7 @@ const Edzestervezes = ({ defaultData }) => {
 
                 <PriceCard
                   trainingPacket={trainingPackets[activePacket]}
-                  coaches={coachesWithLogoURL}
+                  coaches={coaches}
                   trainingItems={trainingItems}
                 />
               </>
@@ -285,7 +283,7 @@ const Edzestervezes = ({ defaultData }) => {
                   <PriceCard
                     key={id}
                     trainingPacket={packet}
-                    coaches={coachesWithLogoURL}
+                    coaches={coaches}
                     trainingItems={trainingItems}
                   />
                 );

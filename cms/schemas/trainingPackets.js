@@ -22,11 +22,11 @@ export default {
       title: "Szolgáltatás Ára",
       type: "number",
     },
-    // {
-    //   name: "priceSanyi",
-    //   title: "Szolgáltatás Ára Sanyival",
-    //   type: "number",
-    // },
+    {
+      name: "priceEuro",
+      title: "Eurós árak",
+      type: "number",
+    },
     {
       name: "services",
       title: "Szolgáltatás Tartalma",
