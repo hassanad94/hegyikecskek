@@ -1447,6 +1447,7 @@ details[open] summary:after {
 .pricing-container .card .coaches-container .coach-image > span {
   border-radius: 50%;
 }
+
 .pricing-container .card .price-container {
   display: flex;
   align-items: center;
@@ -1454,6 +1455,15 @@ details[open] summary:after {
   max-width: 139px;
   margin: auto;
 }
+.pricing-container .card .price-container.euro {
+  justify-content: center;
+  border-top: 1px solid var(--base-color-2);
+}
+
+.pricing-container .card .price-container.euro .price {
+  margin-right: 5px;
+}
+
 .pricing-container .card .price-container.sanyi {
   max-width: 179px;
 }
@@ -1489,7 +1499,7 @@ details[open] summary:after {
 @media (min-width: 850px) {
   .pricing-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
   .pricing-container .card {
     margin: 10px 5px;

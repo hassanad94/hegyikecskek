@@ -4,7 +4,7 @@ import { client, urlForImage } from "../lib/client";
 import { PortableText } from "@portabletext/react";
 import { CoachesPreview } from "../components/Coaches";
 import { Galeria } from "../components/Galeria";
-import { ReviewCard } from "../components/Card";
+import { ReviewCard } from "../components/Packet";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
 import OpenMessageModal from "../components/OpenMessageModal";

@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
-import OpenMessageModal from "../components/OpenMessageModal";
+import OpenMessageModal from "./OpenMessageModal";
 import CurrencyFormat from "react-currency-format";
 
 import "swiper/css";
@@ -82,7 +82,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
-  const { title, name, services, price } = trainingPacket;
+  const { title, name, services, price, priceEuro } = trainingPacket;
 
   return (
     <Card
@@ -127,6 +127,22 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
+              </span>
+              / hónap
+            </span>
+          </Box>
+          <Box className="price-container euro">
+            <span className="price">
+              <CurrencyFormat
+                value={priceEuro}
+                displayType={"text"}
+                thousandSeparator={"."}
+                decimalSeparator={","}
+              />
+            </span>{" "}
+            <span className="upperindex">
+              <span className="base-color-2">
+                <b>EUR</b>
               </span>
               / hónap
             </span>

@@ -1,6 +1,6 @@
 import { client, urlForImage } from "../lib/client";
 import Image from "next/image";
-import PriceCard from "../components/Card";
+import PriceCard from "../components/Packet";
 import { useState, useEffect } from "react";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
@@ -21,7 +21,7 @@ export async function getStaticProps() {
   var trainingPlan = await client.fetch(trainingPlanQuery);
 
   const packets = `*[_type == "traningPackets"]{
-    title, name, services, price, trainingItems->[]
+    title, name, services, price, priceEuro, trainingItems->[]
   }`;
   var trainingPackets = await client.fetch(packets);
 
