@@ -1432,13 +1432,13 @@ details[open] summary:after {
 
 .pricing-container .card .coaches-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0px 16px;
 }
 
 .pricing-container .card .coaches-container .coach-image {
-  flex-basis: 25%;
+  flex-basis: 70px;
 }
 .pricing-container .card .coaches-container .coach-image > div {
   margin: auto;
