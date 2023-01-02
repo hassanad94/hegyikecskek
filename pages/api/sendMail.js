@@ -41,7 +41,7 @@ export default async function handler(req, res) {
   try {
     // const emailResponse = await sendEmail;
 
-    res.status(200).json(emailResponse);
+    res.status(200).json(true);
   } catch (error) {
     return res.json(error);
   }

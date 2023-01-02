@@ -18,7 +18,6 @@ const Navbar = () => {
   ];
 
   const highlightedLinks = [
-    { name: "Edzéstervezés", link: "/edzestervezes" },
     { name: "Tagság", link: "/tagsag" },
     { name: "Kapcsolat", link: "/kapcsolat" },
   ];
@@ -26,8 +25,6 @@ const Navbar = () => {
   const [activeBar, setActiveBar] = useState(false);
 
   const router = useRouter();
-
-  const [activeMenuPath, setActiveMenuPath] = useState(router.pathname);
 
   useEffect(() => {
     const allLink = document.querySelectorAll(
@@ -110,17 +107,20 @@ const Navbar = () => {
               </li>
             ))}
           </div>
+
+          <div className="logo-container">
+            <li>
+              <Image
+                width="105px"
+                height="101px"
+                src="/logo.png"
+                alt="Logo"
+                className="logo"
+                />
+            </li>
+          </div>
+
         </ul>
-        <div className="logo-container">
-          <Image
-            objectFit="contain"
-            width="70px"
-            height="70px"
-            src="/logo.png"
-            alt="Logo"
-            className="logo"
-          />
-        </div>
       </div>
     </div>
   );

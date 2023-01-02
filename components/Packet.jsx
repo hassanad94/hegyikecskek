@@ -117,12 +117,14 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
             <span className="price">
-              <CurrencyFormat
-                value={price}
-                displayType={"text"}
-                thousandSeparator={"."}
-                decimalSeparator={","}
-              />
+              {price && 
+                <CurrencyFormat
+                  value={price}
+                  displayType={"text"}
+                  thousandSeparator={"."}
+                  decimalSeparator={","}
+                />    
+              }
             </span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
@@ -133,12 +135,14 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
           </Box>
           <Box className="price-container euro">
             <span className="price">
-              <CurrencyFormat
-                value={priceEuro}
-                displayType={"text"}
-                thousandSeparator={"."}
-                decimalSeparator={","}
-              />
+              {priceEuro && 
+                <CurrencyFormat
+                  value={priceEuro}
+                  displayType={"text"}
+                  thousandSeparator={"."}
+                  decimalSeparator={","}
+                />
+              }
             </span>{" "}
             <span className="upperindex">
               <span className="base-color-2">

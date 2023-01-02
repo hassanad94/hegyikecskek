@@ -7,6 +7,7 @@ import { useStateContext } from "../context/settingContext";
 import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
+
   const coachesQuery = `*[_type == "coaches"]{
     _id, icon, page{current}
   }`;
