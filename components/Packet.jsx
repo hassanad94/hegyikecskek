@@ -3,7 +3,6 @@ import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import OpenMessageModal from "./OpenMessageModal";
-import CurrencyFormat from "react-currency-format";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -116,16 +115,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         </CardContent>
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
-            <span className="price">
-              {price && 
-                <CurrencyFormat
-                  value={price}
-                  displayType={"text"}
-                  thousandSeparator={"."}
-                  decimalSeparator={","}
-                />    
-              }
-            </span>{" "}
+            <span className="price">{price && { price }}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
@@ -134,16 +124,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             </span>
           </Box>
           <Box className="price-container euro">
-            <span className="price">
-              {priceEuro && 
-                <CurrencyFormat
-                  value={priceEuro}
-                  displayType={"text"}
-                  thousandSeparator={"."}
-                  decimalSeparator={","}
-                />
-              }
-            </span>{" "}
+            <span className="price">{priceEuro && { priceEuro }}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>EUR</b>

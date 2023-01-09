@@ -2,7 +2,6 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Link from "@mui/material/Link";
-import CurrencyFormat from "react-currency-format";
 
 export default function CoachPreviewCard({ coach }) {
   const { name, price, isEuro, introduction, titles, hero, web } = coach;
@@ -23,12 +22,7 @@ export default function CoachPreviewCard({ coach }) {
       />
       <CardContent>
         <b>EdzésTervezés </b>
-        <CurrencyFormat
-          value={price}
-          displayType={"text"}
-          thousandSeparator="."
-          decimalSeparator=","
-        />
+        {price}
         {!isEuro ? " Ft" : " EUR"} / hó - tól
       </CardContent>
       <CardContent sx={{ padding: "10px", textAlign: "left" }}>
