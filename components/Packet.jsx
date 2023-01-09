@@ -79,6 +79,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { formatter } from "../lib/utilities";
 
 const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
   const { title, name, services, price, priceEuro } = trainingPacket;
@@ -115,7 +116,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
         </CardContent>
         <CardContent sx={{ paddingBottom: "0px" }}>
           <Box className="price-container">
-            <span className="price">{price && { price }}</span>{" "}
+            <span className="price"> {formatter.format(price)} </span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>HUF</b>
@@ -124,7 +125,7 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             </span>
           </Box>
           <Box className="price-container euro">
-            <span className="price">{priceEuro && { priceEuro }}</span>{" "}
+            <span className="price">{priceEuro}</span>{" "}
             <span className="upperindex">
               <span className="base-color-2">
                 <b>EUR</b>
