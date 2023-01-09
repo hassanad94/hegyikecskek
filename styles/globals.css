@@ -1719,6 +1719,7 @@ details[open] summary:after {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  row-gap: 5px;
   padding: 0px 16px;
 }
 
