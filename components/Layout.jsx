@@ -2,7 +2,7 @@ import Head from "next/head";
 import NavBar from "./Navbar";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
-import BackButton from "./backButton";
+import BackButton from "./BackButton";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -51,7 +51,6 @@ const Layout = ({ children }) => {
       <header>
         <NavBar />
       </header>
-
 
       <BackButton router={router} />
       <main className="main-container">{children}</main>
