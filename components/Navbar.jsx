@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   const highlightedLinks = [
-    { name: "Tagság", link: "/tagsag" },
+    // { name: "Tagság", link: "/tagsag" },
     { name: "Kapcsolat", link: "/kapcsolat" },
   ];
 
@@ -116,10 +116,9 @@ const Navbar = () => {
                 src="/logo.png"
                 alt="Logo"
                 className="logo"
-                />
+              />
             </li>
           </div>
-
         </ul>
       </div>
     </div>

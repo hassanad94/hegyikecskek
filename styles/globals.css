@@ -507,6 +507,10 @@ body.modal-open .main-container {
   background: var(--base-color-2);
 }
 
+.navbar .menu-content.mobile .menu-items .separeted li.active {
+  color: #fff;
+}
+
 .navbar .menu-content.mobile .menu-items .separeted li {
   font-size: calc(var(--base-font-size) + 1px);
   color: var(--base-color-2);
@@ -1243,16 +1247,15 @@ footer .section::before {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  .contact-container .name-email-fields {
+    display: flex;
+    column-gap: 25px;
+  }
   .contact-container .email-subject {
     width: 100%;
   }
-  .contact-container .input.subject-input,
   .contact-container p {
     width: 900px;
-  }
-  .contact-container .input {
-    width: 440px;
-    margin: 20px 10px 35px 10px;
   }
   .contact-container .input.text-area-input {
     width: 100%;
@@ -2178,4 +2181,47 @@ details[open] summary:after {
   z-index: 555555;
   left: var(--base-section-padding);
   cursor: pointer;
+}
+
+.layout.kapcsolat .kapcsolat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0px;
+}
+
+.layout.kapcsolat .kapcsolat-container .quick-contact {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.layout.kapcsolat .kapcsolat-container .quick-contact a {
+  font-family: noto-sans, sans-serif;
+}
+
+.layout.kapcsolat .kapcsolat-container .social-media-ref {
+  display: flex;
+  column-gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .layout.kapcsolat .kapcsolat-container {
+    gap: 40px;
+  }
+  .layout.kapcsolat .kapcsolat-container .quick-contact {
+    flex-direction: row;
+    column-gap: 15px;
+  }
+  .layout.kapcsolat .kapcsolat-container .social-media-ref {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout.kapcsolat .kapcsolat-container {
+    gap: 90px;
+  }
 }

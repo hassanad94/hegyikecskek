@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import { toast, ToastContainer } from "react-toastify";
 import { useForm, Controller } from "react-hook-form";
-import Alert from '@mui/material/Alert';
+import Alert from "@mui/material/Alert";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -33,7 +33,6 @@ const RedditTextField = styled((props) => (
   },
 }));
 
-
 const validateEmail = (email) => {
   return email.match(
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -42,32 +41,28 @@ const validateEmail = (email) => {
 
 const ContactUs = (...props) => {
   const { subject, description, subjectDisabled } = props[0];
-  const { control, handleSubmit} = useForm();
+  const { control, handleSubmit } = useForm();
 
-  const [formError, setFormError] = useState({})
+  const [formError, setFormError] = useState({});
 
   const onSubmit = async (data) => {
     const { name, email, message } = data;
 
     if (typeof message === "undefined") {
-
-      setFormError( ( prev ) => ({...prev , message : true }) );
-
+      setFormError((prev) => ({ ...prev, message: true }));
     }
 
-    if (!validateEmail( email )) {
+    if (!validateEmail(email)) {
+      console.log("t");
 
-      console.log( "t" );
-
-      setFormError( ( prev ) => ({...prev , email : true }) );
-
+      setFormError((prev) => ({ ...prev, email: true }));
     }
 
-    if( /^[a-zA-Z]+\s[a-zA-Z]+$/.test( name ) ){
-      setFormError( ( prev ) => ({...prev , name : true }) );
+    if (/^[a-zA-Z]+\s[a-zA-Z]+$/.test(name)) {
+      setFormError((prev) => ({ ...prev, name: true }));
     }
 
-    if( !!formError ){
+    if (!!formError) {
       return false;
     }
 
@@ -82,57 +77,60 @@ const ContactUs = (...props) => {
   return (
     <>
       <ToastContainer position="bottom-center" limit={1} />
+      {description && (
+        <p>
+          Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
+          felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
+        </p>
+      )}
+
       <form
         className="contact-container flex"
         onSubmit={handleSubmit(onSubmit)}
       >
-        {description && (
-          <p>
-            Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
-            felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
-          </p>
-        )}
-        <Controller
-          name="name"
-          control={control}
-          defaultValue={""}
-          render={({ field }) => (
-            <RedditTextField
-              name={field.name}
-              value={field.value}
-              onChange={field.onChange}
-              className="input"
-              label="Név"
-              variant="filled"
-              style={{ marginTop: 11 }}
-            />
+        <div className="name-email-fields">
+          <Controller
+            name="name"
+            control={control}
+            defaultValue={""}
+            render={({ field }) => (
+              <RedditTextField
+                name={field.name}
+                value={field.value}
+                onChange={field.onChange}
+                className="input"
+                label="Név"
+                variant="filled"
+                style={{ marginTop: 11 }}
+              />
+            )}
+          />
+
+          {formError.name && (
+            <Alert severity="error">Kérlek add meg a neved!</Alert>
           )}
-        />
 
-        {formError.name && 
-          <Alert severity="error">Kérlek add meg a neved!</Alert>
-        }
+          <Controller
+            control={control}
+            name="email"
+            defaultValue={""}
+            render={({ field }) => (
+              <RedditTextField
+                name={field.name}
+                value={field.value}
+                onChange={field.onChange}
+                label="email"
+                variant="filled"
+                className="input"
+                style={{ marginTop: 11 }}
+              />
+            )}
+          />
 
-        <Controller
-          control={control}
-          name="email"
-          defaultValue={""}
-          render={({ field }) => (
-            <RedditTextField
-              name={field.name}
-              value={field.value}
-              onChange={field.onChange}
-              label="email"
-              variant="filled"
-              className="input"
-              style={{ marginTop: 11 }}
-            />
+          {formError.email && (
+            <Alert severity="error">Hibás Email címet adtál meg!</Alert>
           )}
-        />
-
-        {formError.email && 
-          <Alert severity="error">Hibás Email címet adtál meg!</Alert>
-        }
+        </div>
 
         {subject && (
           <>
@@ -145,7 +143,7 @@ const ContactUs = (...props) => {
               render={({ field }) => (
                 <RedditTextField
                   name={field.name}
-                  value={subject}
+                  value={subject || field.value}
                   onChange={field.onChange}
                   label="Mivel kapcsolatban érdeklődsz?"
                   disabled={subjectDisabled}
@@ -178,9 +176,11 @@ const ContactUs = (...props) => {
           )}
         />
 
-        {formError.message && 
-          <Alert severity="error">Kérlek ne hagyd üresen az üezenet mezőt!</Alert>
-        }
+        {formError.message && (
+          <Alert severity="error">
+            Kérlek ne hagyd üresen az üezenet mezőt!
+          </Alert>
+        )}
 
         <input className="button btn " type="submit" value={"Küldés"} />
       </form>
