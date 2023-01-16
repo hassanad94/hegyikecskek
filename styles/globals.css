@@ -1315,6 +1315,7 @@ area:focus ~ label {
 footer .section.footer {
   background: white;
   padding-top: 30px;
+  padding-bottom: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
