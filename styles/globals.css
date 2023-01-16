@@ -2181,6 +2181,9 @@ details[open] summary:after {
   z-index: 555555;
   left: var(--base-section-padding);
   cursor: pointer;
+  background: #cc4125a1;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .layout.kapcsolat .kapcsolat-container {
