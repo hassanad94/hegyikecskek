@@ -3,7 +3,7 @@ import Image from "next/image";
 function BackButton({ router }) {
   return (
     <div
-      className="backButton s"
+      className="backButton"
       onClick={() => {
         router.back();
       }}

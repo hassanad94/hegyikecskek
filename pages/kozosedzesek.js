@@ -36,7 +36,7 @@ const KozosEdzesek = ({ defaultData }) => {
         <div className="content">
           <h1>Közös Edzések</h1>
 
-          <p>{intro}</p>
+          <p className="center">{intro}</p>
 
           <div className="flex justify-content-center ">
             <Image

@@ -2228,3 +2228,19 @@ details[open] summary:after {
     gap: 90px;
   }
 }
+
+.layout.kozosedzesek .intro {
+  padding-top: 80px;
+}
+
+.layout.egyesulet .intro {
+  padding-top: 80px;
+}
+
+.layout.taborok .intro {
+  padding-top: 80px;
+}
+
+.layout.galeria .intro {
+  padding-top: 80px;
+}

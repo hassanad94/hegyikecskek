@@ -3,9 +3,11 @@ import NavBar from "./Navbar";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
 import BackButton from "./BackButton";
-
+import { useStateContext } from "../context/settingContext";
 const Layout = ({ children }) => {
   const router = useRouter();
+
+  const { currentDevice } = useStateContext();
 
   return (
     <div
@@ -52,7 +54,8 @@ const Layout = ({ children }) => {
         <NavBar />
       </header>
 
-      <BackButton router={router} />
+      {currentDevice !== "desktop" && <BackButton router={router} />}
+
       <main className="main-container">{children}</main>
 
       <footer>

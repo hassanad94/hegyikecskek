@@ -26,7 +26,7 @@ export const StateContext = ({ children }) => {
     if (currentWindowSize < 850) {
       setCurrentDevice("mobile");
     }
-    if (currentWindowSize >= 1024) {
+    if (currentWindowSize >= 1230) {
       setCurrentDevice("desktop");
     }
   };
