@@ -1,7 +1,8 @@
-- a nyíl mögött legyen naracs háttér kör alakú
-- vissza nyíl ne lógjon bele a szövegbe sehol se alapértelmezetten, minden oldalt meg kell vizsgálni!
-- a footerben alulról még legyen hely.
+- a nyíl mögött legyen naracs háttér kör alakú ✅✅
+- vissza nyíl ne lógjon bele a szövegbe sehol se alapértelmezetten, minden oldalt meg kell vizsgálni! ✅✅
+- a footerben alulról még legyen hely. ✅✅
 - név + email mező túl kicsi 50
+FONTOS AZ Emailnál ha rányom a gombra valami betöltés kell!!
 - kapcsolat oldaln az alsó form furán müködik
 - desktop mindenki legyen ott nem kell görgethető
 - weben nem kell vissza jel

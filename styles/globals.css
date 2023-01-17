@@ -1234,6 +1234,15 @@ footer .section::before {
 }
 
 /* .MuiAlert-standardError{ */
+.contact-container .name-email-fields {
+  width: 100%;
+}
+.contact-container .name-email-fields .MuiFormControl-root {
+  margin-bottom: 10px;
+}
+.contact-container .text-area-input {
+  margin-bottom: 10px;
+}
 
 @media (min-width: 1024px) {
   .contact-container {
@@ -2244,4 +2253,13 @@ details[open] summary:after {
 
 .layout.galeria .intro {
   padding-top: 80px;
+}
+
+.succesfull-email {
+  font-family: "Noto Sans";
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 25px;
+  margin-bottom: 45px;
+  color: #fff;
 }

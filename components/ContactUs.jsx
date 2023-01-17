@@ -42,37 +42,56 @@ const validateEmail = (email) => {
 const ContactUs = (...props) => {
   const { subject, description, subjectDisabled } = props[0];
   const { control, handleSubmit } = useForm();
+  const [succesFullEmail, setSuccesFullEmail] = useState(false);
 
   const [formError, setFormError] = useState({});
 
   const onSubmit = async (data) => {
     const { name, email, message } = data;
 
-    if (typeof message === "undefined") {
-      setFormError((prev) => ({ ...prev, message: true }));
+    let errors = {};
+
+    if (message.length === 0) {
+      errors = { ...errors, message: true };
     }
 
     if (!validateEmail(email)) {
-      console.log("t");
-
-      setFormError((prev) => ({ ...prev, email: true }));
+      errors = { ...errors, email: true };
     }
 
-    if (/^[a-zA-Z]+\s[a-zA-Z]+$/.test(name)) {
-      setFormError((prev) => ({ ...prev, name: true }));
+    if (!/^[a-zA-Z]{1,20}( [a-zA-Z]{1,20}){1,2}$/.test(name.trim())) {
+      errors = { ...errors, name: true };
     }
 
-    if (!!formError) {
+    if (!errors) {
+      setFormError(errors);
       return false;
     }
 
     const sendMail = await fetch("/api/sendMail", {
       method: "post",
       body: JSON.stringify(data),
-    })
-      .then((r) => r.json)
-      .then((data) => console.log(data));
+    });
+
+    const response = await sendMail.json();
+
+    if (!response.status) {
+      console.log(response.message);
+      return alert("Hiba történt kérlek frissítsd az oldalt");
+    }
+
+    setSuccesFullEmail(true);
   };
+
+  if (succesFullEmail) {
+    return (
+      <div className="succesfull-email">
+        {" "}
+        ✅✅Sikeresen Elküldted az email-t. Hamarosan kapcsolatba lépünk veled a
+        megadott email címen.✅✅
+      </div>
+    );
+  }
 
   return (
     <>

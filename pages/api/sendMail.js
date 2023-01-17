@@ -1,14 +1,33 @@
-const API_KEY = "YOUR_API_KEY";
-const DOMAIN = "YOUR_DOMAIN_NAME";
+const nodemailer = require("nodemailer");
 
-const formData = require("form-data");
-const Mailgun = require("mailgun.js");
+const sendEmail = (data) => {
+  const { email, name, message, subject } = data;
 
-const mailgun = new Mailgun(formData);
-const client = mailgun.client({
-  username: "api",
-  key: process.env.NEXT_PUBLIC_MAILGUN_API_KEY,
-});
+  return new Promise((resolve, reject) => {
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "hassanad94@gmail.com",
+        pass: process.env.NEXT_PUBLIC_GMAIL_APP_PW,
+      },
+    });
+
+    const mail_option = {
+      from: "hassanad94@gmail.com",
+      to: "hassanad94@gmail.com",
+      subject: `${name} érdeklődik ${subject}-(vel) kapcsolatban`,
+      text: `${message} \n Ezen az emailon kereresztül fogsz tudni neki válaszolni ${email}`,
+    };
+
+    transporter.sendMail(mail_option, function (error, info) {
+      if (error) {
+        return reject({ message: error.message });
+      }
+
+      return resolve({ message: "Email Sent!" });
+    });
+  });
+};
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -18,31 +37,7 @@ export default async function handler(req, res) {
 
   const data = JSON.parse(req.body);
 
-  const { email, name, message, subject } = data;
-
-  const messageData = {
-    from: "Excited User <me@samples.mailgun.org>",
-    to: `${email}`,
-    subject: "Hello",
-    text: "Testing some Mailgun awesomeness!2",
-  };
-
-  const sendEmail = new Promise((resolve, reject) => {
-    client.messages
-      .create(process.env.NEXT_PUBLIC_MAILGUN_DOMAIN, messageData)
-      .then((res) => {
-        return resolve(res);
-      })
-      .catch((err) => {
-        return reject(err);
-      });
-  });
-
-  try {
-    // const emailResponse = await sendEmail;
-
-    res.status(200).json(true);
-  } catch (error) {
-    return res.json(error);
-  }
+  const emailSending = await sendEmail(data)
+    .then((r) => res.status(200).send({ status: true }))
+    .catch((error) => res.status(500).send({ message: error.message }));
 }

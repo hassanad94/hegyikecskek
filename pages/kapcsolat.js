@@ -15,7 +15,7 @@ export async function getStaticProps() {
 }
 
 const Kapcsolat = ({ defaultData }) => {
-  const { facebook, instagram, youtube } = defaultData;
+  const { facebook, instagram, youtube } = defaultData[0];
 
   return (
     <div className="section">
