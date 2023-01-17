@@ -6,6 +6,7 @@ import Alert from "@mui/material/Alert";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import Image from "next/image";
 
 const RedditTextField = styled((props) => (
   <TextField InputProps={{ disableUnderline: true }} {...props} />
@@ -43,6 +44,7 @@ const ContactUs = (...props) => {
   const { subject, description, subjectDisabled } = props[0];
   const { control, handleSubmit } = useForm();
   const [succesFullEmail, setSuccesFullEmail] = useState(false);
+  const [emilIsSending, setEmilIsSending] = useState(false);
 
   const [formError, setFormError] = useState({});
 
@@ -63,10 +65,12 @@ const ContactUs = (...props) => {
       errors = { ...errors, name: true };
     }
 
-    if (!errors) {
+    if (Object.keys(errors).length !== 0) {
       setFormError(errors);
       return false;
     }
+
+    setEmilIsSending(true);
 
     const sendMail = await fetch("/api/sendMail", {
       method: "post",
@@ -80,6 +84,7 @@ const ContactUs = (...props) => {
       return alert("Hiba történt kérlek frissítsd az oldalt");
     }
 
+    setEmilIsSending(false);
     setSuccesFullEmail(true);
   };
 
@@ -90,6 +95,19 @@ const ContactUs = (...props) => {
         ✅✅Sikeresen Elküldted az email-t. Hamarosan kapcsolatba lépünk veled a
         megadott email címen.✅✅
       </div>
+    );
+  }
+
+  if (emilIsSending) {
+    return (
+      <>
+        <Image
+          alt="Email sending Loading gif"
+          src="/icons/emailLoding.gif"
+          width={150}
+          height={150}
+        />
+      </>
     );
   }
 
@@ -175,6 +193,7 @@ const ContactUs = (...props) => {
             />
           </>
         )}
+
         <Controller
           name="message"
           control={control}

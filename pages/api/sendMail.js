@@ -16,7 +16,7 @@ const sendEmail = (data) => {
       from: "hassanad94@gmail.com",
       to: "hassanad94@gmail.com",
       subject: `${name} érdeklődik ${subject}-(vel) kapcsolatban`,
-      text: `${message} \n Ezen az emailon kereresztül fogsz tudni neki válaszolni ${email}`,
+      text: `${message} \n\n\n\n Ezen az emailon kereresztül fogsz tudni neki válaszolni ${email}`,
     };
 
     transporter.sendMail(mail_option, function (error, info) {
