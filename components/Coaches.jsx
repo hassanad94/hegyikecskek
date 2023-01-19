@@ -10,6 +10,35 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export const CoachesPreview = ({ coaches }) => {
+  const { currentDevice } = useStateContext();
+
+  if (currentDevice === "desktop") {
+    return (
+      <div className="all-coach">
+        {coaches &&
+          coaches?.map((coach, i) => {
+            let profilSrc =
+              coach.icon !== null && urlForImage(coach.icon).width(400).url();
+
+            return (
+              <div key={coach.name} className="coach-slide center">
+                <div className="image-container">
+                  <Image
+                    alt="Edzők Kép"
+                    title={coach.name}
+                    layout="fill"
+                    src={profilSrc}
+                  />
+                </div>
+
+                <p className="center">{coach.name}</p>
+              </div>
+            );
+          })}
+      </div>
+    );
+  }
+
   return (
     <Swiper
       loop={true}
@@ -21,7 +50,8 @@ export const CoachesPreview = ({ coaches }) => {
     >
       {coaches &&
         coaches?.map((coach, i) => {
-          let profilSrc = coach.icon !== null && urlForImage(coach.icon).width(400).url();
+          let profilSrc =
+            coach.icon !== null && urlForImage(coach.icon).width(400).url();
 
           return (
             <SwiperSlide key={i}>

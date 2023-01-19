@@ -2263,3 +2263,7 @@ details[open] summary:after {
   margin-bottom: 45px;
   color: #fff;
 }
+
+.all-coach {
+  display: flex;
+}
