@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, FreeMode } from "swiper";
+import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import OpenMessageModal from "./OpenMessageModal";
@@ -10,21 +11,35 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export const ReviewCard = ({ reviews }) => {
+  const [autoplay, setAutoPlay] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1024px)");
+    const handleMediaChange = (event) => {
+      setAutoPlay(event.matches);
+    };
+    query.addListener(handleMediaChange);
+    return () => query.removeListener(handleMediaChange);
+  }, []);
+
+  const breakpoints = {
+    320: {
+      spaceBetween: 10,
+      slidesPerView: 1,
+    },
+    700: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  };
+
   return (
     <Swiper
-      breakpoints={{
-        320: {
-          spaceBetween: 10,
-          slidesPerView: 1,
-        },
-        700: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      }}
-      modules={[FreeMode, Navigation, Scrollbar, A11y]}
+      autoplay={autoplay}
+      breakpoints={breakpoints}
+      modules={[FreeMode, Navigation, Scrollbar, A11y, Autoplay]}
       navigation
       freeMode={true}
       className="review-cards"
@@ -80,6 +95,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { formatter } from "../lib/utilities";
+import { useStateContext } from "../context/settingContext";
 
 const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
   const { title, name, services, price, priceEuro } = trainingPacket;

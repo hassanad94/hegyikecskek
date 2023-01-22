@@ -256,7 +256,14 @@ h3.left-align:before {
   h2.left-align::before,
   h3.left-align::before {
     left: 50%;
-    translate: -50% 0%;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@media (min-width: 1024px) {
+  h2::before,
+  h3::before {
+    top: 38px;
   }
 }
 
@@ -290,6 +297,15 @@ p {
   color: #000;
 }
 
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+}
 .buttonWithArrow {
   font-size: calc(var(--base-font-size) + 1px);
   color: var(--base-color-2);
@@ -719,7 +735,8 @@ footer .section::before {
   }
 
   .main-container > div:not(.fw) {
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 }
 
@@ -849,6 +866,9 @@ footer .section::before {
 .section.expect.mountain-dec {
   padding-bottom: 0px;
   text-align: center;
+}
+.section.expect.mountain-dec h2 {
+  margin-top: 10%;
 }
 
 @media (min-width: 372px) {
@@ -1333,9 +1353,7 @@ footer .section.footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  align-items: center;
 }
 
 footer .section.footer > div {
@@ -1503,6 +1521,10 @@ body .swiper-button-prev:after {
 .reviews-container .swiper-rtl .swiper-button-prev {
   right: 0px;
 }
+
+.reviews-container p {
+  font-size: 16px;
+}
 /* Edzéstervezés */
 
 .details-container {
@@ -1603,6 +1625,10 @@ details[open] summary:after {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.count-task-container p {
+  font-size: 15px;
 }
 
 .count-task-container .task:first-of-type:before {
@@ -2266,4 +2292,9 @@ details[open] summary:after {
 
 .all-coach {
   display: flex;
+}
+
+.subject-field {
+  width: 100%;
+  background-color: #fff;
 }

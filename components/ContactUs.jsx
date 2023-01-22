@@ -7,6 +7,7 @@ import Alert from "@mui/material/Alert";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import Image from "next/image";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const RedditTextField = styled((props) => (
   <TextField InputProps={{ disableUnderline: true }} {...props} />
@@ -169,30 +170,28 @@ const ContactUs = (...props) => {
           )}
         </div>
 
-        {subject && (
-          <>
-            <div className="email-subject">Mivel kapcsolatban érdeklődsz?</div>
-
-            <Controller
-              control={control}
-              name="subject"
-              defaultValue={subject}
-              render={({ field }) => (
-                <RedditTextField
-                  name={field.name}
-                  value={subject || field.value}
-                  onChange={field.onChange}
-                  label="Mivel kapcsolatban érdeklődsz?"
-                  disabled={subjectDisabled}
-                  variant="filled"
-                  type="text"
-                  className="input subject-input"
-                  style={{ marginTop: 11 }}
-                />
-              )}
-            />
-          </>
-        )}
+        <Controller
+          control={control}
+          name="subject"
+          defaultValue={"edzés terv"}
+          render={({ field }) => (
+            <FormControl variant="filled" className="subject-field">
+              <InputLabel id="demo-simple-select-label">
+                Mivel kapcsolatban érdeklődsz?
+              </InputLabel>
+              <Select
+                value={field.value}
+                onChange={field.onChange}
+                label="Mivel kapcsolatban érdeklődsz?"
+              >
+                <MenuItem value="edzés terv">Edzés terv</MenuItem>
+                <MenuItem value="egyesületi tagság">Egyesületi tagság</MenuItem>
+                <MenuItem value="edzőtáborok">Edzőtáborok</MenuItem>
+                <MenuItem value="egyéb">Egyéb</MenuItem>
+              </Select>
+            </FormControl>
+          )}
+        />
 
         <Controller
           name="message"
