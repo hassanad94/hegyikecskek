@@ -11,17 +11,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export const ReviewCard = ({ reviews }) => {
-  const [autoplay, setAutoPlay] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(min-width: 1024px)");
-    const handleMediaChange = (event) => {
-      setAutoPlay(event.matches);
-    };
-    query.addListener(handleMediaChange);
-    return () => query.removeListener(handleMediaChange);
-  }, []);
-
   const breakpoints = {
     320: {
       spaceBetween: 10,
@@ -37,9 +26,11 @@ export const ReviewCard = ({ reviews }) => {
 
   return (
     <Swiper
-      autoplay={autoplay}
       breakpoints={breakpoints}
-      modules={[FreeMode, Navigation, Scrollbar, A11y, Autoplay]}
+      loop={true}
+      spaceBetween={5}
+      slidesPerView={3}
+      modules={[FreeMode, Navigation]}
       navigation
       freeMode={true}
       className="review-cards"

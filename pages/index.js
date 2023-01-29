@@ -87,6 +87,18 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           title="Fő kép"
           layout="fill"
         />
+
+        {currentDevice === "desktop" && (
+          <div className="content button-container center">
+            <Link href="/edzestervezes">
+              <div className="btn">Edzéstervezés</div>
+            </Link>
+
+            <Link href="/tagsag">
+              <div className="btn">Tagság</div>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="section title-desc intro ">
@@ -269,13 +281,12 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
 
           <div className="galeria-container">
             <Galeria galeria={galeria} />
+            <Link href="/galeria">
+              <div className="buttonWithArrow right button">
+                Galéria megnyitása
+              </div>
+            </Link>
           </div>
-
-          <Link href="/galeria">
-            <div className="buttonWithArrow right button">
-              Galéria megnyitása
-            </div>
-          </Link>
         </div>
       </div>
 

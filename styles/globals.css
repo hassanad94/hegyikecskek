@@ -318,17 +318,10 @@ p {
 
 .buttonWithArrow.right {
   text-align: right;
-  padding-right: var(--base-section-padding);
 }
 
 .buttonWithArrow.right::after {
   left: 4px;
-}
-
-@media (min-width: 1024px) {
-  .buttonWithArrow.right {
-    padding-right: 10px;
-  }
 }
 
 .buttonWithArrow:after {
@@ -342,6 +335,18 @@ p {
   display: inline-block;
   top: 4px;
   left: 15px;
+}
+
+@media (min-width: 1230px) {
+  .buttonWithArrow:after {
+    content: "";
+    background: url(/img/menu-button-icon-desktop.png);
+    height: 33px;
+    width: 37px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    top: 8px;
+  }
 }
 
 .main-container {
@@ -518,6 +523,9 @@ body.modal-open .main-container {
   padding: 3px 5px;
   border-radius: var(--base-border-radius);
 }
+.navbar .menu-content .menu-items li .link-item:hover {
+  color: #999999;
+}
 
 .navbar .menu-content .menu-items li .link-item:active {
   background: var(--base-color-2);
@@ -636,6 +644,21 @@ body.modal-open .main-container {
   min-height: 45vh;
 }
 
+@media (min-width: 1230px) {
+  .hero-container {
+    min-height: 59vh;
+  }
+
+  .hero-container .button-container {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    column-gap: 40px;
+  }
+}
+
 .hero-container img {
   -o-object-fit: cover;
   object-fit: cover;
@@ -705,6 +728,10 @@ footer .section::before {
 
 .section.title-desc h1 {
   margin-top: 0;
+}
+
+.home .section.title-desc.intro .button {
+  padding-right: 0;
 }
 
 .section.title-desc.intro .button {
@@ -857,6 +884,7 @@ footer .section::before {
   padding: 5px 10px;
   border: none;
   display: inline-block;
+  cursor: pointer;
 }
 
 .section.expect .mountain-dec-container {
@@ -1147,6 +1175,12 @@ footer .section::before {
 
 .section.page-gallery .button {
   margin-top: 15px;
+}
+
+@media (min-width: 1230px) {
+  .reviews-container .swiper-wrapper {
+    padding-left: 40px;
+  }
 }
 
 .review-cards .card {

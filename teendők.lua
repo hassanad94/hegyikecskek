@@ -6,14 +6,14 @@ FONTOS AZ Emailnál ha rányom a gombra valami betöltés kell!! ✅✅
 - kapcsolat oldaln az alsó form furán müködik ✅✅
 - desktop mindenki legyen ott nem kell görgethető fő oldalon az edzőknél✅✅
 - weben nem kell vissza jel ✅✅
+- desktop az általános szövege legyenek 24px és a title-k 32-48 ✅✅✅
+-részek között padding legyen nagyobb desktop és mobile ✅✅
+- footerben a logo legyen középen align-content-je. ✅✅
+- hogyan dolgozunk rész desktop-n javítás 
 - rólunk desktopon automatikusan menjen és majd meg lehessen állítani 
-- desktop az általános szövege legyenek 24px és a title-k 32-48
--részek között padding legyen nagyobb desktop és mobile
-- footerben a logo legyen középen align-content-je.
-- hogyan dolgozunk rész desktop-n javítás
 - desktopon-> hoverre az edzők listáját adja vissza és ha rányom akkor meg a fő részre menjen 
 
--edzés terv -> alapértelmezett
+-edzés terv -> alapértelmezett ✅✅✅
 -egyesületi tagság
 -edzőtáborok
 -egyéb
