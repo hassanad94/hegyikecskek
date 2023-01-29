@@ -226,6 +226,16 @@ h2 {
   margin-bottom: 45px;
 }
 
+@media (min-width: 1230px) {
+  .section.no-hero h1 {
+    font-size: 56px;
+    margin-bottom: 33px;
+  }
+  h2 {
+    margin-bottom: 90px;
+  }
+}
+
 h2,
 h3 {
   font-style: normal;
@@ -1504,6 +1514,13 @@ footer .section.footer .controls h3 {
   margin: 0px 3px;
   margin-bottom: 20px;
 }
+
+@media (min-width: 1230px) {
+  .icon-card-container > .icon-card {
+    row-gap: 15px;
+  }
+}
+
 .icon-card-container p {
   font-size: 14px;
   margin: 5px 0px;
@@ -2233,6 +2250,12 @@ details[open] summary:after {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+@media (min-width: 1230px) {
+  .rolunk .page-gallery .video-responsive {
+    margin: 110px 0px;
+  }
 }
 
 .css-bn1soe:last-child {
