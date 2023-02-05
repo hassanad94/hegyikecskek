@@ -45,7 +45,7 @@ const Egyesulet = ({ defaultData }) => {
           <p>{intro}</p>
 
           <div className="button-container center">
-            <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
+            <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
           </div>
         </div>
       </div>
@@ -133,8 +133,9 @@ const Egyesulet = ({ defaultData }) => {
             <div className="buttonWithArrow button">Kedvezményeink</div>
           </Link>
           <br />
+          <br />
 
-          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
+          <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
         </div>
       </div>
     </>

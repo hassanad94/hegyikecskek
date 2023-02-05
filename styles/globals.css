@@ -2229,17 +2229,26 @@ details[open] summary:after {
 }
 
 .tag-info-details .MuiAccordion-rounded {
-  max-width: 376px;
+  width: 100%;
   text-align: center;
+  border-bottom: 1px solid var(--base-color-2) !important;
 }
 
 .tag-info-details .MuiAccordion-rounded p {
   text-align: center !important;
 }
+.tag-info-details .MuiAccordion-rounded .description-container {
+  padding-bottom: 20px;
+}
 
 @media (min-width: 650px) {
   .tag-info-details {
     max-width: 500px;
+  }
+}
+@media (min-width: 1230px) {
+  .tag-info-details {
+    margin-bottom: 50px;
   }
 }
 
