@@ -6,12 +6,16 @@ import ContactUs from "../components/ContactUs";
 import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
-  const query = `*[_type == "camps"]`;
+  let query = `*[_type == "camps"]`;
   var defaultData = await client.fetch(query);
+
+  query = `*[_type == "socials"]`;
+  const socialData = await client.fetch(query);
 
   return {
     props: {
       defaultData,
+      socialData,
     },
     revalidate: 1, // In seconds
   };
@@ -23,10 +27,12 @@ const galeriaUrls = (items) => {
   return arrayOfUrls;
 };
 
-const Taborok = ({ defaultData }) => {
+const Taborok = ({ defaultData, socialData }) => {
   const [hun] = defaultData;
 
   const [currentCamp, setCurrentCamp] = useState(hun);
+
+  const { facebook, instagram, youtube } = socialData[0];
 
   const {
     intro,
@@ -51,18 +57,6 @@ const Taborok = ({ defaultData }) => {
         <div className="content">
           <h1>Táborok</h1>
 
-          <p>{intro}</p>
-
-          <div className="flex justify-content-center ">
-            <Image
-              objectFit="contain"
-              width={300}
-              height={163}
-              src={introImageURL}
-              alt="decoration"
-            />
-          </div>
-
           <div className="camp-selector">
             {defaultData &&
               defaultData.map((camp) => {
@@ -83,8 +77,19 @@ const Taborok = ({ defaultData }) => {
                 );
               })}
           </div>
-
           <h2 className="camp-name">{campName} EdzőTábor</h2>
+
+          <div className="flex justify-content-center image ">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              src={introImageURL}
+              alt="decoration"
+            />
+          </div>
+
+          <p>{intro}</p>
+
           <p className="center">{turns}</p>
 
           <div className="flex justify-content-center ">
@@ -124,7 +129,7 @@ const Taborok = ({ defaultData }) => {
 
       <div className="section page-gallery">
         <div className="content">
-          <h2 className="left-align">Képek a közös edzésekről</h2>
+          <h2 className="left-align">Ízelítő a táborainkból</h2>
 
           <div className="galeria-container">
             <Galeria galeria={galeriaUrls(galeria)} />
@@ -133,12 +138,59 @@ const Taborok = ({ defaultData }) => {
       </div>
 
       <div className="section">
-        <div className="content">
-          <h2 className="left-align">Szeretnék ott lenni!</h2>
+        <div className="content apply">
+          <h2 className="left-align">Szeretnél te is velünk táborozni?</h2>
 
-          <p>{join}</p>
+          <p className="center">
+            Írj nekünk, vagy vedd fel velünk a kapcsolatot a többi
+            elérhetőségünkön.
+          </p>
 
-          <OpenMessageModal buttonTitle="Edzéstervet kérek!" />
+          <div className="kapcsolat-container">
+            <div className="quick-contact">
+              <a href="mailto:info@hegyikecskek.hu">
+                &#9993; info@hegyikecskek.hu
+              </a>
+              <a href="tel:+36301234455">&#x1F4DE; +36 30 123 4455</a>
+            </div>
+
+            <div className="social-media-ref">
+              <a href={facebook}>
+                <Image
+                  objectFit="contain"
+                  width="32px"
+                  height="32px"
+                  src="/facebook.png"
+                  alt="Logo"
+                  className="logo"
+                />
+              </a>
+
+              <a href={instagram}>
+                <Image
+                  objectFit="contain"
+                  width="32px"
+                  height="32px"
+                  src="/instagram.png"
+                  alt="Logo"
+                  className="logo"
+                />
+              </a>
+
+              <a href={youtube}>
+                <Image
+                  objectFit="contain"
+                  width="32px"
+                  height="32px"
+                  src="/youtube.png"
+                  alt="Logo"
+                  className="logo"
+                />
+              </a>
+            </div>
+          </div>
+
+          <OpenMessageModal buttonTitle="Szeretnék Jelentkezni!" />
         </div>
       </div>
 
