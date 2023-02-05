@@ -81,7 +81,6 @@ const ContactUs = (...props) => {
     const response = await sendMail.json();
 
     if (!response.status) {
-      console.log(response.message);
       return alert("Hiba történt kérlek frissítsd az oldalt");
     }
 

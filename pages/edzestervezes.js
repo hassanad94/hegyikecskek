@@ -7,7 +7,6 @@ import { useStateContext } from "../context/settingContext";
 import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
-
   const coachesQuery = `*[_type == "coaches"]{
     _id, icon, page{current}
   }`;
@@ -72,16 +71,18 @@ const Edzestervezes = ({ defaultData }) => {
         <div className="content">
           <h1>Egyéni edzéstervezés</h1>
 
-          <p>{desc_1}</p>
+          <div className="page-description">
+            <p>{desc_1}</p>
 
-          <div className="flex justify-content-center ">
-            <Image
-              objectFit="contain"
-              width={300}
-              height={163}
-              src="/img/step.png"
-              alt="decoration"
-            />
+            <div className="flex image-container justify-content-center ">
+              <Image
+                objectFit="contain"
+                width={300}
+                height={163}
+                src="/img/step.png"
+                alt="decoration"
+              />
+            </div>
           </div>
 
           <br />

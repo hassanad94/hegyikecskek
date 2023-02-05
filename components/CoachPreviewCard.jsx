@@ -6,8 +6,6 @@ import Link from "@mui/material/Link";
 export default function CoachPreviewCard({ coach }) {
   const { name, price, isEuro, introduction, titles, hero, web } = coach;
 
-  console.log(price);
-
   return (
     <Card sx={{ maxWidth: 300 }} className="coach-preview-card" data-web={web}>
       <CardContent>

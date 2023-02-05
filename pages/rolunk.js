@@ -39,7 +39,13 @@ const Rolunk = ({ defaultData }) => {
         </div>
 
         <div className="decoration fill-img center">
-          <Image layout="fill" src={heroImage} alt="hero" title="Fő kép" />
+          <Image
+            layout="fill"
+            priority={true}
+            src={heroImage}
+            alt="hero"
+            title="Fő kép"
+          />
         </div>
 
         <div className="content">

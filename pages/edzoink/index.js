@@ -2,6 +2,7 @@ import { client, urlForImage } from "../../lib/client";
 import { CoachSelectorButton } from "../../components/Coaches";
 import CoachPreviewCard from "../../components/CoachPreviewCard";
 import OpenMessageModal from "../../components/OpenMessageModal";
+import { useStateContext } from "../../context/settingContext";
 
 export async function getStaticProps() {
   const query = `*[_type == "coachesSite"]`;
@@ -29,23 +30,27 @@ export async function getStaticProps() {
 const Edzoink = ({ defaultData }) => {
   const { siteData, coaches } = defaultData;
 
+  const { currentDevice } = useStateContext();
+
   const { intro } = siteData[0];
 
   return (
     <>
       <div className="section intro no-hero">
         <div className="content">
-          <h2>Edzőink</h2>
+          <h1>Edzőink</h1>
 
           <p>{intro}</p>
 
-          <div className="coach-select-container flex">
-            {coaches?.map((coach) => {
-              const { _id } = coach;
+          {currentDevice !== "desktop" && (
+            <div className="coach-select-container flex">
+              {coaches?.map((coach) => {
+                const { _id } = coach;
 
-              return <CoachSelectorButton key={_id} coach={coach} />;
-            })}
-          </div>
+                return <CoachSelectorButton key={_id} coach={coach} />;
+              })}
+            </div>
+          )}
 
           <div className="coach-preview-card-container">
             {coaches?.map((coach) => {
