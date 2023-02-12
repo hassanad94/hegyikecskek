@@ -61,8 +61,8 @@ const Footer = () => {
           <a href={facebook}>
             <Image
               objectFit="contain"
-              width="32px"
-              height="32px"
+              width="22px"
+              height="22px"
               src="/facebook.png"
               alt="Logo"
               className="logo"
@@ -72,8 +72,8 @@ const Footer = () => {
           <a href={instagram}>
             <Image
               objectFit="contain"
-              width="32px"
-              height="32px"
+              width="22px"
+              height="22px"
               src="/instagram.png"
               alt="Logo"
               className="logo"
@@ -83,8 +83,8 @@ const Footer = () => {
           <a href={youtube}>
             <Image
               objectFit="contain"
-              width="32px"
-              height="32px"
+              width="22px"
+              height="22px"
               src="/youtube.png"
               alt="Logo"
               className="logo"

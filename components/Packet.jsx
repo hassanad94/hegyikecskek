@@ -54,14 +54,16 @@ export const ReviewCard = ({ reviews }) => {
                 <div className="card-content flex center">
                   <p className="center">{review.review}</p>
 
-                  <div className="profile-pic">
-                    <Image
-                      alt="Profil kép"
-                      title={review.name}
-                      layout="fill"
-                      src={profilSrc}
-                    />
-                  </div>
+                  {profilSrc && (
+                    <div className="profile-pic">
+                      <Image
+                        alt="Profil kép"
+                        title={review.name}
+                        layout="fill"
+                        src={profilSrc}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="name">
@@ -162,7 +164,9 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
                     border: "none!important",
                     marginBottom: "10px",
                   }}
-                  className="training-item-container"
+                  className={`training-item-container ${
+                    packetContain > -1 ? "included" : "excluded"
+                  }`}
                 >
                   <AccordionSummary
                     className="title"

@@ -8,6 +8,7 @@ import { ReviewCard } from "../components/Packet";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
 import OpenMessageModal from "../components/OpenMessageModal";
+import FlipCameraAndroidIcon from "@mui/icons-material/FlipCameraAndroid";
 
 import { useState } from "react";
 
@@ -70,7 +71,10 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
       target
     );
 
-    let cardElements = [...cardExtrainfo];
+    let cardElements =
+      element.type !== "mouseenter"
+        ? [...cardExtrainfo]
+        : [false, false, false, false];
 
     cardElements[getcurrentChildIndex] = !cardElements[getcurrentChildIndex];
 
@@ -116,7 +120,14 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
           <h2>Ha szeretnél</h2>
 
           <div className="image-card-container">
-            <div className="image-card" onClick={handleReasonCardClick}>
+            <div
+              className="image-card"
+              onMouseEnter={handleReasonCardClick}
+              onMouseLeave={() =>
+                setCardExtrainfo([false, false, false, false])
+              }
+              onClick={handleReasonCardClick}
+            >
               <Image
                 layout="fill"
                 src="/img/reason-1.png"
@@ -132,20 +143,19 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div className="rotateIcon">
-                    <Image
-                      width={23}
-                      height={23}
-                      src="/icons/rotate-left.svg"
-                      alt="Information"
-                    />{" "}
-                  </div>
                   <p>Fejlődni aszfalton</p>
                 </div>
               )}
             </div>
 
-            <div className="image-card" onClick={handleReasonCardClick}>
+            <div
+              className="image-card"
+              onMouseEnter={handleReasonCardClick}
+              onMouseLeave={() =>
+                setCardExtrainfo([false, false, false, false])
+              }
+              onClick={handleReasonCardClick}
+            >
               <Image
                 layout="fill"
                 src="/img/reason-2.png"
@@ -161,20 +171,19 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div className="rotateIcon">
-                    <Image
-                      width={23}
-                      height={23}
-                      src="/icons/rotate-left.svg"
-                      alt="Information"
-                    />{" "}
-                  </div>
                   <p>Fejlődni terepen</p>
                 </div>
               )}
             </div>
 
-            <div className="image-card" onClick={handleReasonCardClick}>
+            <div
+              className="image-card"
+              onMouseEnter={handleReasonCardClick}
+              onMouseLeave={() =>
+                setCardExtrainfo([false, false, false, false])
+              }
+              onClick={handleReasonCardClick}
+            >
               <Image
                 layout="fill"
                 src="/img/reason-3.png"
@@ -190,20 +199,19 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div className="rotateIcon">
-                    <Image
-                      width={23}
-                      height={23}
-                      src="/icons/rotate-left.svg"
-                      alt="Information"
-                    />{" "}
-                  </div>
                   <p>Elkezdeni futni</p>
                 </div>
               )}
             </div>
 
-            <div className="image-card" onClick={handleReasonCardClick}>
+            <div
+              className="image-card"
+              onMouseEnter={handleReasonCardClick}
+              onMouseLeave={() =>
+                setCardExtrainfo([false, false, false, false])
+              }
+              onClick={handleReasonCardClick}
+            >
               <Image
                 layout="fill"
                 src="/img/reason-4.png"
@@ -219,14 +227,6 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
                 </div>
               ) : (
                 <div className="description">
-                  <div className="rotateIcon">
-                    <Image
-                      width={23}
-                      height={23}
-                      src="/icons/rotate-left.svg"
-                      alt="Information"
-                    />{" "}
-                  </div>
                   <p>Csapathoz tartozni</p>
                 </div>
               )}

@@ -40,7 +40,7 @@ const Edzoink = ({ defaultData }) => {
         <div className="content">
           <h1>Edzőink</h1>
 
-          <p>{intro}</p>
+          <p className="text-stream center">{intro}</p>
 
           {currentDevice !== "desktop" && (
             <div className="coach-select-container flex">
@@ -60,7 +60,7 @@ const Edzoink = ({ defaultData }) => {
             })}
           </div>
 
-          <OpenMessageModal buttonTitle="Edzéstervet Kérek" />
+          <OpenMessageModal buttonTitle="Edzéstervet kérek" />
         </div>
       </div>
     </>

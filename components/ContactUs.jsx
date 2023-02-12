@@ -156,7 +156,7 @@ const ContactUs = (...props) => {
                 name={field.name}
                 value={field.value}
                 onChange={field.onChange}
-                label="email"
+                label="E-mail"
                 variant="filled"
                 className="input"
                 style={{ marginTop: 11 }}

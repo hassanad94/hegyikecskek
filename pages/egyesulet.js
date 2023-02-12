@@ -42,7 +42,7 @@ const Egyesulet = ({ defaultData }) => {
         <div className="content">
           <h1>Az egyesület</h1>
 
-          <p>{intro}</p>
+          <p className="text-stream">{intro}</p>
 
           <div className="button-container center">
             <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
