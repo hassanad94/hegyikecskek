@@ -263,7 +263,7 @@ h3.left-align:before {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1230px) {
   h2::before,
   h3::before {
     top: 39px;
@@ -1532,9 +1532,6 @@ footer .section.footer .controls h3 {
   footer .section.footer > .logo-container {
     margin-bottom: 5px;
   }
-  footer .section.footer > .controls {
-    margin-top: 25px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -2211,12 +2208,12 @@ details[open] summary:after {
 .camp-name {
   margin-bottom: 10px;
   line-height: 1.2;
-  display: block !important;
 }
 
 @media (min-width: 600px) {
   .camp-name {
     text-align: center !important;
+    margin-bottom: 35px;
   }
 }
 
@@ -2325,6 +2322,22 @@ details[open] summary:after {
   .tag-info-details {
     margin-bottom: 50px;
   }
+
+  .tag-info-details .MuiAccordionSummary-content .MuiTypography-root {
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  .tag-info-desc {
+    font-size: 28px;
+    font-style: italic;
+  }
+
+  .egyesulet main .btn {
+    min-width: 247px;
+    padding: 10px;
+    font-size: 20px;
+  }
 }
 
 .modal-message {
@@ -2411,9 +2424,13 @@ details[open] summary:after {
   row-gap: 5px;
 }
 
+.kapcsolat main .kapcsolat-container .quick-contact a {
+  border-color: #fff;
+  font-size: 20px;
+}
 .kapcsolat-container .quick-contact a {
   font-family: noto-sans, sans-serif;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
 }
 
 .kapcsolat-container .social-media-ref {
@@ -2508,6 +2525,7 @@ details[open] summary:after {
   }
   .camp-selector .button {
     margin-bottom: 50px;
+    font-size: 20px;
   }
   .taborok .intro .image {
     height: 70vh;

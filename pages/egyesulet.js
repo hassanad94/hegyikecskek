@@ -84,7 +84,7 @@ const Egyesulet = ({ defaultData }) => {
       <div className="section">
         <div className="content">
           <h2 className="">Tagsági információk</h2>
-          <p className="center">{tagInfo}</p>
+          <p className="center tag-info-desc">{tagInfo}</p>
 
           <div className="tag-info-details details-container">
             {tagdescription &&
