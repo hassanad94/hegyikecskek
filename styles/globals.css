@@ -379,7 +379,7 @@ body.modal-open .main-container {
 }
 
 .navbar {
-  z-index: 9999999;
+  z-index: 999;
   position: fixed;
   top: -1px;
   left: -1px;
@@ -2227,6 +2227,7 @@ details[open] summary:after {
 
 .galeria-selector {
   margin-top: 15px;
+  margin-bottom: 60px;
 }
 .galeria-selector .button {
   margin: 10px 5px 10px 5px;
@@ -2552,4 +2553,8 @@ h3.left-align:before {
   .taborok .apply h2 {
     margin-bottom: 100px;
   }
+}
+
+.yarl__portal_open {
+  z-index: 555555555 !important;
 }

@@ -2,7 +2,6 @@
 import GaleriaList from "../components/GaleriaList";
 import { client, urlForImage } from "../lib/client";
 import { useState, useEffect } from "react";
-import { number } from "prop-types";
 
 export async function getStaticProps() {
   const query = `*[_type == "galeries"]`;
@@ -61,7 +60,7 @@ const Galeria = ({ defaultData }) => {
 
                 return (
                   <div
-                    key={_id}
+                    key={slug.current}
                     onClick={() => {
                       setSelectedGaleries((prev) => ({
                         ...prev,

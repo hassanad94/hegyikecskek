@@ -27,7 +27,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.36.1",
+    "react-image-lightbox": "^5.1.4",
     "react-minimal-pie-chart": "^8.3.0",
+    "react-photo-album": "^2.0.2",
     "react-toastify": "^9.0.8",
     "swiper": "^8.3.2"
   },
