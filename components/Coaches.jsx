@@ -22,19 +22,25 @@ export const CoachesPreview = ({ coaches }) => {
               coach.icon !== null && urlForImage(coach.icon).width(400).url();
 
             return (
-              <Link key={coach.name} href={`/edzoink/${coach.page.current}`}>
-                <div className="coach-slide center cursor">
-                  <div className="image-container">
-                    <Image
-                      alt="Edzők Kép"
-                      title={coach.name}
-                      layout="fill"
-                      src={profilSrc}
-                    />
+              <Link
+                key={coach.name}
+                passHref
+                legacyBehavior
+                href={`/edzoink/${coach.page.current}`}
+              >
+                <a>
+                  <div className="coach-slide center cursor">
+                    <div className="image-container">
+                      <Image
+                        alt="Edzők Kép"
+                        title={coach.name}
+                        layout="fill"
+                        src={profilSrc}
+                      />
+                    </div>
+                    <p className="center">{coach.name}</p>
                   </div>
-
-                  <p className="center">{coach.name}</p>
-                </div>
+                </a>
               </Link>
             );
           })}
@@ -60,18 +66,24 @@ export const CoachesPreview = ({ coaches }) => {
 
           return (
             <SwiperSlide key={i}>
-              <Link href={`/edzoink/${coach.page.current}`}>
-                <div className="coach-slide center cursor">
-                  <div className="image-container">
-                    <Image
-                      alt="Edzők Kép"
-                      title={coach.name}
-                      layout="fill"
-                      src={profilSrc}
-                    />
+              <Link
+                passHref
+                legacyBehavior
+                href={`/edzoink/${coach.page.current}`}
+              >
+                <a>
+                  <div className="coach-slide center cursor">
+                    <div className="image-container">
+                      <Image
+                        alt="Edzők Kép"
+                        title={coach.name}
+                        layout="fill"
+                        src={profilSrc}
+                      />
+                    </div>
+                    <p className="center">{coach.name}</p>
                   </div>
-                  <p className="center">{coach.name}</p>
-                </div>
+                </a>
               </Link>
             </SwiperSlide>
           );

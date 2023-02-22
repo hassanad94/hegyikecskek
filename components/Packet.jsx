@@ -118,10 +118,18 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
                 const href = `/edzoink/${page.current}`;
 
                 return (
-                  <Link key={_id} href={href} title={href}>
-                    <div className="coach-image rounded-full cursor">
-                      <Avatar src={icon} alt="Edzők" size="md" />
-                    </div>
+                  <Link
+                    key={_id}
+                    href={href}
+                    passHref
+                    legacyBehavior
+                    title={href}
+                  >
+                    <a>
+                      <div className="coach-image rounded-full cursor">
+                        <Avatar src={icon} alt="Edzők" size="md" />
+                      </div>
+                    </a>
                   </Link>
                 );
               })}

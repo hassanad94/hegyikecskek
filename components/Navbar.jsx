@@ -53,7 +53,7 @@ const Navbar = () => {
             <div className="flex">
               {simpleLinks.map((item, i) => (
                 <li className="" key={`${i * 4}`}>
-                  <Link href={item.link}>
+                  <Link passHref legacyBehavior href={item.link}>
                     <a className="link-item">{item.name}</a>
                   </Link>
                 </li>

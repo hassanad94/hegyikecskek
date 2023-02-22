@@ -1903,7 +1903,7 @@ details[open] summary:after {
   padding: 0px 16px;
 }
 
-.pricing-container .card .coaches-container .coach-image {
+.pricing-container .card .coaches-container a {
   -ms-flex-preferred-size: 70px;
   flex-basis: 70px;
 }
