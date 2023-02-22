@@ -48,6 +48,8 @@ function Edzo({ defaultData }) {
     <>
       <div className="section intro no-hero">
         <div className="content">
+          <h1>{name}</h1>
+
           <div className="profil-image">
             <Image
               width={150}
@@ -57,8 +59,6 @@ function Edzo({ defaultData }) {
               alt="Edző Profil Kép"
             />
           </div>
-
-          <h1>{name}</h1>
 
           <div className="about-container">
             <h2>Rólam</h2>
