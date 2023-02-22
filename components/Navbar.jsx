@@ -2,27 +2,49 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { ClickAwayListener, MenuItem, MenuList, Paper } from "@mui/material";
+import { client } from "../lib/client";
 
 /*TO-do MAUI DRAwe-re csere*/
+const simpleLinks = [
+  { name: "Főoldal", link: "/" },
+  { name: "Rólunk", link: "/rolunk" },
+  { name: "Edzéstervezés", link: "/edzestervezes" },
+  { name: "Edzőink", link: "/edzoink" },
+  // { name: "Közös Edzések", link: "/kozosedzesek" },
+  { name: "Egyesületről", link: "/egyesulet" },
+  { name: "Táborok", link: "/taborok" },
+  { name: "Galéria", link: "/galeria" },
+];
+
+const highlightedLinks = [
+  // { name: "Tagság", link: "/tagsag" },
+  { name: "Kapcsolat", link: "/kapcsolat" },
+];
 
 const Navbar = () => {
-  const simpleLinks = [
-    { name: "Főoldal", link: "/" },
-    { name: "Rólunk", link: "/rolunk" },
-    { name: "Edzéstervezés", link: "/edzestervezes" },
-    { name: "Edzőink", link: "/edzoink" },
-    // { name: "Közös Edzések", link: "/kozosedzesek" },
-    { name: "Egyesületről", link: "/egyesulet" },
-    { name: "Táborok", link: "/taborok" },
-    { name: "Galéria", link: "/galeria" },
-  ];
-
-  const highlightedLinks = [
-    // { name: "Tagság", link: "/tagsag" },
-    { name: "Kapcsolat", link: "/kapcsolat" },
-  ];
-
   const [activeBar, setActiveBar] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
+
+  const [coaches, setCoaches] = useState({});
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "coaches"]{
+         page{current}, name}`
+      )
+      .then((data) => setCoaches(data))
+      .catch(console.error);
+  }, []);
+
+  const handleMenuOpen = () => {
+    setMenuOpen(true);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
 
   const router = useRouter();
 
@@ -45,25 +67,71 @@ const Navbar = () => {
     return setActiveBar(false);
   }, [router.pathname]);
 
+  console.log(coaches);
+
   return (
     <div className={"navbar" + (activeBar ? " open" : "")}>
       <div className="wrapper">
         <div className="menu-content desktop">
           <ul className="menu-items">
             <div className="flex">
-              {simpleLinks.map((item, i) => (
-                <li className="" key={`${i * 4}`}>
-                  <Link passHref legacyBehavior href={item.link}>
-                    <a className="link-item">{item.name}</a>
-                  </Link>
-                </li>
-              ))}
+              {simpleLinks.map((item) => {
+                if (item.link === "/edzoink") {
+                  return (
+                    <li
+                      onMouseEnter={handleMenuOpen}
+                      onMouseLeave={handleMenuClose}
+                      className=""
+                      key={item.link}
+                    >
+                      <Link passHref legacyBehavior href={item.link}>
+                        <a className="link-item">{item.name}</a>
+                      </Link>
+
+                      {menuOpen && (
+                        <ClickAwayListener onClickAway={handleMenuClose}>
+                          <Paper className="dropdown-links">
+                            <MenuList>
+                              {coaches.length
+                                ? coaches?.map((coach) => {
+                                    const coachHref = `/edzoink/${coach.page.current}`;
+
+                                    return (
+                                      <Link
+                                        key={coachHref}
+                                        passHref
+                                        legacyBehavior
+                                        href={coachHref}
+                                      >
+                                        <a>
+                                          <MenuItem>{coach.name}</MenuItem>
+                                        </a>
+                                      </Link>
+                                    );
+                                  })
+                                : null}
+                            </MenuList>
+                          </Paper>
+                        </ClickAwayListener>
+                      )}
+                    </li>
+                  );
+                }
+
+                return (
+                  <li className="" key={item.link}>
+                    <Link passHref legacyBehavior href={item.link}>
+                      <a className="link-item">{item.name}</a>
+                    </Link>
+                  </li>
+                );
+              })}
             </div>
 
             <div className="separeted">
               {highlightedLinks.map((item, i) => (
                 <li className="" key={`${i * 4}`}>
-                  <Link href={item.link}>
+                  <Link passHref legacyBehavior href={item.link}>
                     <a className="link-item">{item.name}</a>
                   </Link>
                 </li>
@@ -91,7 +159,7 @@ const Navbar = () => {
           <div className="flex column">
             {simpleLinks.map((item, i) => (
               <li className="" key={`${i * 4}`}>
-                <Link href={item.link}>
+                <Link passHref legacyBehavior href={item.link}>
                   <a className="link-item">{item.name}</a>
                 </Link>
               </li>
@@ -101,7 +169,7 @@ const Navbar = () => {
           <div className="separeted flex column">
             {highlightedLinks.map((item, i) => (
               <li className="" key={`${i * 4}`}>
-                <Link href={item.link}>
+                <Link passHref legacyBehavior href={item.link}>
                   <a className="link-item">{item.name}</a>
                 </Link>
               </li>

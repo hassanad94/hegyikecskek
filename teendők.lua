@@ -12,7 +12,8 @@ FONTOS AZ Emailnál ha rányom a gombra valami betöltés kell!! ✅✅
 - hogyan dolgozunk rész desktop-n javítás 
 - rólunk desktopon automatikusan menjen és majd meg lehessen állítani 
 - white-t nem lehet használni. ✅✅
-- desktopon-> hoverre az edzők listáját adja vissza és ha rányom akkor meg a fő részre menjen 
+- desktopon-> hoverre az edzők listáját adja vissza és ha rányom akkor meg a fő részre menjen  ✅✅
+-Menut még meg kell csinálni 
 - helyek 
 
 -edzés terv -> alapértelmezett ✅✅✅
