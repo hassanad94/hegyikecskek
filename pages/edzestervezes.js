@@ -8,7 +8,7 @@ import OpenMessageModal from "../components/OpenMessageModal";
 
 export async function getStaticProps() {
   const coachesQuery = `*[_type == "coaches"]{
-    _id, icon, page{current}
+    _id, icon, page{current}, page
   }`;
   var coaches = await client.fetch(coachesQuery);
 
@@ -279,7 +279,7 @@ const Edzestervezes = ({ defaultData }) => {
                 />
               </>
             )}
-            {(currentDevice === "tablet" || currentDevice === "desktop") &&
+            {currentDevice !== "mobile" &&
               trainingPackets.map((packet, id) => {
                 return (
                   <PriceCard

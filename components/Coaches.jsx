@@ -3,6 +3,7 @@ import { Navigation, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import { useStateContext } from "../context/settingContext";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,18 +22,20 @@ export const CoachesPreview = ({ coaches }) => {
               coach.icon !== null && urlForImage(coach.icon).width(400).url();
 
             return (
-              <div key={coach.name} className="coach-slide center">
-                <div className="image-container">
-                  <Image
-                    alt="Edzők Kép"
-                    title={coach.name}
-                    layout="fill"
-                    src={profilSrc}
-                  />
-                </div>
+              <Link key={coach.name} href={`/edzoink/${coach.page.current}`}>
+                <div className="coach-slide center cursor">
+                  <div className="image-container">
+                    <Image
+                      alt="Edzők Kép"
+                      title={coach.name}
+                      layout="fill"
+                      src={profilSrc}
+                    />
+                  </div>
 
-                <p className="center">{coach.name}</p>
-              </div>
+                  <p className="center">{coach.name}</p>
+                </div>
+              </Link>
             );
           })}
       </div>
@@ -53,20 +56,23 @@ export const CoachesPreview = ({ coaches }) => {
           let profilSrc =
             coach.icon !== null && urlForImage(coach.icon).width(400).url();
 
+          console.log(coach);
+
           return (
             <SwiperSlide key={i}>
-              <div className="coach-slide center">
-                <div className="image-container">
-                  <Image
-                    alt="Edzők Kép"
-                    title={coach.name}
-                    layout="fill"
-                    src={profilSrc}
-                  />
+              <Link href={`/edzoink/${coach.page.current}`}>
+                <div className="coach-slide center cursor">
+                  <div className="image-container">
+                    <Image
+                      alt="Edzők Kép"
+                      title={coach.name}
+                      layout="fill"
+                      src={profilSrc}
+                    />
+                  </div>
+                  <p className="center">{coach.name}</p>
                 </div>
-
-                <p className="center">{coach.name}</p>
-              </div>
+              </Link>
             </SwiperSlide>
           );
         })}

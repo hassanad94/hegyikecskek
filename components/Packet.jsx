@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
+import { Navigation, FreeMode } from "swiper";
 import Image from "next/image";
 import { urlForImage } from "../lib/client";
 import OpenMessageModal from "./OpenMessageModal";
@@ -88,7 +87,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { formatter } from "../lib/utilities";
-import { useStateContext } from "../context/settingContext";
+import Link from "next/link";
 
 const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
   const { title, name, services, price, priceEuro } = trainingPacket;
@@ -115,10 +114,15 @@ const PriceCard = ({ trainingPacket, trainingItems, coaches }) => {
             {coaches &&
               coaches.map((coach) => {
                 let { icon, page, _id } = coach;
+
+                const href = `/edzoink/${page.current}`;
+
                 return (
-                  <div key={_id} className="coach-image rounded-full">
-                    <Avatar src={icon} alt="Edzők" size="md" />
-                  </div>
+                  <Link key={_id} href={href} title={href}>
+                    <div className="coach-image rounded-full cursor">
+                      <Avatar src={icon} alt="Edzők" size="md" />
+                    </div>
+                  </Link>
                 );
               })}
           </Box>

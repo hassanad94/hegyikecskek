@@ -11,9 +11,9 @@ FONTOS AZ Emailnál ha rányom a gombra valami betöltés kell!! ✅✅
 - footerben a logo legyen középen align-content-je. ✅✅
 - hogyan dolgozunk rész desktop-n javítás 
 - rólunk desktopon automatikusan menjen és majd meg lehessen állítani 
+- white-t nem lehet használni. ✅✅
 - desktopon-> hoverre az edzők listáját adja vissza és ha rányom akkor meg a fő részre menjen 
 - helyek 
-- white-t nem lehet használni. 
 
 -edzés terv -> alapértelmezett ✅✅✅
 -egyesületi tagság

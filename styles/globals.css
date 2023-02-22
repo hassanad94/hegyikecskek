@@ -175,6 +175,9 @@ p.left-align {
 .rounded-full {
   border-radius: 50%;
 }
+.cursor {
+  cursor: pointer;
+}
 
 .button {
   cursor: pointer;
@@ -1114,6 +1117,10 @@ footer .section::before {
   .coach-slide .image-container {
     width: 120px;
     height: 120px;
+    filter: grayscale(70%);
+  }
+  .coach-slide .image-container:hover {
+    filter: none;
   }
 }
 
@@ -2565,4 +2572,10 @@ h3.left-align:before {
 [class*="edzoink/"] .profil-image img {
   object-fit: cover;
   object-position: top;
+}
+
+@media (min-width: 1230px) {
+  [class*="edzoink/"] .about-container {
+    margin-top: 30px;
+  }
 }

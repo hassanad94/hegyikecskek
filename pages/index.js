@@ -8,7 +8,6 @@ import { ReviewCard } from "../components/Packet";
 import ContactUs from "../components/ContactUs";
 import { useStateContext } from "../context/settingContext";
 import OpenMessageModal from "../components/OpenMessageModal";
-import FlipCameraAndroidIcon from "@mui/icons-material/FlipCameraAndroid";
 
 import { useState } from "react";
 
@@ -19,7 +18,7 @@ export async function getStaticProps() {
   var defaultData = await client.fetch(query);
 
   const coaches = `*[_type == "coaches"] {
-    _id, hero, name, icon
+    _id, hero, name, icon,page
   }`;
 
   const coachesData = await client.fetch(coaches);
