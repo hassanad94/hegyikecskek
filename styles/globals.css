@@ -1900,6 +1900,9 @@ details[open] summary:after {
   -ms-flex-preferred-size: 70px;
   flex-basis: 70px;
 }
+.pricing-container .card .coaches-container .coach-image img {
+  object-position: top;
+}
 .pricing-container .card .coaches-container .coach-image > div {
   margin: auto;
 }
@@ -2557,4 +2560,9 @@ h3.left-align:before {
 
 .yarl__portal_open {
   z-index: 555555555 !important;
+}
+
+[class*="edzoink/"] .profil-image img {
+  object-fit: cover;
+  object-position: top;
 }
