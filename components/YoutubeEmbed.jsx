@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const YoutubeEmbed = ({ embedId, maxWidth }) => (
+const YoutubeEmbed = ({ embedId, maxWidth, maxHeight }) => (
   <div className="video-responsive flex center">
     <iframe
       width="100%"
@@ -15,9 +15,10 @@ const YoutubeEmbed = ({ embedId, maxWidth }) => (
       // style="height: 57vw;maxHeight: 350px;maxWidth: 600px;"
       style={{
         height: "57vw",
-        maxHeight: "350px",
-        maxWidth: `${maxWidth}px` || "1024px",
+        maxHeight: maxHeight || "350px",
+        maxWidth: maxWidth || "1024px",
         borderRadius: "var(--base-border-radius)",
+        boxShadow: "var( --base-shadow )",
       }}
     />
   </div>

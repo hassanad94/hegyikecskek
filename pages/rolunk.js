@@ -165,7 +165,11 @@ const Rolunk = ({ defaultData }) => {
 
           <p>{teamdescription}</p>
 
-          <YoutubeEmbed maxWidth={600} embedId={youtubeEmbemedId} />
+          <YoutubeEmbed
+            maxWidth="100%"
+            maxHeight="490px"
+            embedId={youtubeEmbemedId}
+          />
 
           <div className="galeria-container">
             <Galeria galeria={galeriaUrls(galeria)} />

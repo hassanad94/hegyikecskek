@@ -25,7 +25,7 @@ const highlightedLinks = [
 
 const Navbar = () => {
   const [activeBar, setActiveBar] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [coaches, setCoaches] = useState({});
 
