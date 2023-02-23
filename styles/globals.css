@@ -2583,6 +2583,7 @@ h3.left-align:before {
 .menu-content.desktop .dropdown-links {
   position: absolute;
   top: 100%;
+  right: 0;
   background: transparent;
   box-shadow: none;
   padding-top: 7px;
@@ -2594,4 +2595,30 @@ h3.left-align:before {
   color: white;
   background: hsl(0 0% 20% / 1);
   border-radius: var(--base-border-radius);
+}
+
+.menu-content.desktop .edzoink-link {
+  width: 14ch !important;
+}
+.menu-content.desktop .edzoink-link.open {
+  border: 1px solid var(--base-color-2);
+  border-radius: var(--base-border-radius);
+}
+
+.menu-content.desktop .edzoink-link .link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.menu-content.desktop .edzoink-link ul {
+  width: 14ch !important;
+}
+.menu-content.desktop .edzoink-link li {
+  padding: 7px 8px;
+  font-size: 15px;
+}
+.menu-content.desktop .edzoink-link li:hover {
+  background-color: rgb(0 0 0 / 20%);
 }

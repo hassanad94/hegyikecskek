@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { ClickAwayListener, MenuItem, MenuList, Paper } from "@mui/material";
 import { client } from "../lib/client";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 /*TO-do MAUI DRAwe-re csere*/
 const simpleLinks = [
@@ -81,14 +82,16 @@ const Navbar = () => {
                     <li
                       onMouseEnter={handleMenuOpen}
                       onMouseLeave={handleMenuClose}
-                      className=""
+                      className={`edzoink-link${menuOpen ? " open" : ""}`}
                       key={item.link}
                     >
                       <Link passHref legacyBehavior href={item.link}>
-                        <a className="link-item">{item.name}</a>
+                        <a className="link-item">
+                          {item.name} <KeyboardArrowDownIcon />
+                        </a>
                       </Link>
 
-                      {menuOpen && (
+                      {true && (
                         <ClickAwayListener onClickAway={handleMenuClose}>
                           <Paper className="dropdown-links">
                             <MenuList>

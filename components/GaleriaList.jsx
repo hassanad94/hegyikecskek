@@ -1,8 +1,3 @@
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Image from "next/image";
-import { useStateContext } from "../context/settingContext";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "react-image-lightbox";
 // import Lightbox from "yet-another-react-lightbox";
