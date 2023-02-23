@@ -91,7 +91,7 @@ const Navbar = () => {
                         </a>
                       </Link>
 
-                      {true && (
+                      {menuOpen && (
                         <ClickAwayListener onClickAway={handleMenuClose}>
                           <Paper className="dropdown-links">
                             <MenuList>
