@@ -1373,10 +1373,7 @@ footer .section::before {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
-  .contact-container .name-email-fields {
-    display: flex;
-    column-gap: 25px;
-  }
+
   .contact-container .email-subject {
     width: 100%;
   }
@@ -1495,6 +1492,7 @@ footer .section.footer .footer-menu {
 footer .section.footer .footer-menu a {
   line-height: 24px;
   color: #000;
+  text-transform: capitalize;
 }
 footer .section.footer .btn {
   margin-bottom: 8px;
@@ -2051,6 +2049,7 @@ details[open] summary:after {
   padding: 5px;
   font-weight: bold;
   font-size: 12px;
+  flex: 1;
 }
 
 .coach-preview-card-container {
@@ -2059,7 +2058,7 @@ details[open] summary:after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -2303,9 +2302,11 @@ details[open] summary:after {
   width: 102px;
   height: 119px;
 }
+
 .tag-info-details .MuiPaper-elevation:before {
   display: none;
 }
+
 .tag-info-details {
   margin: auto;
   margin-bottom: 25px;
@@ -2317,9 +2318,6 @@ details[open] summary:after {
   border-bottom: 1px solid var(--base-color-2) !important;
 }
 
-.tag-info-details .MuiAccordion-rounded p {
-  text-align: center !important;
-}
 .tag-info-details .MuiAccordion-rounded .description-container {
   padding-bottom: 20px;
 }
@@ -2342,12 +2340,6 @@ details[open] summary:after {
   .tag-info-desc {
     font-size: 28px;
     font-style: italic;
-  }
-
-  .egyesulet main .btn {
-    min-width: 247px;
-    padding: 10px;
-    font-size: 20px;
   }
 }
 
@@ -2412,7 +2404,7 @@ details[open] summary:after {
   width: 25px;
   height: 25px;
   top: 14%;
-  z-index: 555555;
+  z-index: 555;
   left: var(--base-section-padding);
   cursor: pointer;
   background: #cc4125a1;
@@ -2621,4 +2613,149 @@ h3.left-align:before {
 }
 .menu-content.desktop .edzoink-link li:hover {
   background-color: rgb(0 0 0 / 20%);
+}
+
+.edzestervezes .workflow {
+  font-size: 16px;
+  padding-left: 1ch;
+}
+.edzestervezes .workflow p {
+  font-size: 0.85em;
+}
+
+@media (min-width: 600px) {
+  .edzestervezes .workflow-container {
+    justify-content: center;
+  }
+}
+
+main details[open] summary {
+  font-style: italic;
+  font-size: 17px;
+}
+
+.close-modal {
+  font-size: 25px;
+  position: absolute;
+  top: -20px;
+  right: -8px;
+  padding: 1px;
+  border-radius: 50%;
+  padding: 1px 9px;
+  font-weight: bold;
+  background: var(--base-color-2);
+  color: #fff;
+}
+
+.galerialist-container img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.masonary-gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: calc(100% / 3);
+  -moz-column-width: calc(100% / 3);
+  column-width: calc(100% / 3);
+  padding: 0 12px;
+}
+
+.masonary-gallery img {
+  min-height: 300px;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 5px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 5px;
+}
+
+.my-masonry-grid_column > div img {
+  width: auto;
+  height: auto;
+}
+
+.my-masonry-grid_column .gallery-image-container:hover {
+  filter: opacity(0.7);
+  cursor: pointer;
+}
+
+.model {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  overflow: hidden;
+  z-index: 9999999;
+}
+
+.model.open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.model img {
+  display: block;
+  line-height: 0;
+  padding: 20px 0 20px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.model.open svg {
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+}
+
+.model.open svg.close-model {
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+}
+
+.model.open svg.next {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+.model.open svg.prev {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.email-sendresponse {
+  text-align: center;
 }

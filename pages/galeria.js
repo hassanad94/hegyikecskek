@@ -38,7 +38,7 @@ const Galeria = ({ defaultData }) => {
 
     for (const galeriaItem of filteredBySelectionGaleria) {
       mergedImageUrls = mergedImageUrls.concat(
-        galeriaItem.images.map((img) => urlForImage(img).url())
+        galeriaItem.images?.map((img) => urlForImage(img).url())
       );
     }
 

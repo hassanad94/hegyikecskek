@@ -36,7 +36,7 @@ export const ReviewCard = ({ reviews }) => {
     >
       {reviews &&
         reviews.map((review, i) => {
-          let profilSrc = urlForImage(review.hero).url();
+          let profilSrc = review.hero ? urlForImage(review.hero)?.url() : null;
 
           return (
             <SwiperSlide key={i}>

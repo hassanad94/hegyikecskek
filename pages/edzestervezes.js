@@ -95,8 +95,8 @@ const Edzestervezes = ({ defaultData }) => {
         <div className="content">
           <h2 className="left-align">Hogyan dolgozunk?</h2>
 
-          <div className="flex justify-content-center">
-            <ul className="details-container">
+          <div className="flex workflow-container">
+            <ul className="details-container workflow">
               {workflows &&
                 workflows.map((work, key) => {
                   let [title, desc] = work.split("|");

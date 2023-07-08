@@ -1,0 +1,5 @@
+{
+  "editor.formatOnPaste": true,
+  "prettier.bracketSameLine": false,
+  "editor.accessibilitySupport": "off"
+}

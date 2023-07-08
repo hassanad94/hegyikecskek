@@ -62,8 +62,6 @@ export const CoachesPreview = ({ coaches }) => {
           let profilSrc =
             coach.icon !== null && urlForImage(coach.icon).width(400).url();
 
-          console.log(coach);
-
           return (
             <SwiperSlide key={i}>
               <Link

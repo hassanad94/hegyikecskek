@@ -52,6 +52,8 @@ const ContactUs = (...props) => {
   const onSubmit = async (data) => {
     const { name, email, message } = data;
 
+    console.log(data);
+
     let errors = {};
 
     if (message.length === 0) {
@@ -62,7 +64,7 @@ const ContactUs = (...props) => {
       errors = { ...errors, email: true };
     }
 
-    if (!/^[a-zA-Z]{1,20}( [a-zA-Z]{1,20}){1,2}$/.test(name.trim())) {
+    if (name.length === 0 || name.length < 3) {
       errors = { ...errors, name: true };
     }
 
@@ -92,22 +94,22 @@ const ContactUs = (...props) => {
     return (
       <div className="succesfull-email">
         {" "}
-        ✅✅Sikeresen Elküldted az email-t. Hamarosan kapcsolatba lépünk veled a
-        megadott email címen.✅✅
+        ✅✅ Sikeresen Elküldted az email-t. Hamarosan kapcsolatba lépünk veled
+        a megadott email címen. ✅✅
       </div>
     );
   }
 
   if (emilIsSending) {
     return (
-      <>
+      <div className="email-sendresponse">
         <Image
           alt="Email sending Loading gif"
           src="/icons/emailLoding.gif"
           width={150}
           height={150}
         />
-      </>
+      </div>
     );
   }
 
@@ -117,7 +119,7 @@ const ContactUs = (...props) => {
       {description && (
         <p>
           Szeretnél egyéni edzéstervet és elérni a céljaidat? Írj nekünk, és
-          felvesszük veled a kapcsoaltot, hogy megbeszélhessük a részelteket!
+          felvesszük veled a kapcsoltot, hogy megbeszélhessük a részleteket!
         </p>
       )}
 
@@ -172,7 +174,7 @@ const ContactUs = (...props) => {
         <Controller
           control={control}
           name="subject"
-          defaultValue={"edzés terv"}
+          defaultValue={"edzésterv"}
           render={({ field }) => (
             <FormControl variant="filled" className="subject-field">
               <InputLabel id="demo-simple-select-label">
@@ -183,7 +185,7 @@ const ContactUs = (...props) => {
                 onChange={field.onChange}
                 label="Mivel kapcsolatban érdeklődsz?"
               >
-                <MenuItem value="edzés terv">Edzés terv</MenuItem>
+                <MenuItem value="edzésterv">Edzésterv</MenuItem>
                 <MenuItem value="egyesületi tagság">Egyesületi tagság</MenuItem>
                 <MenuItem value="edzőtáborok">Edzőtáborok</MenuItem>
                 <MenuItem value="egyéb">Egyéb</MenuItem>
@@ -214,7 +216,7 @@ const ContactUs = (...props) => {
 
         {formError.message && (
           <Alert severity="error">
-            Kérlek ne hagyd üresen az üezenet mezőt!
+            Kérlek ne hagyd üresen az üzenet mezőt!
           </Alert>
         )}
 

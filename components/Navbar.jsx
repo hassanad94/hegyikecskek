@@ -68,8 +68,6 @@ const Navbar = () => {
     return setActiveBar(false);
   }, [router.pathname]);
 
-  console.log(coaches);
-
   return (
     <div className={"navbar" + (activeBar ? " open" : "")}>
       <div className="wrapper">

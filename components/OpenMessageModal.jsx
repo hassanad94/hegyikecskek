@@ -3,7 +3,7 @@ import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import ContactUs from "./ContactUs";
 
-const OpenMessageModal = (...props) => {
+const OpenMessageModal = (props) => {
   const style = {
     position: "absolute",
     top: "50%",
@@ -30,12 +30,10 @@ const OpenMessageModal = (...props) => {
     setOpenMessageModal(false);
   };
 
-  const { buttonTitle } = props[0];
-
   return (
     <>
       <div onClick={handleOpen} className="button btn center">
-        {buttonTitle}
+        {props.buttonTitle}
       </div>
 
       <Modal
@@ -46,7 +44,10 @@ const OpenMessageModal = (...props) => {
         // disablePortal={true} // a modal így a gyermek lesz nem külön elem
       >
         <Box sx={style}>
-          <ContactUs subject={buttonTitle} subjectDisabled={true} />
+          <div className="close-modal" onClick={handleClose}>
+            ✕
+          </div>
+          <ContactUs subject={props.buttonTitle} subjectDisabled={true} />
         </Box>
       </Modal>
     </>

@@ -15,12 +15,14 @@ export default {
       options: {
         source: "category",
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "images",
       title: "Galéria Képei",
       type: "array",
       of: [{ type: "image" }],
+      validation: (Rule) => Rule.required(),
     },
   ],
 };
