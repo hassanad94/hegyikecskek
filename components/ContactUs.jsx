@@ -174,7 +174,7 @@ const ContactUs = (...props) => {
         <Controller
           control={control}
           name="subject"
-          defaultValue={"edzésterv"}
+          defaultValue={subject || "edzésterv"}
           render={({ field }) => (
             <FormControl variant="filled" className="subject-field">
               <InputLabel id="demo-simple-select-label">

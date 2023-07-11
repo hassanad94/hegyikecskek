@@ -94,9 +94,15 @@ const Footer = () => {
       </div>
 
       <div className="controls">
-        <OpenMessageModal buttonTitle="Edzéstervet szeretnék!" />
+        <OpenMessageModal
+          subject="edzésterv"
+          buttonTitle="Edzéstervet szeretnék!"
+        />
         <br />
-        <OpenMessageModal buttonTitle="Tag szeretnék lenni!" />
+        <OpenMessageModal
+          subject="egyesületi tagság"
+          buttonTitle="Tag szeretnék lenni!"
+        />
       </div>
     </div>
   );

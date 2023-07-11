@@ -47,7 +47,7 @@ const OpenMessageModal = (props) => {
           <div className="close-modal" onClick={handleClose}>
             ✕
           </div>
-          <ContactUs subject={props.buttonTitle} subjectDisabled={true} />
+          <ContactUs subject={props.subject} subjectDisabled={true} />
         </Box>
       </Modal>
     </>

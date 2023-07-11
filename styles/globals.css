@@ -2645,6 +2645,7 @@ main details[open] summary {
   font-weight: bold;
   background: var(--base-color-2);
   color: #fff;
+  cursor: pointer;
 }
 
 .galerialist-container img {
