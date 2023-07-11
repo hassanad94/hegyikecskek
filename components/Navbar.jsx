@@ -151,7 +151,7 @@ const Navbar = () => {
         </div>
 
         <div className="logo-container">
-          <Image layout="fill" src="/logo.png" alt="Logo" className="logo" />
+          <Image fill src="/logo.png" alt="Logo" className="logo" />
         </div>
       </div>
 
@@ -180,8 +180,8 @@ const Navbar = () => {
           <div className="logo-container">
             <li>
               <Image
-                width="105px"
-                height="101px"
+                width="105"
+                height="101"
                 src="/logo.png"
                 alt="Logo"
                 className="logo"

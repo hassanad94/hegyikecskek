@@ -83,13 +83,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
   return (
     <>
       <div className="hero-container fw">
-        <Image
-          src={heroImage}
-          priority={true}
-          alt="hero"
-          title="Fő kép"
-          layout="fill"
-        />
+        <Image src={heroImage} priority={true} alt="hero" title="Fő kép" fill />
 
         {currentDevice === "desktop" && (
           <div className="content button-container center">
@@ -128,7 +122,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               onClick={handleReasonCardClick}
             >
               <Image
-                layout="fill"
+                fill
                 src="/img/reason-1.png"
                 alt="Indok miért csatlakozz"
               />
@@ -156,7 +150,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               onClick={handleReasonCardClick}
             >
               <Image
-                layout="fill"
+                fill
                 src="/img/reason-2.png"
                 alt="Indok miért csatlakozz"
               />
@@ -184,7 +178,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               onClick={handleReasonCardClick}
             >
               <Image
-                layout="fill"
+                fill
                 src="/img/reason-3.png"
                 alt="Indok miért csatlakozz"
               />
@@ -212,7 +206,7 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
               onClick={handleReasonCardClick}
             >
               <Image
-                layout="fill"
+                fill
                 src="/img/reason-4.png"
                 alt="Indok miért csatlakozz"
               />
@@ -256,11 +250,10 @@ export default function Home({ defaultData, coachesData, reviewsData }) {
         ) : (
           <div className="mountain-dec-container">
             <Image
-              layout="fill"
+              fill
               src={`/mountain-dec.png`}
               alt="hegy dekoráció"
               className="mountain-dec"
-              objectFit="contain"
             />
           </div>
         )}

@@ -77,15 +77,10 @@ const Taborok = ({ defaultData, socialData }) => {
                 );
               })}
           </div>
-          <h2 className="camp-name">{campName} EdzőTábor</h2>
+          <h2 className="camp-name">{campName} Edzőtábor</h2>
 
-          <div className="flex justify-content-center image ">
-            <Image
-              objectFit="contain"
-              layout="fill"
-              src={introImageURL}
-              alt="decoration"
-            />
+          <div className="flex camp-image justify-content-center image ">
+            <Image fill src={introImageURL} alt="decoration" />
           </div>
 
           <p>{intro}</p>
@@ -158,8 +153,8 @@ const Taborok = ({ defaultData, socialData }) => {
               <a href={facebook}>
                 <Image
                   objectFit="contain"
-                  width="32px"
-                  height="32px"
+                  width="32"
+                  height="32"
                   src="/facebook.png"
                   alt="Logo"
                   className="logo"
@@ -169,8 +164,8 @@ const Taborok = ({ defaultData, socialData }) => {
               <a href={instagram}>
                 <Image
                   objectFit="contain"
-                  width="32px"
-                  height="32px"
+                  width="32"
+                  height="32"
                   src="/instagram.png"
                   alt="Logo"
                   className="logo"
@@ -180,8 +175,8 @@ const Taborok = ({ defaultData, socialData }) => {
               <a href={youtube}>
                 <Image
                   objectFit="contain"
-                  width="32px"
-                  height="32px"
+                  width="32"
+                  height="32"
                   src="/youtube.png"
                   alt="Logo"
                   className="logo"

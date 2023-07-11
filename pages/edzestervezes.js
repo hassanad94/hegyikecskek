@@ -76,7 +76,6 @@ const Edzestervezes = ({ defaultData }) => {
 
             <div className="flex image-container justify-content-center ">
               <Image
-                objectFit="contain"
                 width={300}
                 height={163}
                 src="/img/step.png"
@@ -124,7 +123,6 @@ const Edzestervezes = ({ defaultData }) => {
               <div className="card-image">
                 <Image
                   width="50"
-                  objectFit="contain"
                   height="50"
                   src="/img/belife-1.png"
                   alt="Miben Hiszünk"
@@ -138,7 +136,6 @@ const Edzestervezes = ({ defaultData }) => {
               <div className="card-image">
                 <Image
                   width="50"
-                  objectFit="contain"
                   height="50"
                   src="/img/belife-2.png"
                   alt="Miben Hiszünk"
@@ -152,7 +149,6 @@ const Edzestervezes = ({ defaultData }) => {
               <div className="card-image">
                 <Image
                   width="50"
-                  objectFit="contain"
                   height="50"
                   src="/img/belife-3.png"
                   alt="Miben Hiszünk"
@@ -166,7 +162,6 @@ const Edzestervezes = ({ defaultData }) => {
               <div className="card-image">
                 <Image
                   width="50"
-                  objectFit="contain"
                   height="50"
                   src="/img/belife-4.png"
                   alt="Miben Hiszünk"
@@ -180,7 +175,6 @@ const Edzestervezes = ({ defaultData }) => {
               <div className="card-image">
                 <Image
                   width="50"
-                  objectFit="contain"
                   height="50"
                   src="/img/belife-5.png"
                   alt="Miben Hiszünk"

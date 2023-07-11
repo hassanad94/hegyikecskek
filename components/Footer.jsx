@@ -20,8 +20,8 @@ const Footer = () => {
     <div className="section footer">
       <div className="logo-container">
         <Image
-          width="84px"
-          height="77px"
+          width="84"
+          height="77"
           src="/logo-dark.png"
           alt="Logo"
           className="logo"
@@ -61,8 +61,8 @@ const Footer = () => {
           <a href={facebook}>
             <Image
               objectFit="contain"
-              width="22px"
-              height="22px"
+              width="22"
+              height="22"
               src="/facebook.png"
               alt="Logo"
               className="logo"
@@ -72,8 +72,8 @@ const Footer = () => {
           <a href={instagram}>
             <Image
               objectFit="contain"
-              width="22px"
-              height="22px"
+              width="22"
+              height="22"
               src="/instagram.png"
               alt="Logo"
               className="logo"
@@ -83,8 +83,8 @@ const Footer = () => {
           <a href={youtube}>
             <Image
               objectFit="contain"
-              width="22px"
-              height="22px"
+              width="22"
+              height="22"
               src="/youtube.png"
               alt="Logo"
               className="logo"

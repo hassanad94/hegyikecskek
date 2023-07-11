@@ -1,6 +1,6 @@
 import Masonry from "react-masonry-css";
 import { useState } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import {
   Close as CloseIcon,
   NavigateNext,
@@ -46,8 +46,9 @@ const GallerySection = ({ images }) => {
             src={images[tempimg]}
             alt="galery item"
             title=""
-            fill
-            sizes="100vw"
+            width={1024}
+            height={1024}
+            loading="eager"
           />
           <NavigateBefore
             className="prev"
@@ -70,15 +71,14 @@ const GallerySection = ({ images }) => {
         {imgs?.map((image, i) => {
           return (
             <div
-              key={image + i}
               className="gallery-image-container"
               onClick={() => getImage(i)}
+              key={image + i}
             >
               <Image
                 src={image}
                 alt="galery item"
                 title=""
-                layout="fill"
                 sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 34vw"
               />
             </div>

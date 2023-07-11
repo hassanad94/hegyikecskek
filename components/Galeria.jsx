@@ -46,15 +46,7 @@ export function Galeria({ galeria }) {
     <>
       <div className="image-container">
         {galeria[index].indexOf("images") > -1 ? (
-          <Image
-            alt="Galéria"
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
-            src={galeria[index]}
-            className=""
-          />
+          <Image alt="Galéria" fill src={galeria[index]} className="" />
         ) : (
           <YoutubeEmbed embedId={galeria[index]} />
         )}

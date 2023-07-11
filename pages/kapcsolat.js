@@ -34,8 +34,8 @@ const Kapcsolat = ({ defaultData }) => {
             <a href={facebook}>
               <Image
                 objectFit="contain"
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 src="/facebook.png"
                 alt="Logo"
                 className="logo"
@@ -45,8 +45,8 @@ const Kapcsolat = ({ defaultData }) => {
             <a href={instagram}>
               <Image
                 objectFit="contain"
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 src="/instagram.png"
                 alt="Logo"
                 className="logo"
@@ -56,8 +56,8 @@ const Kapcsolat = ({ defaultData }) => {
             <a href={youtube}>
               <Image
                 objectFit="contain"
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 src="/youtube.png"
                 alt="Logo"
                 className="logo"

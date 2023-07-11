@@ -921,6 +921,7 @@ footer .section::before {
 
 .section.expect .mountain-dec-container img {
   filter: drop-shadow(0 4px 1px rgb(0 0 0 / 28%));
+  object-fit: contain;
 }
 
 .section.expect.mountain-dec {
@@ -1142,6 +1143,12 @@ footer .section::before {
   -ms-user-select: none;
   user-select: none;
   box-shadow: var(--base-shadow);
+  width: 100%;
+  height: 350px;
+}
+
+.section.page-gallery .image-container img {
+  object-fit: contain;
 }
 
 .section.page-gallery .image-container > span {
@@ -1278,7 +1285,7 @@ footer .section::before {
   flex: 1;
   max-width: 75px;
 }
-.review-cards .card-content .profile-pic > span {
+.review-cards .card-content .profile-pic img {
   border-radius: 50%;
 }
 .review-cards .name {
@@ -2522,6 +2529,10 @@ details[open] summary:after {
   height: 37vh;
 }
 
+.taborok .justify-content-center img {
+  object-fit: contain;
+}
+
 @media (min-width: 1230px) {
   .taborok h1 {
     margin-bottom: 80px !important;
@@ -2725,6 +2736,8 @@ main details[open] summary {
   padding: 20px 0 20px;
   max-height: 100%;
   object-fit: contain;
+  width: 100%;
+  height: "auto";
 }
 
 .model.open svg {

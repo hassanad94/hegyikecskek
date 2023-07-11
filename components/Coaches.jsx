@@ -34,7 +34,7 @@ export const CoachesPreview = ({ coaches }) => {
                       <Image
                         alt="Edzők Kép"
                         title={coach.name}
-                        layout="fill"
+                        fill
                         src={profilSrc}
                       />
                     </div>
@@ -75,7 +75,7 @@ export const CoachesPreview = ({ coaches }) => {
                       <Image
                         alt="Edzők Kép"
                         title={coach.name}
-                        layout="fill"
+                        fill
                         src={profilSrc}
                       />
                     </div>

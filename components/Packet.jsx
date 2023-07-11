@@ -45,7 +45,7 @@ export const ReviewCard = ({ reviews }) => {
                   <Image
                     alt="Idéző jél"
                     title={"ídézőjel"}
-                    layout="fill"
+                    fill
                     src="/img/qvot.png"
                   />
                 </div>
@@ -58,7 +58,7 @@ export const ReviewCard = ({ reviews }) => {
                       <Image
                         alt="Profil kép"
                         title={review.name}
-                        layout="fill"
+                        fill
                         src={profilSrc}
                       />
                     </div>

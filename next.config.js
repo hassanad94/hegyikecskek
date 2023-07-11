@@ -10,11 +10,7 @@ const nextConfig = {
       "img.youtube.com",
     ],
   },
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
+  experimental: {},
 };
 
 module.exports = nextConfig;
