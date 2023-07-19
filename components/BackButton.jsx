@@ -9,8 +9,8 @@ function BackButton({ router }) {
       }}
     >
       <Image
-        width={40}
-        height={40}
+        width={20}
+        height={20}
         alt="back button"
         src="/img/backarrow.svg"
       />
